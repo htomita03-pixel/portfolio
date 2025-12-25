@@ -1,0 +1,1268 @@
+@charset "UTF-8";
+html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      max-width: 768px;
+       min-width: 375px;
+      width: 100%;
+    }/*下部のトップへ戻るボタンをクリック時にスムーズにスクロールするように*/
+
+  body{
+    font-family:'Noto Sans JP', 'Noto Serif JP', sans-serif;
+    max-width: 100%;
+    align-items: center;
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    }
+
+    header{
+      min-width: 375px;
+      position:relative;
+      width: 100%;
+      height: 6.4vh;
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      aspect-ratio: 375 /51.71 ;
+    }
+
+  .topLogo{
+    height :auto;
+    width: 64%;
+    margin-left: 3.2%;/*左から余白を*/
+
+  }
+  .topLogo img{
+    width: 100%;/*トップロゴの中で１００％*/
+    height :auto;
+    min-height: 19.71px;/*縮ませたくない*/
+    object-fit: contain;
+     aspect-ratio:240/19.71;
+  }
+
+  
+/* 以下、ハンバーガー。メニューをページの最上部に配置*/
+/*数値の単位を変更すると崩れがちなのであまり触らない*/
+.hamburgerMenu {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+}
+/* メニューアイコンを ページの最上部に配置*/
+.hamburgerMenu .hamburgerIcon {
+  cursor: pointer;/*カーソルの形状が指差し（手の形）に変わる*/
+  position:absolute;
+  left: 88.5%;
+  top: 0px;
+  padding-top: 0.61vh;
+  height: 2.4%;
+}
+  
+/* メニューアイコン（三本線）の真ん中の線です */
+.hamburgerMenu .hamburgerIcon .lineBtn {
+  background: #B71B26; /* 色は自由に変更可能です */
+  display: block;
+  height: 0.025vh; /* 太さ */
+  width: 8.27vw; /* 長さ */
+  position: relative;
+  transition: background .4s ease-out; /* 形が変わる時のアニメーション */
+ display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+/* メニューアイコン（三本線）の上と下の線を疑似要素で追加 */
+.hamburgerMenu .hamburgerIcon .lineBtn::before,
+.hamburgerMenu .hamburgerIcon .lineBtn::after {
+  background: #B71B26;/* 色は自由に変更可能です */
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .4s ease-out; /* 形が変わる時のアニメーション */
+  width: 100%;
+}
+.hamburgerMenu .hamburgerIcon .lineBtn::before {top: 10px;} /* 位置を上にずらしています */
+.hamburgerMenu .hamburgerIcon .lineBtn::after {top: -10px;} /* 位置を下にずらしています */
+
+/* 表示されるメニューです */
+.hamburgerMenu .globalNav {
+  background-color: rgba(255,255,255,0.9);
+  overflow: hidden;
+  max-height: 0; /* ★最初は高さ0非表示状態 */
+  transition: max-height .6s; /* 表示されるときのアニメーション */
+  text-align: center;
+  font-family: 'Noto Serif JP', sans-serif;
+}
+
+/* メニュー部分のデザインです */
+.hamburgerMenu .globalNav li:first-of-type {
+  padding-top: 9.85vh; /*セクションの一番下の余白*/;
+}/*first-of-type同じ親要素の中で、同じ種類の要素のうち最初の1つだけにスタイルを当てる*/
+
+.hamburgerMenu .globalNav li {
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1rem;
+  padding-top: 48px;
+  
+}
+.hamburgerMenu .globalNav li:last-of-type {
+  padding-bottom: 22.8vh;
+}
+
+.hamburgerMenu .globalNav li a:hover {
+  background-color: rgba(34, 62, 104, 0.1);
+}
+/* チェックボックス非表示*/
+.hamburgerMenu .menubtnCheckbox {
+  display: none;
+}
+
+/* ▼▼▼以下はチェックボックスがONの時の状態▼▼▼ */
+.hamburgerMenu .menubtnCheckbox:checked ~ .globalNav {
+  max-height: 66vh; /* ★チェックボックスがオンの時の高さ */
+  transition: max-height .6s;/* 最大の高さまで０．６秒で伸びる*/
+}
+/* メニューボタンの中央の線を非表示に */
+.hamburgerMenu .menubtnCheckbox:checked ~ .hamburgerIcon .lineBtn {background: transparent;}
+
+/* メニューボタンの上下の線を45度傾けて✕印を作る */
+.hamburgerMenu .menubtnCheckbox:checked ~ .hamburgerIcon .lineBtn::before {transform: rotate(-45deg);top: 0;}
+.hamburgerMenu .menubtnCheckbox:checked ~ .hamburgerIcon .lineBtn::after {transform: rotate(45deg);top: 0;}
+
+.hamburgerMenu .hamburgerIcon {
+top: 18px;
+}
+
+
+  .mainHero {
+    overflow: hidden; /* はみ出した部分を非表示 */
+    margin-bottom: 5.9vh;
+    width: 100%; height:59.11vh; 
+    display: flex;
+     justify-content: center;
+      min-width: 375px;
+  }
+
+  .mainHero img{
+    object-fit: cover; /**/
+    object-position:  -2.5vw -2vh;
+    transform: scale(1.13);
+    z-index: -1;
+    transform-origin: center center;
+  }
+
+  #conceptSection,#serviceSection,#qandaSection{
+    max-width:93.6vw;
+  }
+
+/*コンセプトの部分*/
+  #conceptSection {
+  margin: auto;
+  letter-spacing: 0.1em;
+  max-width:93.6vw;
+  min-width: 351px;
+      margin: 0 auto;
+  justify-content: center;
+ 
+   margin-bottom:  9.85vh; /*セクションの一番下の余白*/
+  }
+
+  #conceptSection h4{
+  text-align: center;
+  font-size: 1.25rem;
+  line-height: 2;
+  }
+
+  #conceptSection p{
+    line-height: 2;
+    font-size: 0.88rem;
+  }
+
+
+
+/*サービスの部分*/
+  #serviceSection {
+    max-width:93.6vw;
+     min-width: 351px;
+      margin: 0 auto;
+      justify-content: center;
+      margin-bottom:  9.85vh; /*セクションの一番下の余白*/;
+  }
+
+  #serviceSection li{
+  margin-bottom:  5.9vh;/*写真と文章のコンテンツの下の余白*/
+  }
+  
+  #serviceSection img{
+  object-fit: contain; /*画像そのまま範囲内に拡大縮小*/
+  object-position: center 0px; /*画像の位置は中央固定*/
+  
+  }
+
+  .servicePhoto{
+  aspect-ratio: 10 / 7;
+  max-width: 100%;
+  height: auto;
+}
+
+.servicePhoto img {
+  width: 100%;
+  height: 100%;
+}
+  #serviceSection p{
+    font-size: 0.88rem;
+    line-height: 1.5;
+    letter-spacing: 0.1em;
+  }
+
+  h2{
+    font-family:'Noto Serif JP', sans-serif;
+    font-size: 1.75rem;
+    text-align: center;
+    margin: 1.97vh auto 0.47vh;
+    font-weight: bold;
+  }
+
+  #serviceSection h2{
+    margin-top: 9.85vh; 
+  }
+
+  #serviceSection h4 {
+    text-align: center;
+    font-family:'Noto Serif JP', sans-serif;
+    font-size: 1.25rem;
+    line-height: 2;
+  }
+  .moreAndArrow {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    max-width: 100%;
+    gap: 0.44rem;
+    
+  }/*ここに小さい→への指定も入っている*/
+  .moreAndArrow span{
+    justify-content: flex-end;
+    font-size: 0.88rem;
+    line-height: 2;
+    transform: translateY(-0.1rem); /*他の要素のレイアウトを崩さずに位置をずらす*/
+      }
+
+  .more img{
+    width:0.88rem;
+    aspect-ratio:  4.75/ 9.5;
+  }
+
+/*Q&A*/
+#qandaSection{
+  min-width: 351px;
+   margin: 0 auto;/*中央寄せ*/
+   letter-spacing: 0.1em;
+    margin-bottom:  9.85vh; /*セクションの一番下の余白*/
+}
+.questionContent {
+  background-color: #333;
+  color: #fff;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;/*フレックスにより縮むのを防ぐ*/
+  font-family:'Noto Serif JP', sans-serif;
+}
+.answerContent {
+  background-color: #B71B26;
+  color: #fff;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;/*フレックスにより縮むのを防ぐ*/
+  font-family:'Noto Serif JP', sans-serif;
+}
+
+
+
+#qandaSection dl {
+  display: flex;
+  flex-direction: column;
+}
+#qandaSection dt, #qandaSection dd {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px; /* QとAの間に少し間隔を追加 */
+  line-height: 2;
+}
+#qandaSection .questionContent, #qandaSection .answerContent {
+  margin-right: 10px; /* QとAの後ろに間隔を追加 */
+  line-height: 2;
+}
+
+
+
+
+
+/*施工の流れ*/
+  #flowSection{
+    background-color: #f4f5f7;
+    width: 100%;
+  height: auto;
+  padding-top: 1.97vh;
+  padding-bottom: 1.97vh;
+  margin-bottom:  9.85vh; /*セクションの一番下の余白*/
+  }
+    
+  #flowSection ol img{
+    margin-bottom: 1vh;
+ 
+  }
+
+  #flowSection ol{
+    width: 80vw;
+    margin:0px auto ;
+    text-align: center;
+    min-width:300px;
+  }
+
+  #flowSection ol li{
+    justify-content: center;
+    display:block;
+    background-color: #333;
+    border-radius: 20px;
+    color: #fff;
+    letter-spacing: 0.1em;
+    margin-bottom: 1vh;
+    padding: 1.97vh auto;
+    line-height: 2;
+  }
+
+
+/*FLOWの矢印の色設定*/
+  #imgFilter60{
+    opacity: 0.6;/*要素の不透明度を設定60% filter: brightness(60%)でも可*/
+  }
+  #imgFilter70{
+    opacity: 0.7;
+  }
+
+  #imgFilter80{
+    opacity: 0.8;
+  }
+
+  #imgFilter90{
+    opacity: 0.9;
+  }
+
+
+
+/*問い合わせ*/
+
+#contactSection{
+  min-width: 375px;
+  text-align: center;/*この中のコンテンツ中央揃え*/
+  max-width: 768px;/*タブレット幅上限*/
+  width: 100%;
+  height: auto;
+  background-color:#dee2e9;
+  padding: 1.97vh 3.2vw 1.97vh 3.2vw;        /* rem % 左右の余白 */
+  box-sizing: border-box; /* パディング込みで幅計算 */
+  margin-bottom:  9.85vh; /*rem セクションの一番下の余白*/
+}
+
+form{
+  min-width: 351px;
+      margin: 0 auto;
+    letter-spacing: 0.1em;
+    line-height: 2;
+    font-weight: bold;
+    font-size: 1rem;
+    align-items: center;
+    text-align: center;
+    transform-origin: center center;
+  }
+ 
+  /* 必須マーク */
+.fieldisRequired{
+  background-color: #B71B26;
+  color: #ffffff;
+  border-radius: 0.5rem;
+  width: 11%;
+  height:2vh;
+  padding: 0.25vh 2.53vw;/*rem rem*/
+  font-size: 0.625rem;
+  font-weight: normal;
+  margin-left: 0.9vw;/* rem*/
+  align-items: center;
+margin-bottom: 1.45vh;/* rem*/
+aspect-ratio:  40/ 18;
+box-sizing: border-box;
+} 
+
+/* テキスト・メール・電話・テキストエリア */
+input[ type="text" ],
+input[ type="email"],
+input[ type="tel"],
+textarea {
+background-color: #ffffff;
+width: 93.6vw;/* %*/
+min-width:280px;/* */
+max-width: 720px;/* レイアウト上限を確保 */
+}
+
+textarea{
+  height: 14vh;/*rem */
+}
+
+
+input[ type="email"],
+input[ type="tel"],
+input[type="text"][name="dearName"],
+input[type="text"][name="nameFuriana"],
+textarea {
+margin-bottom: 2.9vh;} /*rem*/
+
+
+.confilmRight,.telRight,
+.messageRight,.mailRight,
+.addressRight03,.addressRight02,
+.addressRight01,.telRight,
+.huriganaRight,.nameRight,
+.inquiryRight,.messageRight
+{
+  display: none;
+}
+
+/* ラジオボタン */
+ .InquiryType ,
+ .radioBtn {
+  text-align: center;
+  margin: 0 auto;
+ }
+
+.InquiryType {
+  font-size: 1rem;
+}
+
+ .radioBtn{
+    margin-bottom: 2.95vh; /*rem*/
+     min-width: 266px;
+  }
+
+.radioBtn label {
+  margin: 0 5%;
+  font-size: 1rem;
+  display: inline-block;
+  }
+
+  .radioText{
+  font-weight: normal;
+font-size: 0.88rem;}
+
+
+
+/* 郵便番号 */
+  input[ name="userPostcode"] {
+  width: 125px;/*rem*/
+  min-width:125px;
+}/*rem*/
+
+  .postCode{
+  text-align: left;
+  font-size: 0.88rem;
+  width: 93.6vw;/*%*/
+    margin-bottom: 0.9vh;/*rem*/
+  }
+
+  /**/
+
+  /* 項目の整列 積みあがったものを直す*/
+  .addressRight01{
+    width: 1.25rem;
+  height: auto;
+  display: inline-block;
+}
+  .addressRight02{
+    width: 125px;/* rem */
+    height: auto;
+  display: inline-block;
+  }
+
+  /*送信ボタン*/
+.toSend{
+  min-width:200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #333 ;
+  background : url(images/sqFormArrow.svg) norepeat 98% 50% /100%;
+  color: #fff;
+  width: 53%;/* % */
+  height: 5.92vh; /*rem  */
+  margin:2.96vh auto 0;/* 2rem auto 0 */
+  font-family:'Noto Serif JP', sans-serif; 
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.toSend img{
+  align-self: center;
+  padding-left: 4px;/*rem*/
+  transform: translateY(0.1rem);
+}
+
+.toSend:hover {
+  background-color: #223E69;
+  transform: scale(0.99);
+  border-radius: 5px;
+  transition-property: background-color,transform,border-radius;
+  transition-duration: 0.8s;
+  transition-timing-function: ease-in;
+  transition-delay: 0ms;
+}
+
+/* フォーム項目ブロック間の余白 */
+  .userName,
+  .huriGana,.telePhone,.userMail,
+  .conFirmMail,.messageTextForm,
+  .submitBtn,.addressBlock
+  {
+    margin-top:2.96vh; /*rem*/
+  }
+  
+
+  /* 下部ボタンのスタイルと場所、フッター */
+.mainEnd{
+  min-width: 375px;
+}
+.toPagetop{
+  position:relative; 
+   left: 84.53%;
+   top: 0px;
+  }
+
+ .toPagetop{
+  cursor: pointer;
+  background-color:#333;
+  width: 12.27vw;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+ }
+
+ .toPagetop img{
+  z-index: 100;
+  aspect-ratio: 30 / 15;
+  width: 8.2vw;/*親要素の％にしたほうが良い*/
+  }
+
+  footer{
+  min-width: 375px;
+  max-width: 768px;
+  width: 100%;
+  height: 5.54vh;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  background-color:#333;
+  color: #fff;
+  }
+
+/*以下、テキスト横の線*/
+
+
+.withLines{
+  display: flex; /* 線とテキストを水平に並べる */
+  align-items: center; /* 線とテキストを垂直方向の中央に揃える */
+  font-size: 0.75rem;
+  font-family:'Noto Serif JP', sans-serif; 
+  margin: 0 auto 2.9vh;
+  text-align: center;
+  justify-content: center;
+}
+
+.withLines::before,
+.withLines::after {
+  content: ""; /* 必須項目 */
+  display: block; /* 疑似要素をブロック要素として表示 */
+  height: 1px; /* 線の太さを指定 */
+  background-color: #333; /* 線の色を指定 */
+  width: 60.5px;
+}
+
+#flowSection .withLines::before,
+#flowSection .withLines::after
+{
+  background-color: #B71B26;
+}
+
+#flowSection .withLines{
+  color: #B71B26;
+}
+
+.withLines::before {
+  margin-right: 10px; /* 線の右側とテキストの間隔 */
+  margin-left: 10px;
+}
+
+.withLines::after {
+  margin-left: 10px; /* 線の左側とテキストの間隔 */
+  margin-right: 10px; 
+}
+
+
+  
+
+
+/* ここからPC版(768px以上）*/
+@media screen and (min-width:768px){
+
+html {
+      max-width: 1366px;
+      width: 100%;
+      margin: 0 auto;
+    }
+  
+body{
+  font-size: 1.25rem;
+  /*PCのページ全体の文字大きささ基準が20px*/
+}
+
+header{
+  aspect-ratio: 1366 / 80.85 ;/*比率を変えたくないので固定*/
+}
+
+#pageTop{/*ヘッダー*/
+  width: 100vw;
+  display: flex;
+  max-width: 100%;
+   display: flex;
+  height: 10.53vh;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 1.7vw;
+}
+
+.topLogo{
+    height: 40%;
+    width: 29%;
+    margin-left: 1.7vw;
+  }
+
+  /* ハンバーガーを非表示 */
+  .hamburgerMenu .hamburgerIcon,
+  .hamburgerMenu .menubtnCheckbox {
+    display: none;
+}
+  /* メニューを常時表示＆横並び */
+  .hamburgerMenu .globalNav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;  /* 縦揃えポイント */
+    background: none;
+    position: static;  
+    max-height: none;
+    font-size: 1.17vw;
+    width: 100%;
+    gap: 2.5rem;
+     padding: 0;
+    margin: 0;
+    flex-wrap: nowrap;
+  }
+
+.hamburgerMenu .globalNav li{
+  list-style: none;
+    padding: 0;
+    margin: 0;
+     flex-shrink: 0; /* 幅が足りなくても縮まない */
+}
+
+
+ .hamburgerMenu .globalNav li a{
+display: flex;
+    align-items: center;   /* ← 縦位置を中央に揃える */
+    justify-content: center;
+    text-decoration: none;
+    color: #000;
+    height: 100%;
+    font-size: 1.17vw;
+    width: auto;
+     flex-shrink: 0; /* 幅が足りなくても縮まない */
+     letter-spacing: 0.1em;
+ }
+
+ .hamburgerMenu .globalNav li a:hover {
+    background-color: rgba(34, 62, 104, 0.1);
+  }
+
+ .hamburgerMenu .globalNav li:first-of-type{
+object-position: 0 100px;
+padding: 0px;
+
+ }
+.hamburgerMenu .globalNav li:last-of-type{
+  padding: 0px;
+ object-position: 0 50px;
+ align-self:center;
+}
+
+ .hamburgerMenu {
+    position: static;
+    width: auto;
+  }
+  
+ .mainHero {
+    width: 100vw; 
+    height:70.96vh; 
+   margin-bottom:160px;/*コンセプトまでの余白*/
+  }
+
+  .mainHero img{
+    width:100vw;/*画面いっぱい表示*/
+    height:70.96vh;/*画面の８０％くらい*/
+    object-fit: cover; /*範囲いっぱいまで拡大*/
+    object-position:  0 55%;/*位置を少し上げる*/
+    z-index: -1;/*写真が枠の手前に来ないようにする*/
+    transform: scale(1);/*coverで足りない分写真を枠より少し拡大*/
+    transform-origin: center center;/*基準点を設置*/
+    aspect-ratio: 1366 / 891.32;/*比率固定*/
+  }
+
+#conceptSection,#serviceSection,#qandaSection{
+    max-width:74.67vw;
+  }
+
+
+
+   h2{
+    font-size: 2.625rem;
+    margin:0 auto 16px;/*上　右左　下（小見出しまでの余白）*/
+  }
+  .withLines,
+  #flowSection .withLines{
+  font-size: 1rem;
+  margin-bottom: 48px;/*小見出しから中身のコンテンツまでの余白*/
+}
+
+#flowSection .withLines::before,
+#flowSection .withLines::after,
+.withLines::before,
+.withLines::after {
+  width: 60.5px;
+}
+
+#flowSection .withLines::before,
+.withLines::before {
+  margin-right: 8px; /* 線の右側とテキストの間隔 */
+ margin-left: 5.8vw;
+}
+
+#flowSection .withLines::after,
+ .withLines::after{
+  margin-left: 8px; /* 線の左側とテキストの間隔 */
+  margin-right: 5.8vw;
+}
+
+
+
+/*PC版コンセプトの部分*/
+#conceptSection{
+  margin: auto;
+   margin-bottom:  160px; /*セクションの一番下の余白*/
+}
+
+
+/*PC版サービスの部分*/
+  .pcberService
+  {
+    display: flex;
+    justify-content: space-between;
+    flex-shrink: 0; 
+  } 
+
+#serviceSection {
+      margin: 0 auto;
+      margin-bottom:  160px; /*セクションの一番下の余白*/;
+  }
+
+.servicePhoto{
+  aspect-ratio: 10 / 7;
+  max-width: 100%;
+  height: auto;
+}
+.servicePhoto img {
+  width: 21.9vw;
+  height: auto;
+  aspect-ratio: 300 / 210.51;
+}
+
+#serviceSection p{
+  font-size: 1.17vw;
+    line-height: 1.5;
+    letter-spacing: 0.1em;
+}
+
+.bathRoom,.livingRoom,
+.kitchenRoom{
+  display: inline-block;
+  max-width: 21.9vw;
+  flex-wrap: wrap;
+}
+
+.moreAndArrow{
+  font-size: 1.17vw;
+}
+
+/*PC版施工の流れ*/
+#flowSection{
+height: auto;
+width: 100%;
+padding-bottom: 48px;
+margin-bottom:  160px; /*セクションの一番下の余白*/;
+}
+
+#flowSection ol{
+justify-content: space-between;
+display: flex;
+align-items: strech;
+height: 280px;
+width: 920px;
+}
+
+#flowSection ol li{
+  text-align: center;
+  height: 280px;
+  width: 60px;
+  flex-wrap: wrap;
+  font-size: 1.75rem;
+  align-items: center;
+  line-height: 1;
+  border-radius: 60px;
+  padding:   0 auto;
+}
+  
+.flowText{
+  display: inline-block;/* ブロック化して余白指定を有効に */
+  display:flex;
+  width: 60px;
+  height: 114.52px;
+  text-align: center;
+  align-items: center;
+  margin: 82px auto;  /*余白を追加 */
+
+}
+
+/*PC版施工の流れの矢印の指定*/
+ #imgFilter60,#imgFilter70,
+ #imgFilter80,#imgFilter90,
+ #imgFilter100
+{
+align-items: center;
+height: 30px;
+width: 60px;
+flex-shrink: 0;
+align-self: center; 
+transform-origin: center;
+transform: rotate(270deg);
+}
+
+#flowSection img{
+ width: 100%;
+ height: auto;
+  flex-shrink: 0;
+  margin-bottom: 0px;
+}
+/*PC版Q&A*/
+#qandaSection{
+    margin-bottom:  160px; /*セクションの一番下の余白*/
+}
+
+
+
+/*PC版の問い合わせフォーム*/
+
+/*指定していないのに生じている謎の数pxを消す*/
+.inquiryRadio,
+.userName,
+.huriGana,
+.telePhone,
+.userMail,
+.conFirmMail,
+.addressBlock,
+.messageTextForm {
+  font-size: 0; /* ←この行が重要 */
+  margin-bottom: 3vh;
+}
+
+/*消すのに使ったプロパティの効果で消えた文字サイズを戻す*/
+.inquiryLeft,
+.inquiryRight,
+.nameLeft,
+.nameRight,
+.huriganaLeft,
+.huriganaRight,
+.telLeft,
+.telRight,
+.mailLeft,
+.mailRight,
+.confilmLeft,
+.confilmRight,
+.addressLeft,
+.addressRight,
+.messageLeft,
+.messageRight {
+  font-size: 1.25rem;/*20px*/
+}
+
+#contactSection{
+  background-color:rgba(34, 62, 105, 0.15);
+  max-width: 100vw;
+  padding: 6.2vh 0 6.2vh;/*フォームを囲む部分　左右は中のコンテンツのマージン*/
+  
+}
+form{
+  background-color:rgba(255, 255, 255, 0.5);
+  width: 74.6%;/*1020px*/
+  height: auto;
+  padding:6vh 1.17vw;/*48 16*/
+  font-size: 1.25rem;/*20*/
+  margin: 0 auto;
+  justify-content: center;
+  letter-spacing: 0.1em;
+}
+
+#contactSection input{
+  margin-bottom: 0px;
+}
+
+/* 必須マーク */
+.fieldisRequired{
+font-size: 0.8em;/*16px*/
+/*58×24*/
+padding: 0px 0.8em;/*0.87vw12*/
+ margin-left: 0em;/*8*/
+ margin-right: 0;
+ margin-bottom:0;
+ flex-basis: 2.8em;
+ letter-spacing: 0.1em;
+}
+.fieldisRequired{
+font-size: 0px;
+}
+.fieldisRequired{
+font-size: 0.8em}
+
+
+.InquiryType,.radioBtn{
+  display: flex;
+  display: inline-block;
+  max-width: 36.45vw;/*498サイズあとでなおす*/
+}
+
+input[ type="text" ],
+input[ type="email"],
+input[ type="tel"]{
+height: 6.7vh;
+}
+
+/*枠はブロックにして積む。中身はインラインブロックにして中だけを横並びにする*/
+.userName,.huriGana,.telePhone,
+.addressBlock,.userMail,
+.conFirmMail,.messageTextForm,.addressRight03{
+  display: block;
+  max-width:71vw;/* 980サイズ*/
+  flex-shrink: 0;/*フレックスにより縮むのを防ぐ*/
+  margin: 0px ;
+  text-align: center;
+}
+
+/*お問い合わせ種別*/
+
+.inquiryRadio{
+  text-align: left;
+  margin: 0 auto;
+  margin-left: 0.874%;/*右は0.873%;*/
+  max-width:71vw;
+}
+
+.inquiryLeft{
+  width: 21.3vw;/*292(余白16含む）form1020に対して28.6％VWは21.3vw*/
+  text-align: right;
+}
+
+.inquiryRight{
+  
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+}
+
+input[ type="text" ],
+input[ type="email"],
+input[ type="tel"],
+textarea {
+background-color: #ffffff;
+min-width:280px;/* */
+max-width: 720px;/* レイアウト上限を確保 */
+}
+
+textarea{
+  height: 27vh;/*rem 208px */
+}
+
+/*名前*/
+.userName{
+  text-align: left;
+  margin: 0 auto;
+}
+.nameLeft,.nameRight{
+  display: inline-block;
+  max-width: 34vw;/*474サイズ*/
+   margin-bottom: 3.1vh;/*24*/
+}
+.nameLeft{
+  width: 21.3vw;/*292(余白16含む）form1020に対して28.6％VWは21.3vw*/
+  text-align: right;
+}
+.nameRight{
+  text-align: left;
+}
+
+input[type="text"][name="dearName"],
+input[type="text"][name="nameFuriana"]{
+  width: 24vw;/*332px;*/
+}
+
+
+.InquiryType,.radioText{
+font-size: 1.25rem;/*20*/
+}
+.radioBtn label{
+  margin: 0;
+}
+
+/*フリガナ*/
+.huriGana{
+text-align: left;
+margin: 0 auto;
+}
+.huriganaLeft,.huriganaRight{
+  display: inline-block;
+   margin-bottom: 3.1vh;/*24*/
+}
+
+.huriganaLeft{
+ width: 21.3vw;/*292(余白16含む）form1020に対して28.6％VWは21.3vw*/
+  text-align: right;
+}
+
+
+/*電話番号*/
+.telePhone{
+  text-align: left;
+  margin: 0 auto;
+}
+.telLeft,.telRight{
+   display: inline-block;
+   margin-bottom: 3.1vh;/*24*/
+}
+
+.telLeft{
+  width: 21.3vw;/*292(余白16含む）form1020に対して28.6％VWは21.3vw*/
+  text-align: right;
+}
+.telRight{
+  text-align: left;
+}
+input[ type="tel"]{
+  width: 24vw;/*332px;*/
+}
+
+/*住所*/
+.addressBlock{
+  margin: 0 auto;
+  height: 128px;
+  display: flex;
+  align-items: flex-start;
+    margin-bottom: 3.1vh;/*24*/
+}
+.postCode{
+  max-width: 48.6vw;/*664サイズ*/
+  display: inline-block;
+
+}
+.addressLeft,.addressRight01,.addressRight02{
+  display: inline-block;
+}
+
+
+input[type="text"][name="userPostcode"]{
+width: 16vw;/*222px;*/
+}
+
+.addressRight02
+{
+  margin-bottom: 3.1vh;/*24*/
+}
+
+.addressRight03{
+   margin-bottom: 3.1vh;/*24*/
+}
+
+input[type="text"][name="userAddress"]{
+  width: 48.6vw;
+  
+}  
+ .addressLeft{
+  width: 21.3vw;/*292(余白16含む）form1020に対して28.6％VWは21.3vw*/
+  height: 100%;
+  text-align: right;
+}
+
+
+
+
+
+/*メルアド*/
+.userMail{
+  display: flex;
+  justify-content: center;
+  /*margin-left: 7.4vw;/*102サイズ*/
+}
+
+.mailLeft,.mailRight{
+  display: inline-block;
+   margin-bottom: 3.1vh;}/*24*/
+
+   .mailLeft{
+  width: 21.3vw;/*292(余白16含む）form1020に対して28.6％VWは21.3vw*/
+  text-align: right;
+}
+
+.mailRight,.confilmRight{
+  max-width:48vw;
+}
+
+input[ type="email"]{
+  width: 48.6vw;/*664px*/
+}
+
+
+/*メルアド確認*/
+.conFirmMail{
+  display: block;
+  display: flex;
+  align-items: center;  
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+.confilmLeft,.confilmRight{
+  display: inline-block;
+   margin-bottom: 3.1vh;/*24*/
+  }
+.confilmLeft,.confilmRight{
+font-size: 0px;
+}
+.confilmLeft,.confilmRight{
+font-size: 1.25rem}
+
+.confilmLeft{
+  max-width: 21.3vw;/*292(余白16含む）form1020に対して28.6％VWは21.3vw*/
+  text-align: left;
+  padding: 0;
+  margin: 0;
+
+}
+
+/*問い合わせ*/
+.messageTextForm{
+  display: flex;
+  justify-content: space-between;
+  /*916
+  280*/ /*margin-left: 5.8vw;/*80*/
+}
+
+.messageLeft,.messageRight{
+  display: inline-block;
+}
+.messageLeft{
+  width: 21.3vw;/*292(余白16含む）form1020に対して28.6％VWは21.3vw*/
+  text-align: center;
+}
+textarea {
+/*margin-left: 5.7vh;/*78*/
+margin-bottom: 6.2vh;/*48*/
+height: 27vh;/*208pxサイズ*/
+width: 48.6vw;/*664px*/
+}
+
+
+/*ボタン*/
+.toSend{
+  width: 300px;/*300pxあまり伸びないほうがいい気がする。サイズあとでなおす*/
+  height: 68px;/*68px*/
+
+}
+
+
+
+
+.inquiryRight,.nameRight,
+.huriganaRight,.telRight,
+.addressRight01,.addressRight03,
+.mailRight,.confilmRight,
+.messageRight{
+  
+margin-left: 0.87vw;
+
+}
+
+
+
+
+/*topへ戻るためのリンク*/
+.mainEnd{
+ width: 100%;
+}
+
+.toPagetop{
+  max-width: 60px;
+  height: auto;
+  aspect-ratio: 1 / 1;
+}
+.toPagetop{
+  position:relative; 
+   left: 94.5%;/*左1292サイズ、あとでなおす*/
+   top: 0px;
+  }
+
+.toPagetop img{
+aspect-ratio: 30 / 15;
+max-width: 40px;
+height: auto;
+}
+footer{
+  max-width: 100%
+}
+
+
+
+}
+
+
+
+
+
+
