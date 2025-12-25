@@ -1,0 +1,1178 @@
+@charset "utf-8";
+
+html {
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-size: 12px;	/* ※以降4の倍数にする */
+    /* line-height: 1.5; */
+    color: #000000;
+	scroll-behavior: smooth;
+}
+img {
+    max-width: 100%;
+}
+/* トップに戻るボタンを常時、右下に表示 */
+.topBtn {
+	width: 48px;
+	height: 48px;
+	position: fixed; /* 画面に固定 */
+	bottom: 48px;    /* 下から20px */
+	right: 48px;     /* 右から20px */
+	z-index: 100;   /* 他の要素よりも前面に表示 */
+	background-image: url(../../images/topBtn.png) ;
+	background-repeat: no-repeat;
+	display: block;
+}
+/* .onlySp {
+	height: 150px;
+} */
+.onlyPc {
+    display: none;
+}
+
+
+/*トップビュー*/
+.topSec {
+    width: 375px;
+    height: 667px;
+    background: url(../images/imgHeroTaichu.png) no-repeat;
+    background-size: cover;
+}
+/*taichuLogo*/
+.topSec .taichuLogo {
+    width: 199px;
+    height: 372px;
+    padding-top: 120px;
+    margin: 0 auto;
+}
+/*sns縦並び*/
+.topSec .sns {
+    height: 139px;
+    position: absolute;
+    top: 461px;
+    left: 20px;
+}
+.topSec .sns dt {
+    margin-bottom: 20px;
+}
+.topSec .sns dt:last-of-type {
+    margin-bottom: 0;
+}
+/*台中概要*/
+.taichu {
+    width: 247px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #ffffff;
+    position: absolute;
+    top: 601.4px;
+    right: 20px;
+}
+
+
+/*nakamurasannoo-ba-reiローディングオーバーレイ
+/* #loadingOverlay {
+	position: fixed;
+	inset: 0;
+	background: #0076b6;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.3s ease;
+	z-index: 999;
+}
+#loadingOverlay.show {
+	opacity: 1;
+	pointer-events: auto;
+}
+#loadingImg {
+	width: 375px;
+	height: 667px;
+}
+ */
+
+
+/* パンくずナビゲーション */
+.panNav {
+	width: 375px;
+	height: 32px;
+    font-size: 16px;
+    font-weight: 400;
+    border-bottom: 1px solid #000000;
+    padding: 8px;
+}
+.breadcrumb {
+	padding: 0 .5rem;
+}
+.breadcrumb ul {
+	display: flex;
+	flex-wrap: wrap;
+	list-style: none;
+	margin: auto;
+	padding: auto 20px;
+}
+.breadcrumb li:not(:last-child)::after {
+	display: inline-block;
+	margin: 0 .25rem;
+	content: "＞";
+}
+.separatorFull {
+    width: 100%;            /* 下線の長さ（任意） */
+    height: 1px;             /* 下線の太さ */
+    background-color: #000;  /* 線の色 */
+    margin: 0;       /* 上下20px／左右は中央寄せ */
+}
+
+
+/* container */
+.container {
+	width: 375px;
+}
+.midashi {
+	width: 220px;
+	height: 40px;
+	background-image: url(../../images/midashiLine.png) ;
+	background-position: center;
+	background-size:cover;
+	background-repeat: no-repeat;
+
+    border: none;
+
+    font-size: 24px;		/* h2 */
+    font-weight: 400;
+	text-align: center;
+
+	margin: auto;
+}
+
+h2 span {
+    font-size: 50%;
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: 700;
+  /* text-align: center; */
+}
+
+.separator {
+    width: 223px;            /* 下線の長さ（任意） */
+    height: 1px;             /* 下線の太さ */
+    background-color: #000;  /* 線の色 */
+    margin: 40px auto;       /* 上下20px／左右は中央寄せ */
+}
+
+/* Attraction */
+.attraction {
+	width: 295px;
+	margin: 0 auto;
+}
+.attraction h3 {
+    letter-spacing: .3em;
+  	text-align: center;
+	margin-top: 30px;
+	margin-bottom: 15px;
+}
+attraction img {
+	width: 295px;
+	height: 221px;
+}
+.koubiArea {
+	width: 295px;
+	margin: auto;
+}
+.saikouArea {
+	width: 295px;
+	margin: auto;
+}
+
+.attraction .textArea {
+	width: 295Px;
+	background-color: rgba(237, 161, 132, .2);
+	padding: 16px;		/* テキストエリア内の空間 */
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+/* museum */
+.museum {
+	width: 295px;
+	margin: auto;
+}
+.museum h3 {
+    font-size: 12px;
+    font-weight: 700;
+}
+.museum h3 span {
+    font-weight: 400;
+}
+.museum .textArea {
+	border-top: solid 1px #000000;
+	width: 223Px;
+	border-bottom: solid 1px #000000;
+	margin: auto;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+/* モーダル処理 */
+h4 {
+    font-size: 24px;
+    font-weight: 700;
+	color: #ffffff;
+	margin-bottom: 30px;
+  	text-align: center;
+}
+.modalPhoto {
+	width: 157.5px;
+	height: 165px;
+	margin: auto;
+}
+.modalPhotos {
+	display: flex;
+	margin: auto;
+}
+.modalText {
+    font-size: 12px;
+    font-weight: 700;
+	color: #ffffff;
+	margin-top: 20px;
+	margin-left: 20px;	
+}
+/* ボタン */
+.modalBtn {
+	text-align: right;
+}
+.openBtn {
+	font-size: 12px;
+	color: #000000;
+	padding: 0.5rem 0.5rem;
+	border: solid 4px rgba(237, 161, 132, .2);
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	margin: 5px 0;
+}
+.openBtn:hover {
+	background-color: rgba(237, 161, 132, .2);
+}
+/* モーダル背景 */
+.modalBackground {
+	display: none; /* 初期状態は非表示 */
+	position: fixed;
+	z-index: 999;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.1);
+
+	/* 初期状態は透明、初期状態は非表示、0.5秒かけて変化させる */
+	opacity: 0;         
+	visibility: hidden; 
+	transition: opacity 0.5s, visibility 0.5s; 
+}
+/* 表示時に不透明にする、表示時に見せる */
+.modalBackground.is-visible {
+	opacity: 1; 
+	visibility: visible; 
+}
+/* モーダルコンテンツ */
+.modalContent {
+	background-color: rgba(1,128,190,0.9);
+	width: 375px;
+	height: 350px;
+}
+
+/* 閉じるボタン */
+.closeBtnOya {
+	text-align: right;
+}
+.closeBtn {
+	width: 28px;
+	height: 28px;
+}
+.closeBtn:hover,
+.closeBtn:focus {
+	background-color: rgba(0,0,0,0.3);
+  cursor: pointer;
+}
+
+/* sweets */
+.sweets {
+	width: 375Px;
+
+}
+.sweets .textArea {
+	width: 224Px;
+	margin: auto;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+.sweets h3 {
+	text-align: center;
+	border-bottom: solid 1px #000000;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+.sweet1, .sweet4 {
+	width: 223Px;
+	height: 148px;
+    display: block;
+    margin: 0 auto;
+}
+.sweetSub {
+	width: 335Px;
+	height: 225px;
+    display: block;
+    margin: 0 auto;
+}
+.sweet2, .sweet3 {
+	width: 157.5Px;
+	height: 225px;
+	margin: auto;
+	padding: 5px;
+}
+
+
+/*上に戻るアイコンの指定*/
+.toPageTop {
+	position: fixed;
+	right: 8px;/*配置位置*/
+	bottom: 8px;
+	z-index: 300;
+	/*要変更　とりあえずハンバーガーボタンと同じにしておく
+	どこに置くのかわかったら。*/
+}
+/*上に戻るアイコンの大きさ*/
+.toPageTop img {
+	width: 48px;
+	height: 48px;
+	transform: rotate(270deg);/*アイコンの矢印を上向きにする*/
+	/* z-index: 100; */
+}
+
+/*footer*/
+footer {
+	width: 375Px;
+    background-color: #007AB7;
+}
+/* .footSec {
+    padding-top: 20px;
+} いらなそう*/
+/*国旗*/
+footer .footFlag {
+    padding-top: 20px;
+}
+footer .footFlag img {
+    width: 32px;
+    height: 24px;
+    margin: 0 auto;
+}
+/*footerナビ*/
+footer ul {
+    max-width: 195px;
+    /* height: 167px; */
+    margin: 20px auto 84px;
+    /* padding-top: 64px; */
+}
+footer ul li {
+    font-size: 12px;
+    color: #ffffff;
+    border-bottom: 1px solid #ffffff;
+    padding: 12px 0 6px; 
+}
+footer ul li:first-of-type {
+    padding: 0 0 6px;
+}
+.logoSns {
+    display: flex;
+    position: relative;
+}
+
+/*sns画像サイズ*/
+.sns img {
+    width: 32px;
+    height: 32px;
+}
+.sns img[src="images/twitter.png"] {
+    width: 38.9px;
+    height: 32px;
+}
+
+/*footerロゴ*/
+footer .footLogo {
+    width: 71px;
+    height: 28px;
+    position: absolute;
+    bottom: 12px;
+    left: 20px;
+}
+/*sns横並びアイコン*/
+footer .sns {
+    width: 142px;
+    display: flex;
+    justify-content: space-between;
+    /* margin: 40px auto 12px; */
+    position: absolute;
+    bottom: 12px;
+    left: 115px;
+}
+
+/*コピーライト*/
+footer p {
+    font-size: 10px;
+    color: #ffffff;
+    border-top: 1px solid #03A9F4;
+    padding: 12px 0 12px;
+    text-align: center;
+}
+
+/*ここからヘッダーとドロワーに必要です*/
+/*ヘッダー*/
+header {
+  height: 53px;
+  width: 100%;/*375px;*/
+  z-index: 100;
+  position: absolute;/*relative;*/
+  /*background-color: rgba(0, 0, 0, 0.2);PCだけ？*/
+  display: flex;
+  align-items: center;
+}
+
+.headerLogo{
+width: 111px;
+height: 45px;
+}
+
+/*ヘッダー共有時用、TOPページのみのコード。これでヘッダー左のロゴが消えます。
+.headerLogo{
+  display:none;
+}*/
+
+/*ヘッダー内
+ここからドロワー部分 
+ドロワーとしての動きが異なるので、
+教科書と同じ記述にはなりませんでした。
+JSの変更点はJS内のコメントアウトでお知らせします。
+*/
+
+.headerContainer {
+  display: flex;/*ヘッダー内の要素は横並び*/
+}
+
+/*ヘッダー内　z-index注意
+ドロワークローズ時のメニュの状態ー*/
+.drawerOpen{/*ドロワーアイコンの場所指定*/
+  position: fixed;
+  left: 323px;/*ここを教科書と同じにしようとするとうまくいかなくなる*/
+  top: 4px;
+  width: 45px;
+  height: 45px;
+
+  z-index:110;
+  /*ここがページの他の部分より上、
+  かつモーダルより下になるようにしてください。
+  ドロワー用のオーバーレイよりも上です*/
+
+  background: transparent;/*背景を透明にする*/
+  border: none;/*背景をなくす*/
+  cursor: pointer;/*手の形に変化*/
+  align-self: center;
+}
+
+
+/*機能実装に必要な
+ドロワーメニューのスタイル　z-index注意*/
+#drawerNav {
+  top: 0;
+  position: fixed;
+  left: 375px;/* 要調整　初期位置：ナビメニューの幅分だけ画面外へ */
+  width: 225px;
+  height: 100vh;
+
+  z-index: 200;
+  /* header より前。モーダルよりは上*/
+
+  background-color: rgba(0, 122, 183, 0.9);
+  transition: transform 0.3s ease-out;
+  color: #fff;
+  line-height: 1;
+}
+
+#drawerNav.show {
+  /*showが付与された後の状態に対して*/
+  /* ←画面内へ */
+  transform: translateX(-225px);/* 右から画面内へスライドイン */
+}
+
+/*ドロワー内のリスト*/
+#drawerNav ul li {
+  margin-bottom: 20px;
+  text-align: center;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;/*下線の太さを細く調整*/
+  font-size: 20px;
+}
+
+#drawerNav ul li:first-of-type{/*リストの１番目だけ指定*/
+  font-size: 24px;
+  text-decoration: none;
+  margin-bottom: 60px;
+  margin-top: 80px;
+}
+#drawerNav ul li:nth-of-type(2) {/*リストの2番目だけ指定*/
+  margin-bottom: 40px;
+}
+
+/*ドロワーのロゴ*/
+.drawerLogo {
+  width: 101px;
+  height:40px;
+}
+
+/*閉じる×ボタンのスタイル設定*/
+.drawerClose {
+  position: absolute;
+  left: 173px;/*左端からの距離*/
+  top: 4px;
+
+  width: 45px;
+  height: 45px;
+  z-index: 210;/*順番表あり*/
+  background: transparent;/*背景は透明　noneでも可*/
+  border: none;/*境界は透明*/
+  cursor: pointer;
+}
+
+
+/*追加　オーバーレイ　
+ドロワーが開いているとき、オーバーレイ
+＝後ろのページを暗くして表示　figmaの指定により*/
+#overLay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.25);
+  z-index: 80;
+  display: none;
+
+}
+
+#overLay.show {
+  display: block;
+}
+
+/*ここからローディング画面　（HT）*/
+body, 
+main {
+  margin: 0;
+  background-color: #fff;
+  /* 通常コンテンツは白 */
+}
+
+#loadingOverlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #007AB7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 500;
+}
+
+.loadingLogo {
+  width: 287px;
+  height: 117px;
+  opacity: 0;/*はじめは消しておく*/
+  animation-name: blinkSp;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+
+  /* delay 1000ms 
+  blink: アニメーションの名前（@keyframesで定義した名前と一致させる）。
+   1s (duration): アニメーション1サイクルにかかる時間（1秒）。 
+   ease-out (timing-function): アニメーションの速度（開始は速く、終わりは遅く）。 
+   1s (delay): アニメーション開始までの遅延時間（1秒）。
+   infinite (iteration-count): アニメーションの繰り返し回数（無限）。
+  */
+}
+
+/* blink=点滅 */
+@keyframes blinkSp {
+  0% {
+   opacity: 0;/* 完全に透明 */
+  }
+
+    80% {
+       opacity: 1;/* 完全に表示 */
+    }
+
+  100% {
+    opacity: 0;
+  }
+
+}
+
+/* Loading が消える */
+#loadingOverlay.hide {
+  animation: fadeOut 2s forwards;
+}
+
+@keyframes fadeOut {
+  0% { 
+    opacity: 1; 
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+
+
+@media screen and (min-width: 768px) {
+	body {
+		font-family: "Zen Kaku Gothic New", sans-serif;
+		font-size: 20px;
+		/* line-height: 1.5; */
+		color: #000000;
+	}
+	img {
+		max-width: 100%;
+	}
+
+	h2 {
+		font-size: 48px;
+		font-weight: 400;
+		text-align: center;
+	}
+
+	h3 {
+		font-size: 36px;
+		font-weight: 700;
+	}
+	.separator {
+		width: 480px;            /* 下線の長さ（任意） */
+		margin: 40px auto;       /* 上下20px／左右は中央寄せ */
+		text-align: center;
+	}
+
+	.onlySp {
+		display: none;
+	}
+	.onlyPc {
+        display: block;
+    }
+
+	.midashi {
+		width: 530px;
+		height: 96px;
+    	font-size: 48px;		/* h2 */
+		text-align: center;
+		margin: auto;
+	}
+
+    /*top*/
+    .topSec {
+        width: 1366px;
+        height: 768px;
+        background: url(../images/imgHeroTaichuPc.png) no-repeat;
+        background-size: cover;
+    }
+    /*タイトル*/
+    /*taichulogo*/
+    .topSec .taichuLogo {
+        width: 300px;
+        height: 539.82px;
+        padding-top: 94px;
+        margin-left: 363px;
+    }
+
+    /* .topSec p {
+        width: 780px;
+        margin: 0;
+        padding-top: 174px;
+        padding-left: 223px;
+    } */
+    /*sns縦並び*/
+    .topSec .sns {
+        height: 139px;
+        position: absolute;
+        top: 512px;
+        left: 103px;
+    }
+    .topSec .sns dt {
+        margin-bottom: 20px;
+    }
+    .topSec .sns dt:last-of-type {
+        margin-bottom: 0;
+    }
+	/*台中概要*/
+	.taichu {
+        width: 467px;
+        font-size: 20px;
+        font-weight: bold;
+        color: #ffffff;
+        position: absolute;
+        top: 652px;
+        left: 796px;
+        right: 0;
+    }
+
+	/*ここからPC版ローディング画面（HT）*/
+	body,
+	main {
+    	margin: 0;
+    	background-color: #fff;
+    	/* 通常コンテンツを白で表示 */
+	}
+
+	#loadingOverlay {
+    	position: fixed;
+    	top: 0;
+    	right: 0;
+    	bottom: 0;
+    	left: 0;/*領域を隙間なく埋める＝100vw,100vhでも多分OK*/
+    	background: #007AB7;
+    	display: flex;
+    	justify-content: center;
+    	align-items: center;
+    	z-index: 500;
+	}
+
+	.loadingLogo {
+    	width: 318px;
+    	height: 128px;
+    	opacity: 0;
+    	animation-name: blinkPc;
+    	animation-duration: 3s;
+    	animation-timing-function: ease-out;
+    	animation-delay: 0.8s;
+    	animation-iteration-count: infinite;
+	}
+	/*blink: アニメーションの任意の名前（@keyframesで定義した名前と一致させる）。
+	s (duration): アニメーション1サイクルにかかる時間（秒）。 
+	ease-out (timing-function): アニメーションの速度（開始は速く、終わりは遅く）。
+    s (delay): アニメーション開始までの遅延時間（秒）。
+	infinite (iteration-count): アニメーションの繰り返し回数（ロードが終わるまで無限）。*/
+	@keyframes blinkPc {
+		0% {
+    		opacity: 0;
+    	}
+    	65% {
+    		opacity: 1;
+    	}
+    	100% {
+    		opacity: 0;
+    	}
+	}
+/*ローディングここまで*/
+
+	/* パンくずナビゲーション */
+	.panNav {
+		width: 1366px;
+		height: 60px;
+		font-size: 20px;
+		font-weight: 400;
+	}
+
+	/* attraction */
+	.attraction h3 {
+		letter-spacing: .3em;
+		text-align: left;
+	}
+	.koubiArea1, .koubiArea2 {
+		width: 1160px;
+		display: flex;
+		margin: 20px auto;
+	}
+	.saikouArea1, .saikouArea2 {
+		width: 1160px;
+		display: flex;
+		margin: 20px auto;
+	}
+
+	.imgMain {
+		width: 600px;
+		height: 360px;
+	}
+	.onlyPc {
+		width: 600px;
+		height: 144px;
+	}
+
+	.attraction .textArea {
+		width: 500Px;
+		background-color: rgba(237, 161, 132, .2);
+		padding: 16px;		/* テキストエリア内の空間 */
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
+
+
+	/* museum */
+	.museum {
+		width: 1140px;
+		height: 1508.4px;
+		margin: 0 40px;
+	}
+	.museum h3 {
+		font-size: 36px;
+		font-weight: 700;
+	}
+	.museum h3 span {
+		font-weight: 400;
+	}
+	.midashiMuseum {
+		/* position: absolute; */
+		/* right: 0; */
+		margin-right: 0;
+	}
+	.midashiText {
+		/* position: absolute;  */
+		/* left: 0; */
+		margin-left: 0;
+	}
+	.museum .textArea {
+		border-top: solid 1px #000000;
+		width: 420Px;
+		border-bottom: solid 1px #000000;
+		margin: auto;
+		margin-top: 40px;
+		margin-bottom: 40px;
+		margin-left: 0;
+		padding-top: 15px;
+		padding-bottom: 15px;
+		left: 0;
+	}
+	.museumDtl {
+		display: flex;
+	}
+	.museum1, .museum2, .museum3, .museum4  {
+		width: 530px;
+		height: 501.2px;
+	}
+	.museum1, .museum3  {
+		text-align: left;
+		margin-right: 60px;
+	}
+	.museum2, .museum4  {
+		text-align: left;
+		margin-right: 20px;
+	}
+	.museumPhoto {
+		width: 530px;
+		height: 270px;
+	}
+	.modalBtn {
+		text-align: right;
+	}
+
+	/* モーダル処理 */
+	h4 {
+		font-size: 36px;
+		/* font-weight: 700;
+		color: #ffffff;
+		margin-bottom: 30px;
+		text-align: center; */
+	}
+	.modalPhoto {
+		width: 380px;
+		height: 380px;
+		margin: auto;
+	}
+
+	.modalText {
+		font-size: 24px;
+	}
+	/* ボタン */
+	.openBtn {
+		font-size: 20px;
+	}
+	.openBtn:hover {
+		background-color: rgba(237, 161, 132, .2);
+	}
+
+	/* モーダルコンテンツ */
+	.modalContent {
+		background-color: rgba(1,128,190,0.9);
+		width: 900px;
+		height: 610px;
+	}
+
+	/* 閉じるボタン */
+	.closeBtn {
+		width: 36px;
+		height: 36px;
+	}
+	.closeBtn:hover,
+	.closeBtn:focus {
+		background-color: rgba(0,0,0,0.3);
+	cursor: pointer;
+	}
+
+	/* sweets */
+	.sweets {
+		width: 1366Px;
+		position: relative;
+	}
+	/* .sweets .midashi {
+		position: absolute;
+		left: 0;
+	} */
+	.midashiSweets {
+		margin-left: 50px;	
+	}
+	.sweets .textMiyahara {
+		position: absolute;
+		top: 100px;
+		left: 50px;
+	}
+	.sweetsArea1 {
+		position: absolute;
+		top: 300px;
+		width: 1120Px;
+		height: 352px;
+		display: flex;
+		margin: 20px auto;
+	}
+	.sweetSub {
+		position: absolute;
+		top: 700px;
+		left: 100px;
+		width: 960Px;
+		height: 600px;
+		display: flex;
+		/* margin: 0 auto; */
+		/* margin: 20px auto; */
+	}
+	.sweetsArea2 {
+		position: absolute;
+		top: 1350px;
+		width: 1120Px;
+		height: 352px;
+		display: flex;
+		margin: 20px auto;
+	}
+	.sweets .textArea {
+		width: 420Px;
+		margin: auto;
+	}
+	.sweets h3 {
+		text-align: center;
+		border-bottom: solid 1px #000000;
+		margin-top: 15px;
+		margin-bottom: 15px;
+		padding-top: 15px;
+		padding-bottom: 15px;
+	}
+	.sweet1, .sweet4 {
+		width: 560Px;
+		height: 346px;
+		display: block;
+		margin: 0 auto;
+	}
+	.sweet2, .sweet3 {
+		width: 400Px;
+		height: 600px;
+		margin: auto;
+		padding: 5px;
+	}
+
+	.sweet2 {
+		left: 0;	
+	}
+	.sweet3 {
+		right: 0;	
+	}
+	.sweets .separator {
+		position: relative;
+		top: 1800px;
+	}
+
+    
+    /* 上に戻るボタン */
+    .toPageTop {
+        position: fixed;
+        right: 40px;
+        bottom: 40px;
+        top: auto;
+        left: auto;
+    }
+
+    .toPageTop img {
+        width: 48px;
+        height: 48px;
+        transform: rotate(270deg);/*上向きにする*/
+    }
+    /*上に戻るアイコンの指定*/
+    .toPageTop {
+        position: fixed;
+        right: 20px;
+        /*配置位置*/
+        bottom: 20px;
+        /*要変更　とりあえずハンバーガーボタンと同じにしておく
+        どこに置くのかわかったら。*/
+    }
+
+    /*上に戻るアイコンの大きさ*/
+    .toPageTop img {
+        width: 100px;
+        height: 100px;
+    }
+
+    /*footer*/ /*時間あれば改善します*/
+    footer {
+		position: relative;
+		top: 1850px;
+        width: 1366px;
+        background-color: #007AB7;
+    }
+    /*国旗*/
+    footer .footFlag {
+        padding-top: 40px;
+    }
+    footer .footFlag img {
+        width: 64px;
+        height: 48px;
+        margin: 0 auto;
+    }
+    /* .footSec {
+        display: flex;
+    } */
+    /*footerナビ*/
+    footer ul {
+        max-width: 332px;
+        /* height: 167px; */
+        /*margin-top: 80px;
+        margin-left: 103px; */
+        /* padding-left: 64px; */
+        margin: 80px 0 20px 103px;
+    }
+    footer ul li {
+        font-size: 20px;
+        color: #ffffff;
+        border-bottom: 1px solid #ffffff;
+        padding: 20px 0 12px; 
+    }
+    footer ul li:first-of-type {
+        padding: 0 0 12px;
+    }
+    
+    /*footerロゴ*/
+    footer .footLogo {
+        width: 256px;
+        height: 103px;
+        position: absolute;
+        bottom: 20px;
+        left: 555px;
+    }
+    /*sns横並びアイコン*/
+    footer .sns {
+        width: 182.9px;
+        /* display: flex;
+        justify-content: space-between; */
+        /* margin: 40px auto 12px; */
+        position: absolute;
+        bottom: 20px;
+        left: 1080.1px;
+    }
+
+	/* ヘッダー */
+	header {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;/*1366*/
+		height: 94px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		background-color: rgba(0, 0, 0,0.25);
+		padding: 0 8vw;/*103両端からのコンテンツまでの距離*/
+		z-index: 200;
+		text-align: center;
+	}
+
+	.headerLogo {
+		width: 133px;
+		height: 54px;
+	}
+
+	/* ドロワーを横並びのナビリンクに変換 */
+	#drawerNav {
+	position: static;/* 固定解除 */
+	width: auto;
+	height: auto;
+	background: none;/* 背景を透明に */
+	display: flex;/* 横並び */
+	justify-content: flex-end;/* 右寄せ */
+	align-items: center;
+	transform: none;/* スライド解除 */
+	}
+
+	#drawerNav ul {
+	display: flex;/* リンク横並び */
+	gap: 30px;/* リンク間隔 */
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	}
+
+	#drawerNav ul li {
+	margin: auto 0px;
+	text-align: center;
+	text-decoration: none;
+	font-size: 24px;
+	}
+
+
+	#drawerNav ul li:first-of-type {
+	display: none;/* 「Menu」は非表示 must*/ 
+	}
+	#drawerNav ul li:nth-of-type(2) {
+	/*リストの2番目だけ指定*/
+	margin: auto 0px;
+	}
+
+	#drawerNav ul li a {
+	text-decoration: none;/* must*/
+	text-decoration-thickness: none;/* must*/
+	font-size: 24px;
+	
+	}
+
+	#drawerNav ul li a:hover {
+	font-size: 28px;/*ちょっと大きくなる*/
+	font-weight: bold;
+	transition-duration: 300ms;
+	}
+
+	/* ドロワーボタンとオーバーレイとロゴ非表示 
+	must*/
+	.drawerOpen,
+	.drawerLogo,
+	#overLay,
+	.drawerClose {
+	display: none;
+	}
+
+	/* モーダルタイトル左寄せ */
+	.modalContent h4 {
+		text-align: left;
+	}
+
+}
