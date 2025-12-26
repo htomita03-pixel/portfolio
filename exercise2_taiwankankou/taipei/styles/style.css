@@ -1,0 +1,1100 @@
+@charset "utf-8";
+body {
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    width: 100%;
+    max-width: 375px;
+    line-height: 1.5;
+}
+img {
+    max-width: 100%;
+}
+
+html {scroll-behavior: smooth;}
+
+/*sns画像サイズ*/
+.sns img {
+    width: 32px;
+    height: 32px;
+}
+.sns img[src="images/twitter.png"] {
+    width: 38.9px;
+    height: 32px;
+}
+
+/*トップビュー*/
+.topSec {
+    width: 375px;
+    height: 667px;
+    background: url(../images/taipeiTopPhotoSP.png) no-repeat;
+    background-size: cover;
+}
+/*taipeilogo*/
+.topSec .taipeiLogo {
+    width: 199px;
+    padding-top: 120px;
+    margin: 0 auto;
+}
+.taipeiLogo img {
+    width: 199px;
+    height: 372px;
+}
+/*sns縦並び*/
+.topSec .sns {
+    height: 139px;
+    position: absolute;
+    top: 461px;
+    left: 20px;
+}
+.topSec .sns dt {
+    margin-bottom: 20px;
+}
+.topSec .sns dt:last-of-type {
+    margin-bottom: 0;
+}
+/*台北概要*/
+.taipei {
+    width: 247px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #ffffff;
+    position: absolute;
+    top: 601.4px;
+    right: 20px;
+}
+
+
+/*共通項・全体の余白等*/
+.attrctionSec,
+.nmarketSec,
+.accessSec {
+    max-width: 375px;
+    padding-top: 20px;
+}
+.attrctionSec,
+.nmarketSec {
+    margin-bottom: 40px;
+}
+.accessSec {
+    margin-bottom: 60px;
+}
+
+/*見出し*/
+.midashi h2 {
+    background: url(../../images/midashiLine.png) no-repeat center/contain;
+    width: 220px;
+    margin: 0 auto;
+    font-size: 24px;
+    padding: 8px 30px;
+}
+.midashi span {
+    font-size: 12px;
+}
+.midashi, h3 {
+    text-align: center;
+}
+
+/*区切り線*/
+hr {
+    width: 223px;
+    margin: 0 auto;
+}
+
+/*attrctionSec*/
+.sightseeing {
+    width: 295px;
+    margin: 0 auto;
+}
+.sightseeing p {
+    background-color: #6CBAD833;
+    margin-top: 20px;
+    font-size: 12px; 
+}
+.sightText {
+    padding: 8px 36px;
+}
+.bestTime {
+    text-align: center;
+    padding: 8px 0;
+    line-height: 20px;
+}
+.sightTime {
+    font-weight: bold;
+}
+.sightseeing img {
+    margin-top: 20px;
+}
+.sightseeing h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 40px;
+}
+
+.jiufen, .taipei101 {
+    padding-bottom: 40px;
+}
+/*subImg*/
+.subImgJiufen,
+.subImg101 {
+    display: flex;
+    justify-content: space-between;
+}
+.subJiu1, .subTai1, .sub2 {
+    width: 137.5px;
+    height: 225px;
+    object-fit: cover;
+}
+.subJiu1, .subTai1 {
+    margin-right: 20px;
+}
+
+/*nightmarket*/
+.nightmarket {
+    width: 295px;
+    margin: 0 auto;
+    text-align: center;
+}
+.nmarketTextImg {
+    margin-top: 60px;
+}
+.nmarketTextImg p {
+    width: 223px;
+    margin: 12px auto;
+    font-size: 12px;
+    text-align: left;
+}
+.nightmarket1,
+.nightmarket2 {
+    width: 183px;
+    height: 122px;
+}
+.nightmarket1 {
+    margin-top: 40px;
+}
+.nightmarket2 {
+    margin-bottom: 40px;
+}
+.nmarketBtn {
+    margin: 20px auto;
+}
+.btn12, .btn34 {
+    display: flex;
+    justify-content: space-between;
+}
+.btn12 {
+    margin-bottom: 32px;
+}
+.nmarketBtn button {
+    width: 131.5px;
+    height: 48px;
+    font-size: 12px;
+    font-weight: bold;
+    background: url(../images/nightmarketFrame.png) no-repeat center/contain;
+}
+
+/*access*/
+.midashi p {
+    font-size: 12px;
+    margin: 40px auto 12px;
+}
+.access {
+    width: 335px;
+    margin: 0 auto;
+}
+.accessPhoto {
+    height: 134px;
+    margin: 40px 0 20px;
+}
+.howRide {
+    margin: 0 54px 0 56px;
+    font-size: 12px;
+}
+.howRide h4 {
+    margin: 20px auto 12px;
+}
+.howRide h4 span {
+    font-weight: bold;
+}
+.card {
+    margin-top: 20px;
+    text-align: center;
+}
+.icCard {
+    width: 95px;
+    height: 61px;
+}
+
+/*footer*/
+footer {
+    background-color: #007AB7;
+}
+/*国旗*/
+footer .footFlag {
+    padding-top: 20px;
+}
+footer .footFlag img {
+    width: 32px;
+    height: 24px;
+    margin: 0 auto;
+}
+/*footerナビ*/
+footer ul {
+    max-width: 195px;
+    margin: 20px auto 84px;
+}
+footer ul li {
+    font-size: 12px;
+    color: #ffffff;
+    border-bottom: 1px solid #ffffff;
+    padding: 12px 0 6px; 
+}
+footer ul li:first-of-type {
+    padding: 0 0 6px;
+}
+.logoSns {
+    display: flex;
+    position: relative;
+}
+/*footerロゴ*/
+footer .footLogo {
+    width: 71px;
+    height: 28px;
+    position: absolute;
+    bottom: 12px;
+    left: 20px;
+}
+/*sns横並びアイコン*/
+footer .sns {
+    width: 142px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 12px;
+    left: 115px;
+}
+
+/*コピーライト*/
+footer p {
+    font-size: 10px;
+    color: #ffffff;
+    border-top: 1px solid #03A9F4;
+    padding: 12px 0 12px;
+    text-align: center;
+}
+
+
+/*▽ここからヘッダーとドロワーに必要です*/
+/*ヘッダー*/
+header {
+  height: 53px;
+  width: 100%;/*375px;*/
+  z-index: 100;
+  position: absolute;
+  display: flex;
+  align-items: center;
+}
+
+.headerLogo{
+width: 111px;
+height: 45px;
+}
+
+
+/*ヘッダー内
+ここからドロワー部分 
+ドロワーとしての動きが異なるので、
+教科書と同じ記述にはなりませんでした。
+JSの変更点はJS内のコメントアウトでお知らせします。
+*/
+
+.headerContainer {
+  display: flex;/*ヘッダー内の要素は横並び*/
+}
+
+/*ヘッダー内
+ドロワークローズ時のメニュの状態ー*/
+.drawerOpen{/*ドロワーアイコンの場所指定*/
+  position: fixed;
+  left: 323px;
+  top: 4px;
+  width: 45px;
+  height: 45px;
+
+  z-index:110;
+  /*ここがページの他の部分より上、
+  かつモーダルより下になるようにしてください。
+  ドロワー用のオーバーレイよりも上です*/
+
+  background: transparent;/*背景を透明にする*/
+  border: none;/*背景をなくす*/
+  cursor: pointer;/*手の形に変化*/
+  align-self: center;
+}
+
+
+/*機能実装に必要な
+ドロワーメニューのスタイル*/
+#drawerNav {
+  top: 0;
+  position: fixed;
+  left: 375px;/* 要調整　初期位置：ナビメニューの幅分だけ画面外へ */
+  width: 225px;
+  height: 100vh;
+
+  z-index: 200;
+  /* header より前。モーダルよりは上*/
+
+  background-color: rgba(0, 122, 183, 0.9);
+  transition: transform 0.3s ease-out;
+  color: #fff;
+  line-height: 1;
+}
+
+#drawerNav.show {
+  /*showが付与された後の状態に対して*/
+  /* ←画面内へ */
+  transform: translateX(-225px);/* 右から画面内へスライドイン */
+}
+
+/*ドロワー内のリスト*/
+#drawerNav ul li {
+  margin-bottom: 20px;
+  text-align: center;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;/*下線の太さを細く調整*/
+  font-size: 20px;
+}
+
+#drawerNav ul li:first-of-type{/*リストの１番目だけ指定*/
+  font-size: 24px;
+  text-decoration: none;
+  margin-bottom: 60px;
+  margin-top: 80px;
+}
+#drawerNav ul li:nth-of-type(2) {/*リストの2番目だけ指定*/
+  margin-bottom: 40px;
+}
+
+/*ドロワーのロゴ*/
+.drawerLogo {
+  width: 101px;
+  height:40px;
+}
+
+
+
+/*閉じる×ボタンのスタイル設定*/
+.drawerClose {
+  position: absolute;
+  left: 173px;/*左端からの距離*/
+  top: 4px;
+
+  width: 45px;
+  height: 45px;
+  z-index: 210;/*順番表あり*/
+  background: transparent;/*背景は透明　noneでも可*/
+  border: none;/*境界は透明*/
+  cursor: pointer;
+}
+
+
+/*追加　オーバーレイ　
+ドロワーが開いているとき、オーバーレイ
+＝後ろのページを暗くして表示　figmaの指定により*/
+#overLay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.25);
+  z-index: 80;
+  display: none;
+
+}
+
+#overLay.show {
+  display: block;
+}
+
+/*△ドロワーモバイル版に必要個所ここまで*/
+
+
+/* パンくずナビゲーション */
+.panNav {
+	width: 375px;
+	height: 32px;
+    font-size: 16px;
+    font-weight: 400;
+    border-bottom: 1px solid #000000;
+    padding: 8px;
+}
+.breadcrumb {
+	padding: 0 .5rem;
+}
+.breadcrumb ul {
+	display: flex;
+	flex-wrap: wrap;
+	list-style: none;
+	margin: auto;
+	padding: auto 20px;
+}
+.breadcrumb li:not(:last-child)::after {
+	display: inline-block;
+	margin: 0 .25rem;
+	content: "＞";
+}
+
+/* モーダル処理 */
+/* モーダルコンテンツ */
+.modalContent {
+	background-color: rgba(1,128,190,0.9);
+	width: 100%;
+	height: auto;
+}
+h5 {
+    font-size: 24px;
+    font-weight: 700;
+	color: #ffffff;
+	margin-bottom: 30px;
+  	text-align: center;
+}
+.modalPhoto {
+	width: 335px;
+	height: 223px;
+	margin: auto;
+  	text-align: center;
+}
+.modalText {
+    font-size: 12px;
+    font-weight: 700;
+	color: #ffffff;
+	margin-top: 20px;
+	margin-left: 20px;	
+}
+/* モーダルボタン */
+.openBtn:hover {
+	background-color: rgba(237, 161, 132, .2);
+}
+/* モーダル背景 */
+.modalBackground {
+	display: none; /* 初期状態は非表示 */
+	position: fixed;
+	z-index: 999;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.1);
+}
+
+.modalText {
+    color: #ffffff;
+}
+.modalHourArea {
+    text-align: center;
+}
+
+/* 閉じるボタン */
+.closeBtnOya {
+	text-align: right;
+}
+.closeBtn {
+	width: 28px;
+	height: 28px;
+}
+.closeBtn:hover,
+.closeBtn:focus {
+	background-color: rgba(0,0,0,0.3);
+  cursor: pointer;
+}
+
+/*上に戻るアイコンの指定*/
+.toPageTop {
+	position: fixed;
+	right: 8px;/*配置位置*/
+	bottom: 8px;
+    z-index: 300;
+	/*要変更　とりあえずハンバーガーボタンと同じ*/
+}
+/*上に戻るアイコンの大きさ*/
+.toPageTop img {
+	width: 48px;
+	height: 48px;
+	transform: rotate(270deg);/*アイコンの矢印を上向きにする*/
+}
+
+/*ここからローディング画面　（HT）*/
+body, 
+main {
+	margin: 0;
+	background-color: #fff;
+	/* 通常コンテンツは白 */
+}
+
+#loadingOverlay {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: #007AB7;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 500;
+}
+
+.loadingLogo {
+	width: 287px;
+	height: 117px;
+	opacity: 0;/*はじめは消しておく*/
+	animation-name: blink;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+}
+
+/* blink=点滅 */
+@keyframes blink {
+	0% {
+		opacity: 0;/* 完全に透明 */
+	}
+    80% {
+       opacity: 1;/* 完全に表示 */
+    }
+	100% {
+    	opacity: 0;
+  	}
+}
+
+
+/* Loading が消える 　変更点1212*/
+#loadingOverlay.hide {
+  animation: fadeOut 2s forwards;
+}
+
+@keyframes fadeOut {
+  0% { 
+    opacity: 1; 
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+
+/*PC*/
+@media screen and (min-width: 768px) {
+    body {
+        width: 100%;
+        max-width: 1366px;
+    }
+
+    /*top*/
+    .topSec {
+        width: 1366px;
+        height: 768px;
+        background: url(../images/taipeiTopPhotoPC.png) no-repeat;
+        background-size: cover;
+    }
+    /*タイトル*/
+    /*taipeilogo*/
+    .topSec .taipeiLogo {
+        width: 300px;
+        padding-top: 94px;
+        margin-left: 363px;
+    }
+    .taipeiLogo img {
+        width: 300px;
+        height: 539.82px;
+    }
+    /*sns縦並び*/
+    .topSec .sns {
+        height: 139px;
+        position: absolute;
+        top: 512px;
+        left: 103px;
+    }
+    .topSec .sns dt {
+        margin-bottom: 20px;
+    }
+    .topSec .sns dt:last-of-type {
+        margin-bottom: 0;
+    }
+    /*台北概要*/
+    .taipei {
+        width: 467px;
+        font-size: 20px;
+        font-weight: bold;
+        color: #ffffff;
+        position: absolute;
+        top: 652px;
+        left: 796px;
+        right: 0;
+    }
+    
+	/*ここからPC版ローディング画面（HT）*/
+	body,
+	main {
+    	margin: 0;
+    	background-color: #fff;
+    	/* 通常コンテンツを白で表示 */
+	}
+
+	#loadingOverlay {
+    	position: fixed;
+    	top: 0;
+    	right: 0;
+    	bottom: 0;
+    	left: 0;/*領域を隙間なく埋める＝100vw,100vhでも多分OK*/
+    	background: #007AB7;
+    	display: flex;
+    	justify-content: center;
+    	align-items: center;
+    	z-index: 500;
+	}
+
+	.loadingLogo {
+    	width: 318px;
+    	height: 128px;
+    	opacity: 0;
+    	animation-name: blink;
+    	animation-duration: 3s;
+    	animation-timing-function: ease-out;
+    	animation-delay: 0.8s;
+    	animation-iteration-count: infinite;
+	}
+	@keyframes blink {
+		0% {
+    		opacity: 0;
+    	}
+    	65% {
+    		opacity: 1;
+    	}
+    	100% {
+    		opacity: 0;
+    	}
+	}
+
+/* Loading が消える 　変更点1212*/
+#loadingOverlay.hide {
+  animation: fadeOut 2s forwards;
+}
+
+@keyframes fadeOut {
+  0% { 
+    opacity: 1; 
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+    /*共通項・全体の余白等*/
+    .attrctionSec,
+    .nmarketSec,
+    .accessSec {
+        max-width: 1366px;
+        padding: 20px 103px 0;
+        margin-bottom: 80px;
+    }
+    
+
+    /*見出し*/
+    .midashi h2 {
+        background: url(../../images/midashiLine.png) no-repeat center/contain;
+        width: 530px;
+        margin: 0;
+        font-size: 48px;
+        padding: 24px 30px;
+    }
+    .midashi span {
+        font-size: 24px;
+    }
+    .nmarketSec .midashi {
+        padding-left: 630px;
+    }
+    .sightseeing h3 {
+        text-align: left;
+    }
+
+    /*区切り線*/
+    hr {
+        width: 480px;
+    }
+    .horizon {
+        width: 420px;
+    }
+
+    /*attrctionSec*/
+    .sightseeing {
+        width: 1160px;
+        margin: 0;
+    }
+    .sightseeing p {
+        font-size: 20px; 
+    }
+    .sightText {
+        padding: 20px 40px;
+        width: 500px;
+        height: 360px;
+    }
+    .bestTime {
+        text-align: center;
+        padding: 40px 0;
+        line-height: 60px;
+        width: 500px;
+        height: 167px;
+    }
+    .sightTime {
+        font-weight: bold;
+    }
+    .sightseeing h3 {
+        font-size: 36px;
+        margin-top: 80px;
+    }
+    .jiufen, .taipei101 {
+        padding-bottom: 80px;
+    }
+    .mainJiufen,
+    .subJiufen,
+    .main101,
+    .sub101 {
+        display: flex;
+        justify-content: space-between;
+    }
+    .subImgJiufen,
+    .subImg101 {
+        width: 600px;
+        height: 167px;
+    }
+    /*main*/
+    .mainJiufen img,
+    .main101 img {
+        width: 600px;
+        height: 360px;
+    }
+    /*subImg*/
+    .subJiu1, .subTai1, .sub2 {
+        width: 290px;
+        height: 167px;
+        object-fit: cover;
+    }
+    .subJiu1 {
+        object-position: 0 20%;
+    }
+    .subTai1 {
+        object-position: 0 90%;
+    }
+
+    /*nightmarket*/
+    .nightmarket {
+        width: 1160px;
+        margin: 0;
+    }
+    .nmarketTextImg {
+        display: flex;
+        margin-top: 80px;
+        justify-content: space-between;
+    }
+    .nmarketTextImg p {
+        width: 420px;
+        margin: 36px auto;
+        font-size: 20px;
+    }
+    .nightmarket1,
+    .nightmarket2 {
+        width: 540px;
+        height: 264px;
+    }
+    .nightmarket1 {
+        margin-top: 0;
+    }
+    .nmarketImgBtn {
+        display: flex;
+        margin: 120px auto 80px;
+        justify-content: space-between;
+    }
+    .nmarketBtn {
+        width: 460px;
+        height: 220px;
+        margin: 0;
+    }
+    .nmarketBtn button {
+        width: 210px;
+        height: 90px;
+        font-size: 18px;
+    }
+
+    /*access*/
+    .midashi p {
+        font-size: 24px;
+        margin: 80px auto 40px;
+        text-align: left;
+        padding-left: 72px;
+    }
+    .accessSec .midashi hr {
+        margin-left: 54px;
+    }
+    .access {
+        width: 1160px;
+        margin: 0 auto;
+    }
+    .accessPhoto {
+        height: 336px;
+        margin: 80px 0;
+    }
+    .howRide {
+        width: 1040px;
+        margin: 0 auto;
+        font-size: 24px;
+    }
+    .ride {
+        width: 480px;
+        height: 406px;
+        padding: 40px 40px 0;
+    }
+    .chikaBus,
+    .taxxCard {
+        display: flex;
+        justify-content: space-between;
+    }
+    .chikaBus {
+        margin-bottom: 20px;
+    }
+    .card {
+        margin-top: 40px;
+        text-align: right;
+        padding-right: 177px;
+    }
+    .icCard {
+        width: 246px;
+        height: 155px;
+    }
+    .howRide h4 {
+        margin-bottom: 40px;
+        text-align: center;
+    }
+    .clearPC {
+        display: none;
+    }
+    
+    /* 上に戻るボタン */
+    .toPageTop {
+        position: fixed;
+        right: 40px;
+        bottom: 40px;
+        top: auto;
+        left: auto;
+    }
+
+    .toPageTop img {
+        width: 48px;
+        height: 48px;
+        transform: rotate(270deg);/*上向きにする*/
+    }
+    /*上に戻るアイコンの指定*/
+    .toPageTop {
+        position: fixed;
+        right: 20px;
+        /*配置位置*/
+        bottom: 20px;
+        /*要変更　とりあえずハンバーガーボタンと同じ*/
+    }
+
+    /*上に戻るアイコンの大きさ*/
+    .toPageTop img {
+        width: 100px;
+        height: 100px;
+    }
+
+    /*footer*/
+    footer {
+        background-color: #007AB7;
+        max-width: 1366px;
+    }
+    /*国旗*/
+    footer .footFlag {
+        padding-top: 40px;
+    }
+    footer .footFlag img {
+        width: 64px;
+        height: 48px;
+        margin: 0 auto;
+    }
+    /*footerナビ*/
+    footer ul {
+        max-width: 332px;
+        margin: 80px 0 20px 103px;
+    }
+    footer ul li {
+        font-size: 20px;
+        color: #ffffff;
+        border-bottom: 1px solid #ffffff;
+        padding: 20px 0 12px; 
+    }
+    footer ul li:first-of-type {
+        padding: 0 0 12px;
+    }
+    
+    /*footerロゴ*/
+    footer .footLogo {
+        width: 256px;
+        height: 103px;
+        position: absolute;
+        bottom: 20px;
+        left: 555px;
+    }
+    /*sns横並びアイコン*/
+    footer .sns {
+        width: 182.9px;
+        /* display: flex;
+        justify-content: space-between; */
+        /* margin: 40px auto 12px; */
+        position: absolute;
+        bottom: 20px;
+        left: 1080.1px;
+    }
+
+    /*ここから必要*/
+    /* ヘッダー */
+    header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;/*1366*/
+        height: 94px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: rgba(0, 0, 0,0.25);
+        padding: 0 8vw;/*103両端からのコンテンツまでの距離*/
+        z-index: 200;
+        text-align: center;
+    }
+
+    .headerLogo {
+        width: 133px;
+        height: 54px;
+    }
+
+    /* ドロワーを横並びのナビリンクに変換 */
+    #drawerNav {
+        position: static;/* 固定解除 */
+        width: auto;
+        height: auto;
+        background: none;/* 背景を透明に */
+        display: flex;/* 横並び */
+        justify-content: flex-end;/* 右寄せ */
+        align-items: center;
+        transform: none;/* スライド解除 */
+    }
+
+    #drawerNav ul {
+        display: flex;/* リンク横並び */
+        gap: 30px;/* リンク間隔 */
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    #drawerNav ul li {
+        margin: auto 0px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 24px;
+    }
+
+
+    #drawerNav ul li:first-of-type {
+        display: none;/* 「Menu」は非表示 must*/ 
+    }
+    #drawerNav ul li:nth-of-type(2) {
+        /*リストの2番目だけ指定*/
+        margin: auto 0px;
+    }
+
+    #drawerNav ul li a {
+        text-decoration: none;/* must*/
+        text-decoration-thickness: none;/* must*/
+        font-size: 24px;
+    
+    }
+
+    #drawerNav ul li a:hover {
+        font-size: 28px;/*ちょっと大きくなる*/
+        font-weight: bold;
+        transition-duration: 300ms;
+    }
+
+    /* ドロワーボタンとオーバーレイとロゴ非表示 
+    must*/
+        .drawerOpen,
+        .drawerLogo,
+        #overLay,
+        .drawerClose {
+        display: none;
+    }
+
+	/* パンくずナビゲーション */
+	.panNav {
+		width: 1366px;
+		height: 60px;
+		font-size: 20px;
+		font-weight: 400;
+	}
+
+
+	/* モーダル処理 */
+	/* モーダルコンテンツ */
+	.modalContent {
+		background-color: rgba(1,128,190,0.9);
+		width: 100%;
+		height: auto;
+	}
+	h5 {
+		font-size: 36px;
+      	text-align: left;
+	}
+	.modalText {
+		font-size: 20px;
+	}
+	/* ボタン */
+	.openBtn:hover {
+		background-color: rgba(237, 161, 132, .2);
+	}
+
+    .modalPhoto {
+        width: 600px;   /* 必要に応じて調整 */
+		height: 468px;
+    }
+    .modalArea {
+        display: flex;
+        gap: 20px;       /* 画像と説明文の間隔 */
+        align-items: flex-start;
+    }
+    /* 説明文 + 営業時間を縦に並べる */
+    .modalTextWrapper {
+		width: 600px;
+        display: flex;
+        flex-direction: column;  /*縦並び */
+        margin: auto;
+    }
+
+	/* 閉じるボタン */
+	.closeBtn {
+		width: 36px;
+		height: 36px;
+	}
+	.closeBtn:hover,
+	.closeBtn:focus {
+		background-color: rgba(0,0,0,0.3);
+	    cursor: pointer;
+	}
+}

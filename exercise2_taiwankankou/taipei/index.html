@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../common/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>台湾観光サイト｜台北</title>
+</head>
+<body>
+    
+    <!-- ▼ ローディング画面をここに追加　変更不可 ▼ -->
+    <div id="loadingOverlay"><!--ローディングアニメ用ID-->
+        <img src="../images/topLogo.png" class="loadingLogo" alt="ローディングロゴ">
+    </div>
+    <!-- ▲ ローディング画面ここまで ▲ -->
+
+    <div id="topPage"></div><!--ページ内リンク用ID-->
+    <!--▽ここからドロワーに必要な部分-->
+    
+    <header>
+        <div class="headerContainer">
+                <!--ここから共有部分-->
+                    <img src="../images/topLogo.png" class=" headerLogo" alt="メインロゴ"> 
+                <!--ここからドロワークローズ時の３本線アイコン-->
+                <button class="drawerOpen" id="openNav"><!--変更不可　ドロワーJS用ID-->
+                    <img src="../images/sqDrawerIcon.svg" class="onlySp" alt="ドロワー用アイコン"> 
+                </button>
+            </div>
+        
+        <!--ドロワーオープン時のメニュー（メニュークローズ時は非表示）-->
+        <nav id="drawerNav"><!--変更不可　ドロワーJS用ID-->
+                    <img src="../images/topLogo.png" class="onlySp drawerLogo" alt="ドロワーロゴ">
+                <button class="drawerClose" id="closeNav"><!--変更不可　ドロワーJS用ID-->
+                    <img src="../images/sqDrawerClose.svg" class="onlySp" alt="ドロワークローズ用アイコン">
+                </button>
+
+                <ul>
+                    <li>Menu</li>
+                    <li> <a href="../index.html#taipeiMap" class="MenuTop">TOP</a></li>
+                    <li><a href="index.html">台北</a></li>
+                    <li><a href="../taichu/index.html">台中</a></li>
+                    <li><a href="../tainan/index.html">台南</a></li>
+                    <li><a href="#">当サイトのポリシー</a></li>
+                    <li><a href="#">お問い合わせ</a></li>
+                </ul>
+        </nav>
+    </header>
+    <div id="overLay"></div><!--変更不可　ドロワーJS用ID-->
+    <!--△ドロワーヘッダー部分ここまで。あとはスクリプトタグが下にあります-->
+
+    <main>
+        <section class="topSec">
+            <p class="taipeiLogo"><img src="images/taipeiLogo.png" alt=""></p>
+            <dl class="sns">
+                <dt><img src="../images/facebook.png" alt="facebookのアイコン"></dt>
+                <dt><img src="../images/instagram.png" alt="instagramのアイコン"></dt>
+                <dt><img src="../images/twitter.png" alt="twitterのアイコン"></dt>
+            </dl>
+            <p class="taipei">台北市は台湾の中心地です。活気にあふれる街台北では、さまざまな建物や台北を生きる人々の美しい風景を見ることができます。</p>
+        </section>
+
+        <section class="panNav">
+            <nav class="breadcrumb">
+                <ul>
+                    <li><a href="../index.html">Top</a></li>
+                    <li><a href="../index.html#taipeiMap">Travel</a></li>
+                    <li><span aria-current="page">台北</span></li>
+                </ul>
+            </nav>
+        </section>
+
+        <section class="attrctionSec">
+            <div class="midashi">
+                <h2>Attrction <span>観光名所</span></h2>
+            </div>
+            
+            <div class="sightseeing">
+                <div class="jiufen">
+                    <h3>九份</h3>
+                    <div class="mainJiufen">
+                        <img src="images/mainJiufen.png" alt="">
+                        <p class="sightText">細い路地の階段に沿って建つ古い館に、提灯が灯るノスタルジックな風景。1989年、映画「非情城市」の舞台になったことをきっかけに再び注目を集めると共に、日本では、九份の町中にある建物が2001年公開の映画「千と千尋の神隠し」に登場する湯婆婆の湯屋を彷彿させるとして話題に。日本統治時代に建てられた古い建物が残ることから、どこか懐かしい雰囲気が漂う町並みは日本人の琴線に触れ、今や台湾で行きたい観光地ナンバーワンとなりました。</p>
+                    </div>
+                    <div class="subJiufen">
+                        <div class="subImgJiufen">
+                            <img src="images/subJiufen1.png" alt="" class="subJiu1">
+                            <img src="images/subJiufen2.png" alt="" class="sub2">
+                        </div>
+                        <p class="bestTime">おすすめ観光時間は幻想的な夕暮れがねらい目<br><span class="sightTime">15:00～19:00</span></p>
+                    </div>
+                </div>
+                <hr>
+
+                <div class="taipei101">
+                    <h3>台北101</h3>
+                    <div class="main101">
+                        <img src="images/mainTaipei101.png" alt="">
+                        <p class="sightText">高さは509.2m　地下5階＋地上101階からなり、名前の由来にもなっている。エレベーターは東芝エレベータ製で、毎分1,010メートル（時速60.6キロメートル）の速さで上昇でき、地上1階から展望台のある89階（地上382.2メートル）まで39秒で到達する。展望台、オフィス、レストラン、ショッピングモールなどが入る台湾を代表するランドマークワー。有名なカウントダウンパーティーをはじめ節目に合わせたライトアップを行っています。</p>
+                    </div>
+                    <div class="sub101">
+                        <div class="subImg101">
+                            <img src="images/subTaipei1011.png" alt="" class="subTai1">
+                            <img src="images/subTaipei1012.png" alt="" class="sub2">
+                        </div>
+                        <p class="bestTime">おすすめ観光時間は展望台営業時間帯<br><span class="sightTime">11:00～19:00</span></p>
+                    </div>
+                </div>
+                <hr>
+            </div>
+        </section>
+
+        <section class="nmarketSec">
+            <div class="midashi">
+                <h2>NightMarket <span>夜市</span></h2>
+            </div>
+
+            <div class="nightmarket">
+                <div class="nmarketTextImg">
+                    <div class="nmarketText">
+                        <hr class="horizon">
+                        <p>台北観光の夜の目玉と言えば、なんと言っても夜市（ナイトマーケット）があげられます。 毎日市内の各所でひらかれ、夕方から夜遅くまで多くの人々で賑わっています。 絶品Ｂ級グルメ・小吃からファッション、ゲームといったお店が集まっています。</p>
+                        <hr class="horizon">
+                    </div>
+                    <img src="images/nightmarket1.png" alt="" class="nightmarket1">
+                </div>
+                <div class="nmarketImgBtn">
+                    <!--モーダル　ボタン-->
+                    <div class="nmarketBtn" id="modalBtnArea">
+                        <div class="btn12">
+                            <button id="openModalBtn" class="openModal openBtn" value="1">寧夏夜市</button>
+                            <button id="openModalBtn" class="openModal openBtn" value="2">饒河街観光夜市</button>
+                        </div>
+                        <div class="btn34">
+                            <button id="openModalBtn" class="openModal openBtn" value="3">士林夜市</button>
+                            <button id="openModalBtn" class="openModal openBtn" value="4">通化夜市</button>
+                        </div>
+                    </div>
+                    <!--/modal-->
+                    <img src="images/nightmarket2.png" alt="" class="nightmarket2">
+                </div>
+                <hr>
+            </div>
+        </section>
+        <section>
+            <!-- モーダル -->
+            <div id="myModal" class="modalBackground">
+                <div class="modalContent">
+                    <div class="closeBtnOya">
+                        <img class="closeBtn" src="../images/modalCloseBtn.png">
+                    </div>
+                    <h5 id="modal1" class="modal1">夜市</h5>
+                    <div class="modalArea">
+                        <div class="modalPhotos">
+                            <img id="modal2" class="modalPhoto" src="" alt="">
+                        </div>
+                        <div class="modalTextWrapper">
+                            <p id="modal3" class="modalText modalTextArea"> </p>
+                                <ul id="modalList" class="modalText modalHourArea">営業時間
+                                    <li>日曜日<span class="modalText modalHour"> </span></li>
+                                    <li>月曜日<span class="modalText modalHour"> </span></li>
+                                    <li>火曜日<span class="modalText modalHour"> </span></li>
+                                    <li>水曜日<span class="modalText modalHour"> </span></li>
+                                    <li>木曜日<span class="modalText modalHour"> </span></li>
+                                    <li>金曜日<span class="modalText modalHour"> </span></li>
+                                    <li>土曜日<span class="modalText modalHour"> </span></li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="accessSec">
+            <div class="midashi">
+                <h2>Access <span>交通手段</span></h2>   <!--交通手段 → アクセス-->
+                <p>各地へのアクセスにご利用ください</p>
+                <hr class="horizon">
+            </div>
+            <div class="access">
+                <img src="images/accessPhoto.png" alt="" class="accessPhoto">
+                <div class="howRide">
+                    <div class="chikaBus">
+                        <div class="ride">
+                            <h4><span>■MRT</span>　地下鉄：初乗り20元</h4>
+                            <p>乗り方は日本の地下鉄とほぼ同じ。改札を通る時には、切符・ICカード共にタッチ。台北MRTは全て各駅停車。</p>
+                        </div>
+                        <div class="ride">
+                            <h4><span>■バス</span>：初乗り15元</h4>
+                            <p>バス停は、ポールが立っているだけ、大通りでは車道の真ん中のバスレーン沿いにあります。乗りたい場合、バスに向かって手を挙げます。乗車して、現金で払う場合は運転手に行先を告げて運賃箱にお金を入れます。</p>
+                        </div>
+                    </div>
+                    <div class="taxxCard">
+                        <div class="ride">
+                            <h4><span>■タクシー</span>：初乗り70元</h4>
+                            <p>市内の移動で気軽に使うことが出来ます。MRTなどが運行しない真夜中や早朝の移動にも便利です。新幹線の駅や有名観光地などにはタクシー乗り場が準備されているので、そこから乗りましょう。ホテルならフロントで呼んでもらいます。</p>
+                        </div>
+                        <div class="ride">
+                            <h4>■<span class="clearPC">EASYCARD　</span>悠遊カード：販売額100元</h4>
+                            <!--「EASYCARD」PC版のみ文字消す-->
+                            <p>現金をチャージして使うことが出来る交通系ICカード。台北旅行の際に手に入れておくと便利です。MRT・バス・台湾鉄路などで使用することができ、切符を買う手間がなく、運賃が割引（MRTは二割引き）になります。</p>
+                        </div>
+                    </div>
+                </div>
+                <p class="card"><img src="images/iccard.png" alt="" class="icCard"></p><!--ICカード-->
+            </div>
+        </section>
+        <p class="toPageTop"><!--ページトップへのリンクを含むアイコン-->
+            <a href="#topPage">
+                <img src="../images/sliderArrow.svg"  alt="ページトップへ戻る">
+            </a>
+        </p>
+    </main>
+
+    <footer>
+        <p class="footFlag"><img src="../images/taiwanFlag.svg" alt=""></p>
+        <div class="footSec">
+            <ul>
+                <li><a href="../index.html#taipeiMap">Topへもどる</a></li>
+                <li><a href="index.html">台北</a></li>
+                <li><a href="../taichu/index.html">台中</a></li>
+                <li><a href="../tainan/index.html">台南</a></li>
+                <li><a href="#">当サイトのポリシー</a></li>
+                <li><a href="#">お問い合わせ</a></li>
+            </ul>
+            <div class="logoSns">
+                <img src="../images/topLogo.png" alt="" class="footLogo">
+                <dl class="sns">
+                    <dt><img src="../images/facebook.png" alt="facebookのアイコン"></dt>
+                    <dt><img src="../images/instagram.png" alt="instagramのアイコン"></dt>
+                    <dt><img src="../images/twitter.png" alt="twitterのアイコン"></dt>
+                </dl>
+            </div>
+        </div>
+        <p>Copyright (C) 2023 TAIWAN.traveler.cc</p>
+    </footer>
+
+    <script src="scripts\script.js"></script><!--台北モーダル用JS-->
+    <script src="..\common\script.js"></script><!--共通部分JS　ドロワー　ローディング-->
+</body>
+</html>
