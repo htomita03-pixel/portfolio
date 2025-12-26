@@ -1,0 +1,501 @@
+@charset "utf-8";
+
+
+/*ページ全体への指定など*/
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    font-family: '游ゴシック', 'Yu Gothic', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, sans-serif;
+    line-height: 1.6;
+    letter-spacing: 0;
+}/*要変更　グーグルフォントとりあえずなし。これから考える*/
+
+body {
+    max-width: 768px;
+    width: 100vw;
+}
+
+.wrapper{
+   margin: 0 auto; 
+    
+}
+
+/*大きなBOXや広範囲への指定*/
+
+section {
+    margin-top: 20px;
+}
+
+
+
+/*名前（見出し）*/
+h2 .myName{
+    font-size: 2rem;
+    text-align: center;
+    font-weight: bold;
+    padding:20px;
+    text-align: center;
+}
+.myName span {
+    background-image: linear-gradient(60deg,rgb(245, 9, 147) 0%, rgb(219, 222, 27) 50%, rgb(133, 241, 31) 100%);
+    background-clip: text;
+    color: transparent;
+    -webkit-background-clip: text;
+    opacity: 0.9;
+}
+
+
+h3 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h5 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/*ヘッダー（ドロワーは下部）*/
+header {
+    width: 100vw;
+}
+
+
+.titleImg {
+    background-image: url(../common/images/testyou0.png);
+    background-repeat: no-repeat;
+    object-fit: cover; 
+    padding: 10px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.headerNav {
+    background-color:rgba(40, 13, 33, 0.5);
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+
+
+
+/*自己紹介*/
+
+.profileBox {
+    align-items: center;
+    margin: 0 auto;
+    width: 70vw;
+    
+}
+
+.profileBox p {
+    text-align: center;
+}
+
+.selfImgBox {
+   margin-bottom: 20px; 
+}
+
+.selfImg {
+    width: 150px;
+    height: 100%;
+    aspect-ratio: 150/200;
+}
+
+
+.profileSecText {
+    border: 1px solid #000;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+
+.profileSecText h3 {
+text-align: center;
+border-bottom: 1px solid #000;
+margin-bottom: 10px;
+}
+
+.profile1,
+.profile2{
+    margin-bottom: 20px;
+}
+
+/*リンク*/
+.pageLink {
+    text-align: center;
+
+}
+
+.twoColumnsBox {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.linkSecH2 {
+    font-size: 1rem;
+    text-align: center;
+    font-weight: bold;
+    padding:20px;
+}
+
+.linkSec {
+    margin-bottom: 100px;
+}
+
+ .twoColumnsLi1,
+ .twoColumnsLi2 {
+    margin: 0 auto;
+    margin-bottom: 20px;
+    width:70vw;
+}
+
+
+
+.linkPage {
+    background-color: rgba(157, 247, 55, 0.664);
+    aspect-ratio: 1/1;
+    width: 40vw;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 10vw;
+}
+
+.linkGuideText {
+    height: 10vh;
+    font-size: 0.8rem;
+    margin-top: 10px;
+}
+
+.linkGuideBorder {
+   /* border-top: 1px solid #000;
+    border-bottom: 1px solid #000;*/
+    border: 1px solid #000;
+    margin-bottom: 20px;
+    font-size: 12px;
+    border-radius: 20px;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
+
+
+
+
+/*上に戻るボタン*/
+.toPageTop {
+    width: 50px;
+        height: 50px;
+        z-index: 10;
+}
+
+.upBtn{
+    width: 50px;
+        height: 50px;
+        position: fixed;
+        bottom: 10vw;
+        right: 10vw;
+        opacity: 0.7;
+
+}
+
+
+/*フッター*//*配置に問題あり、後で要修正*/
+
+footer {
+    width: 100vw;
+    text-align: center;
+    height: 20vh;
+    position: fixed;
+    bottom: -100px;
+    
+    
+}
+
+
+
+
+
+
+/*ここからギミック*/
+
+/*ドロワー*/
+#open_btn {
+    width: 45px;
+    height: 45px;
+    position: relative;
+    right: 0px;
+    top: 0px;
+}
+
+#close_btn {
+    width: 45px;
+    height: 45px;
+    position: relative;
+    top: 4px;
+    left: 65vw;
+}
+
+#drawer_menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(146, 50, 122, 0.7);
+    transform: translateX(100%);
+    transition: transform 0.3s ease-out;
+    z-index: 100;
+}
+
+#drawer_menu.show {
+    transform: translateX(20%);
+}
+/*point #drawer_menu.showのとこ半角開けないこと*/
+
+.drawerMenu ul{
+    width: 80%;
+    font-size: 24px;
+    color: #ffffffa8;
+    text-align: center;
+    line-height: 2;
+}
+
+.drawerMenu ul li {
+    margin-bottom: 24px;
+    border: 1px solid #fff;
+    width: 70%;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: rgba(81, 238, 243, 0.479);
+    border-radius: 10px;
+}
+
+.drawerMenu ul li:first-of-type {
+    margin-top: 36px;
+    margin-bottom: 36px;
+    font-size: 36px;
+    border: 1px solid #fff;
+    background-color: rgba(61, 20, 51, 0.5);
+}
+
+
+
+/*オーバーレイ*/
+#over_lay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(40, 13, 33, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+    z-index: 90;
+}
+
+#over_lay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/*全体のバックの画像*/
+/*ギミック*/
+/*仮　要変更 背景に表示する画像を切り替える*/
+.backImg {
+    background-image: url('../images/time1.png') no-repeat;
+    object-fit: cover;
+    animation: changeImg 60s infinite;/*時間設定*/
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    opacity: 0.3;
+    z-index: -20;
+}
+
+@keyframes changeImg {
+    0%,100% {
+        background-image: url('../images/time1.png');
+    }
+    25%{
+        background-image: url('../images/time2.png');
+    }
+    50%{
+            background-image: url('../images/time3.png');
+        }
+    75%{
+            background-image: url('../images/time4.png');
+        }
+        /*これまで自分が作った壁面装飾とか*/
+}
+
+
+
+/*PC*/
+
+@media screen and (min-width: 786px) {
+.spOnly {
+    display:none;
+}
+
+body {
+        max-width: 1366px;
+        width: 100vw;
+        margin: 0 auto;
+    }
+
+
+
+
+
+/*隠れているメニューからリストを取り出し整列*/
+.drawerMenu ul{
+    display: flex;
+}
+
+.headerNav {
+    background-color:rgba(40, 13, 33, 0.5);
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    height: auto;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.titleImg {
+ height: 50%;
+ width: 18vw;
+ text-align: center;
+}
+
+
+
+#drawer_menu {
+    position: relative;
+    width: 100vw;
+    height: 20%;
+    background-color: rgba(146, 50, 122, 0);
+    transform: translateX(0%);
+    transition: none;
+    z-index: 0;
+    
+}
+
+.drawerMenu ul{
+    width: 80%;
+    font-size: 24px;
+    color: #ffffffa8;
+    text-align: center;
+    line-height: 1;
+    justify-content: space-evenly;
+    gap: 5vw;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.drawerMenu ul li {
+    margin-bottom: 0px;
+    width: 70%;
+    align-items: center;
+    display: inline-block;
+}
+
+.drawerMenu ul li:first-of-type {
+    display: none;
+}
+
+.drawerMenu ul li:last-of-type {
+    margin-right: 10px;
+}
+
+/* 自己紹介セクション*/
+h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 20vw;
+}
+
+.profileSec {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.profileBox {
+    align-items: center;
+    margin: 0 auto;
+    width: 70vw;
+    
+    gap: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+    
+
+.profileBox p {
+    text-align: left;
+}
+
+.selfImgBox {
+   margin-bottom: 20px; 
+}
+
+
+.profileSecText {
+    border: 1px solid #000;
+    padding: 50px 100px;
+    border-radius: 10px;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 10vw;
+}
+
+.profileSecText h3 {
+text-align: center;
+border-bottom: 1px solid #000;
+margin-bottom: 10px;
+}
+
+.profile1,
+.profile2{
+    margin-bottom: 20px;
+}
+
+
+/*以下指定要修正*/
+.selfImg {
+    width: auto;
+    height: 60vh;
+
+    aspect-ratio: 150/200;
+     object-fit: cover;
+}
+
+
+
+/*上に戻るボタン*/
+.upBtn{
+    width: 100px;
+        height: 100px;
+        position: fixed;
+        bottom: 2.5vw;
+        right: 5vw;
+        opacity: 0.8;
+}
+
+
+
+
+}
