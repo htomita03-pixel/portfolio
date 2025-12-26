@@ -1,0 +1,1398 @@
+@charset "UTF-8";
+/*文書全体*/
+.onlyPc {
+  display: none;
+}
+.onlySp {
+  display: block;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 12px;/*※以降4の倍数にする*/
+
+}
+
+body {
+  line-height: 1.6;
+  margin: 0 auto;
+  min-width: 375px; 
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+
+/*ヘッダー*/
+header {
+  height: 53px;
+  width: 100%;/*375px;*/
+  z-index: 100;
+  position: absolute;
+  display: flex;
+  align-items: center;
+}
+
+.headerLogo{
+width: 111px;
+height: 45px;
+}
+
+
+/*ヘッダー内
+ここからドロワー部分 
+JSの変更点はJS内のコメントアウトでお知らせします
+*/
+.headerContainer {
+  display: flex;/*ヘッダー内の要素は横並び*/
+}
+
+/*ヘッダー内
+ドロワークローズ時のメニュの状態ー*/
+.drawerOpen{/*ドロワーアイコンの場所指定*/
+  position: fixed;
+  left: 323px;/*ここを教科書と同じにしようとするとうまくいかなくなる*/
+  top: 4px;
+  width: 45px;
+  height: 45px;
+  z-index:110;
+  background: transparent;/*背景を透明にする*/
+  border: none;/*背景をなくす*/
+  cursor: pointer;/*手の形に変化*/
+  align-self: center;
+}
+
+
+/*機能実装に必要な
+ドロワーメニューのスタイル*/
+#drawerNav {
+  top: 0;
+  position: fixed;
+  left: 375px;/* 要調整　初期位置：ナビメニューの幅分だけ画面外へ */
+  width: 225px;
+  height: 100vh;
+  z-index: 200;/* header より前 */
+  background-color: rgba(0, 122, 183, 0.9);
+  transition: transform 0.3s ease-out;
+  color: #fff;
+  line-height: 1;
+}
+
+#drawerNav.show {
+  /*showが付与された後の状態に対して*/
+  /* ←画面内へ */
+  transform: translateX(-225px);/* 右から画面内へスライドイン */
+}
+
+#drawerNav ul li {
+  margin-bottom: 20px;
+  text-align: center;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;/*下線の太さ調整*/
+  font-size: 20px;
+}
+
+#drawerNav ul li:first-of-type{/*リストの１番目だけ指定*/
+  font-size: 24px;
+  text-decoration: none;
+  margin-bottom: 60px;
+  margin-top: 80px;
+}
+#drawerNav ul li:nth-of-type(2) {/*リストの2番目だけ指定*/
+  margin-bottom: 40px;
+}
+
+.drawerLogo {
+  width: 101px;
+  height:40px;
+}
+
+
+
+
+/*閉じる×ボタンのスタイル設定*/
+.drawerClose {
+  position: absolute;
+  left: 173px;/*左端からの距離*/
+  top: 4px;
+
+  width: 45px;
+  height: 45px;
+  z-index: 210;/*順番表あり*/
+  background: transparent;/*背景は透明　noneでも可*/
+  border: none;/*境界は透明*/
+  cursor: pointer;
+}
+
+/*
+ドロワーが開いているとき、オーバーレイ
+＝後ろのページを暗くして表示*/
+#overLay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.25);
+  z-index: 80;
+  display: none;
+
+}
+
+#overLay.show {
+  display: block;
+}
+
+/*HERO画像と台南の文字部分*/
+.topHero {
+  background-image: url(../images/tnSqTop.png); 
+  object-fit: cover;
+  width: 375px;
+  height: auto;
+  aspect-ratio: 375 / 667;
+  overflow: hidden;
+}
+/*台南ロゴの入った箱*/
+.topHero h1{
+  text-align: center;
+  position: absolute;
+  top: 120px;
+  left:88px;
+
+}
+/*台南ロゴ部分*/
+.tainanLogo {
+  width: 199px;
+  height: auto;
+  aspect-ratio: 199 / 372;
+  align-items: center;
+
+}
+/*ヒーロー画像下の説明文*/
+.topHero p {
+  font-weight: bold;
+  line-height: 1.6;
+  width: 247px;
+  color: #FFF;
+  position: absolute;
+  top:601.4px;
+  left: 108px;
+  letter-spacing: 0;
+}
+
+/*TOPのSNSアイコン*/
+.snsIconh1 {
+  z-index: 80;
+ position: absolute;
+ top: 461px; 
+ left: 20px;
+  display: block;
+  width: 38.9px;
+  height: 136px;
+}
+
+.snsIconh1 img {
+  width: 32px;
+  height: 32px;
+  margin-top: 20px;
+}
+
+.snsIconh1 img[src="images/twitter.png"]{
+  width: 38.9px;
+}
+
+/* パンくずナビゲーション */
+.panNav {
+	width: 375px;
+	height: 32px;
+  font-size: 16px;
+  font-weight: 400;
+  border-bottom: 1px solid #000000;
+  padding: 8px;
+}
+.breadcrumb {
+	padding: 0 .5rem;
+}
+.breadcrumb ul {
+	display: flex;
+	flex-wrap: wrap;
+	list-style: none;
+	margin: auto;
+	padding: auto 20px;
+}
+.breadcrumb li:not(:last-child)::after {
+	display: inline-block;
+	margin: 0 .25rem;
+	content: "＞";
+}
+
+/*セクション共通*/
+section {
+  margin: 0 auto;
+  line-height: 1.6;
+  letter-spacing:0; 
+}
+
+h2 {
+  font-size: 24px;
+  display: block;
+  background-image: url(../images/midashiLine.png) ;
+  background-position: center;
+  background-size:cover;
+  background-repeat: no-repeat;
+  letter-spacing: 0;
+  width: 220px;
+  height: 40px;
+  margin: 0 auto;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.h2Jn{
+  font-size:12px;
+}
+
+
+
+
+/*観光名所セクション*/
+.attractionSec{
+  text-align: center;
+  width: 295px;
+  height: auto;
+}
+.attractionSec h2{
+  margin-bottom: 40px;
+  margin-top: 20px;
+}
+
+.attractionSec article {
+  margin: 40px auto;
+}
+
+.attractionSec figure{
+  margin-bottom: 20px;
+}
+
+.attractionSecPhoto2 {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.attractionSecPhoto2 img{
+  width: 137.5px;
+  height: 150px;
+}
+
+.attractionSecH3 {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1;
+  letter-spacing: 0.3em;
+  margin-bottom: 20px;
+}
+
+.attractionSec p {
+  display: block;
+  background-color: rgb(100, 201, 155,0.2);
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 30px;
+  padding-right: 30px;
+  width: 296px;
+}
+.attractionSecLast {
+  display: inline-block;
+}
+
+.borderLine {
+  border-bottom: 1px solid #000;
+    width: 223px;
+    margin: 0 auto;
+}
+.attractionSec1 p,
+.attractionSec2no1 p {
+  text-align: left;
+  display: flex;
+  justify-content: center;
+}
+
+/*グルメセクション*/
+.goulmetSec{
+text-align: center;
+width: 335px;
+margin-bottom: 40px;
+}
+
+.goulmetSec article {
+  margin: 20px auto;
+}
+
+.goulmetSec p {
+  text-align: left;
+  width: 223px;
+  margin: 0 auto;
+  
+}
+
+.goulmetSecGuide {
+  height: 81.6px;
+  margin:0 auto ; 
+  border-top :1px solid #000;
+  border-bottom:1px solid #000;
+  display: flex;
+  align-items: center;
+  line-height: 1.6;
+} 
+
+.goulmetSecH3 {
+  font-size: 32px;
+  line-height: 1;
+  letter-spacing: 0;
+  margin-bottom: 8px;
+  margin-top: 60px;
+}
+
+.goulmetSec h4{
+ font-size: 16px;
+  line-height: 1;
+  letter-spacing: 0;
+  margin-bottom: 8px;
+}
+
+.goulmetSec article p {
+  display: inline-block;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+.goulmetSecModal {
+  width: 223px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.goulmetLink {
+  position: absolute;
+  right: 0;
+  width: 60px;
+}
+.goulmetSecLine {
+  position: absolute;
+  border-bottom:1px solid #000;
+  width: 223px;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding-top: 20px;
+}
+
+/*ピックアップセクション*/
+.pickupSec{
+  text-align: center;
+  margin: 0 auto;
+}
+
+.pickupSec p{
+  margin-top: 8px;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.gridItem01,
+.gridItem02, .gridItem03, 
+.gridItem04, .gridItem06,
+.gridItem07 {
+  width: 223px;
+  margin: 0 auto;
+}
+
+.gridItem02 h3 {
+ font-size: 24px;
+  line-height: 1;
+  letter-spacing: 0;
+  border-bottom: 1px solid #000;/*セクション下の線*/
+  padding-bottom: 12px;
+}
+
+.pickupSec figure {
+  margin-bottom: 20px;
+}
+
+  .pickupSecPhoto2{
+  display:flex;
+  justify-content: space-between;
+  width: 335px;
+  margin: 0 auto;
+}
+.gridItem05 p {
+  width: 223px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+.gridItem06 figure img {
+  margin: 0 auto;
+}
+
+.gridItem07 {
+  border-bottom: 1px solid #000;/*セクション下の線*/
+  margin-bottom: 40px;
+
+}
+
+.gridItem07 figure {
+  margin-bottom: 40px;
+}
+
+.gridItem07 figure img {
+  margin: 0 auto;
+}
+
+
+/*上に戻るアイコンの指定*/
+.toPageTop {
+  position: fixed;
+  right: 8px;/*配置位置*/
+  bottom: 8px;
+  z-index: 300;
+}
+
+/*上に戻るアイコンの大きさ*/
+.toPageTop img {
+  width: 48px;
+  height: 48px;
+  transform: rotate(270deg);/*アイコンの矢印を上向きにする*/
+}
+
+/*footer　（TT）*/
+footer {
+  background-color: #007AB7;
+}
+
+/*国旗*/
+footer .footFlag {
+  padding-top: 20px;
+}
+
+footer .footFlag img {
+  width: 32px;
+  height: 24px;
+  margin: 0 auto;
+}
+
+/*footerナビ*/
+footer ul {
+  max-width: 195px;
+  margin: 20px auto 84px;
+}
+
+footer ul li {
+  font-size: 12px;
+  color: #ffffff;
+  border-bottom: 1px solid #ffffff;
+  padding: 12px 0 6px;
+}
+
+footer ul li:first-of-type {
+  padding: 0 0 6px;
+}
+
+.logoSns {
+  display: flex;
+  position: relative;
+}
+
+/*footerロゴ*/
+footer .footLogo {
+  width: 71px;
+  height: 28px;
+  position: absolute;
+  bottom: 12px;
+  left: 20px;
+}
+
+/*sns横並びアイコン*/
+footer .sns {
+  width: 142px;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 12px;
+  left: 115px;
+}
+
+/*sns画像サイズ*/
+.sns img {
+    width: 32px;
+    height: 32px;
+}
+.sns img[src="images/twitter.png"] {
+    width: 38.9px;
+    height: 32px;
+}
+
+
+/*コピーライト*/
+footer p {
+  font-size: 10px;
+  color: #ffffff;
+  border-top: 1px solid #03A9F4;
+  padding: 12px 0 12px;
+  text-align: center;}
+
+
+
+/*ここからローディング画面　（HT）*/
+body, 
+main {
+  margin: 0;
+  background-color: #fff;
+  /* 通常コンテンツは白 */
+}
+
+#loadingOverlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #007AB7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 500;
+}
+
+.loadingLogo {
+  width: 287px;
+  height: 117px;
+  opacity: 0;/*はじめは消しておく*/
+  animation-name: blinkSp;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+
+  /* delay 1000ms 
+  blink: アニメーションの名前（@keyframesで定義した名前と一致させる）。
+   1s (duration): アニメーション1サイクルにかかる時間（1秒）。 
+   ease-out (timing-function): アニメーションの速度（開始は速く、終わりは遅く）。 
+   1s (delay): アニメーション開始までの遅延時間（1秒）。
+   infinite (iteration-count): アニメーションの繰り返し回数（無限）。
+  */
+}
+
+/* blink=点滅 */
+@keyframes blinkSp {
+  0% {
+   opacity: 0;/* 完全に透明 */
+  }
+
+    80% {
+       opacity: 1;/* 完全に表示 */
+    }
+
+  100% {
+    opacity: 0;
+  }
+
+}
+
+/* Loading が消える */
+#loadingOverlay.hide {
+  animation: fadeOut 2s forwards;
+}
+
+@keyframes fadeOut {
+  0% { 
+    opacity: 1; 
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+
+
+/*SP版ローディングここまで*/
+
+
+/* モーダル処理 */
+
+.modalPhoto {
+	width: 283px;
+	height: 283px;
+	margin: auto;
+}
+.modalPhotos {
+	display: flex;
+	margin: auto;
+}
+.modalText {
+  font-size: 12px;
+  font-weight: 700;
+	color: #ffffff;
+	margin-top: 20px;	
+}
+/* ボタン */
+
+.openBtn:hover {
+	background-color: rgba(237, 161, 132, .2);
+}
+/* モーダル背景 */
+.modalBackground {
+	display: none; /* 初期状態は非表示 */
+	position: fixed;
+	z-index: 999;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.1);
+}
+/* モーダルコンテンツ */
+.modalContent {
+	background-color: rgba(1,128,190,0.9);
+	width: 375px;
+	height: 375px;
+}
+
+/* 閉じるボタン */
+.closeBtnOya {
+	text-align: right;
+}
+.closeBtn {
+	width: 28px;
+	height: 28px;
+}
+.closeBtn:hover,
+.closeBtn:focus {
+	background-color: rgba(0,0,0,0.3);
+  cursor: pointer;
+}
+
+
+@media screen and (min-width: 768px) {
+  .onlyPc {
+    display: block;
+  }
+  .onlySp {
+    display: none;
+  }
+  
+  html {
+    font-size: 16px;
+  }
+
+  body {
+    max-width: 1366px;
+  }
+
+    main {
+      max-width: 1355px;
+    }
+
+  /* ヘッダー */
+  header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;/*1366*/
+    height: 94px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0,0.25);
+    padding: 0 8vw;/*103両端からのコンテンツまでの距離*/
+    z-index: 200;
+    text-align: center;
+  }
+
+  .headerLogo {
+    width: 133px;
+    height: 54px;
+  }
+
+  /* ドロワーを横並びナビに変換 */
+
+  #drawerNav {
+    position: static;
+    width: auto;
+    height: auto;
+    background: none;/* 背景を透明に */
+    display: flex;
+    justify-content: flex-end;/* 右寄せ */
+    align-items: center;
+    transform: none;/* スライド解除 */
+  }
+
+  #drawerNav ul {
+    display: flex;/* リンク横並び */
+    gap: 30px;/* リンク間隔 */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  #drawerNav ul li {
+    margin: auto 0px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 24px;
+  }
+
+
+  #drawerNav ul li:first-of-type {
+    display: none;/* 「Menu」は非表示 must*/ 
+  }
+  #drawerNav ul li:nth-of-type(2) {
+    /*リストの2番目だけ指定*/
+    margin: auto 0px;
+  }
+
+  #drawerNav ul li a {
+    text-decoration: none;/* must*/
+    text-decoration-thickness: none;/* must*/
+    font-size: 24px;
+  }
+
+  #drawerNav ul li a:hover {
+        font-size: 28px;/*ちょっと大きくなる*/
+        font-weight: bold;
+        transition-duration: 300ms;
+    }
+
+
+  /* ドロワーボタンとオーバーレイとロゴ非表示 
+  must*/
+  .drawerOpen,
+  .drawerLogo,
+  #overLay,
+  .drawerClose {
+    display: none;
+  }
+
+
+
+  /* HEROセクション */
+  .topHero {
+    position: relative;
+    height: 768px;/*要調整（はみ出す*/
+     width: 1366px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    object-position: 50%;
+  }
+
+  .topHero h1 {
+    position: absolute;
+    top: 94px;
+    left: 50px;
+
+  }
+
+  .topHero p {
+    position: absolute;
+    bottom: 20px;
+    left: 796px;
+    width: 500px;
+    font-size: 20px;
+    line-height: 1.6;
+    color: #fff;
+    width: 467px;
+    height: auto;/*97px*/
+  }
+
+  /*PC版SNSアイコン*/
+  .snsIconh1 {
+    display: block;
+    position: absolute;
+    left: 103px;
+    width: 50px;
+    height: auto;
+    bottom: 80px;/*SNSアイコンの下からヒーロー画像の境界（下）まで*/
+  }
+
+
+  .snsIconh1 img {
+    margin-top: 40px;
+    width: 32px;
+      height: 32px;
+  }
+  .snsIconh1 img[src="images/twitter.png"] {
+    width: 38.9px;
+    height: 32px;
+  }
+
+    .tainanLogo {
+      position: relative;
+      width: 300px;
+        height: 539.82px;
+      aspect-ratio: 199 / 372;
+      margin-left: 313px;/*親のh1はすでに右に50pxずれているので、その分を引いた数値*/
+    }
+    
+
+  /* 上に戻るボタン */
+  .toPageTop {
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+    top: auto;
+    left: auto;
+  }
+
+  .toPageTop img {
+    width: 48px;
+    height: 48px;
+    transform: rotate(270deg);/*上向きにする*/
+  }
+  
+  /*PCセクション各部共通*/
+  section {
+    max-width: 1366px;
+    width: 100%;
+    margin: 0 auto;
+    line-height: 1.6;
+    letter-spacing: 0;
+  }
+
+  /*見出し飾りと見出しの設定*/
+  h2 {
+    font-size: 48px;
+    width: 530px;
+    height: 96px;
+    margin-top: 20px;
+    margin-bottom: 80px;
+    display: block;
+    margin-left: 0px;
+  }
+  
+  .h2Jn {
+    font-size: 24px;
+  }
+
+
+  /*PC観光名所セクション*/
+  .attractionSec{
+    text-align: center;
+    width: 1160px;
+    height: auto;
+  }
+
+
+  .attractionSec article {
+    margin: 80px auto;
+    width: 100%;/*1160*/
+  }
+
+  .attractionSec1no1, 
+  .attractionSec1no2,
+  .attractionSec2no1,
+  .attractionSec1no2 {
+    display: flex;
+    justify-content: space-between;
+    
+  }
+
+  .attractionSec figure {
+    margin-bottom: 0px;
+  }
+
+  .attractionSecPhoto2  {/*サブ画像*/
+    width: 600px;
+    height: 167px;
+    margin-bottom: 80px;
+    margin-top: 0px;
+  }
+
+  .attractionSecPhoto2 img{
+    object-fit: contain;
+    width: 290px;/*100%*/
+    height: 167px;/*auto*/
+  }
+
+  .attractionSec1no1 .attractionSecPhoto {/*メイン画像１・２*/
+    width: 600px;
+    height: 304px;
+    margin-bottom: 40px;
+  }
+
+  .attractionSec2no1 .attractionSecPhoto {
+    width: 600px;
+    height: 336px;
+    margin-bottom: 40px;
+  }
+
+  .attractionSecH3 {
+    font-size: 36px;
+    text-align: left;
+    
+  }
+
+
+  /*観光名所セクションテキストブロックの指定
+  （インラインブロック）*/
+  .attractionSec p {
+    width: 500px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    text-align: left;
+  }
+  .attractionSec1no1 p
+  {
+    height: 304px;
+  }
+
+  .attractionSec2no1 p{
+    height: 336px;
+  }
+
+  .attractionSec1no2 p,
+  .attractionSec2no2 p {
+    height: 160px;
+  }
+
+  .attractionSec2no2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .attractionSec2no2 p  {
+  display: inline-block;
+    text-align: center;
+  }
+
+  .borderLine {
+    border-bottom: 1px solid #000;
+    width: 420px;
+    margin: 0 auto;
+    margin-bottom: 80px;
+  }
+
+
+  /*グルメセクションの指定*/
+
+  .goulmetSec{
+  text-align: center;
+  width: 1080px;/**/
+  margin-bottom: 80px;
+  }
+
+  /**/
+  .goulmetSec article {
+    margin: 20px auto;
+
+  }
+
+  .goulmetSec p {
+  margin: 0;
+  width: 420px;
+  font-size: 20px;
+  }
+
+
+  .goulmetSec1 p, 
+  .goulmetSec2 p{
+    text-align: left;
+    width: 510px;
+    margin: 0;
+    padding:0px;
+  }
+
+  .goulmetSec h2 {
+    margin-left: 630px;/*動かないのでマージン指定マイナス１０３*/
+  }
+
+  .goulmetSecGuide { 
+    display: flex;
+    align-items: center;
+    line-height: 1.6;
+    height: 256px;
+    border-top :1px solid #000;
+    border-bottom:1px solid #000;
+    padding: 60px 0 60px;
+    
+  }
+
+  .goulmetSec1,.goulmetSec2{
+    display: flex;
+  }
+
+  .goulmetSecH3H4{
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .goulmetSecH3 {
+    font-size: 36px;
+    line-height: 1;
+    letter-spacing: 0;
+    margin-bottom: 20px;
+    margin-top: 60px;
+  }
+
+  .goulmetSec h4{
+  font-size: 24px;
+    line-height: 1;
+    margin-bottom: 20px;
+    margin-left: 20px;
+  }
+
+  .goulmetSec article p {
+    display: inline-block;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    line-height: 1.6;
+    font-size: 20px;
+  }
+
+  .goulmetSecModal {
+    width: 510px;
+    margin: 0 auto;
+    position: relative;
+    justify-content: flex-start;
+  }
+
+  .goulmetLink {
+    position: absolute;
+    left: 0;
+    width: 100px;
+  }
+  .goulmetSecLine {
+  position: absolute;
+    border-bottom:1px solid #000;
+    width: 510px;
+    margin: 0 auto;
+    margin-top: 40px;
+    padding-top: 40px;
+  }
+
+  /*pickupセクション*/
+
+  .pickupSec {
+  text-align: center;
+  width: 1080px;/**/
+  margin: 0 auto;
+  margin-bottom: 80px;
+  }
+
+  .pickupSec1,
+  .pickupSec2
+  {
+    display: flex;
+  }
+
+  .pickupSec p{
+    margin-top: 8px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    text-align: left;
+    font-size: 20px;
+    margin-right: auto;
+  }
+
+  .gridItem01,
+  .gridItem02, .gridItem03, 
+  .gridItem04, .gridItem06,
+  .gridItem05,.gridItem07 {
+    width: 1080px;
+    margin: 0 auto;
+  }
+
+  .gridItem03 p, 
+  .gridItem04 p, .gridItem06 p,
+  .gridItem05 p,.gridItem07 p {
+  margin-left: 60px;
+  }
+
+  .pickupSec h2 {
+    margin-left: 0px;/*動かないのでマージン指定マイナス１０３*/
+  }
+
+  .gridItem02 {
+    width: 420px;
+    height: 192px;
+    margin-left: 0px;
+    margin-bottom: 60px;
+  }
+
+  .pickupSec1 {
+    margin-bottom: 80px;
+  }
+
+  .gridItem04 {
+    display: flex;
+    align-items: center;
+  }
+
+  .gridItem05 p{
+    width: 620px;
+    margin: 0 auto;
+    margin-bottom: 80px;
+    justify-content: center;
+    line-height: 1;
+  }
+
+  .gridItem05 figure {
+    display: flex;
+    justify-content: space-between;
+    width: 1080px;
+    height: auto;
+    margin-bottom: 80px;
+  }
+
+  .gridItem05 figure img {
+    width: 510px;
+    height: 214px;
+  }
+
+  .pickupSec2 {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .gridItem06 figure {
+    margin-bottom: 0px;
+  }
+
+  .gridItem06 figure img {
+    margin: 0 ;
+  }
+
+  .gridItem06 figure img {
+    margin: 0 auto;
+    aspect-ratio: 600/325;
+  }
+      
+  .gridItem07 {
+    border-bottom: none;
+    margin-bottom: 0px;
+    
+  }
+
+  .gridItem07 figure {
+    margin-bottom: 0px;
+  }
+
+  .gridItem07 figure img {
+    margin-left: 60px;
+    height: auto;
+    object-fit: contain;
+    aspect-ratio: 420/209;
+  }
+
+  .gridItem07 figure p {
+    width: 420px;
+    height: 96px;
+  }
+  .pickupSecPhoto3 {
+    width: 600px;
+      height: 325px;
+  }
+
+
+  .pickupSecPhoto4 {
+    width: 420px;
+  }
+
+  .underLine {
+    width: 480px;
+    border-bottom:1px solid #000 ;
+    margin: 0 auto;
+  }
+
+  .underLine {
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+
+  /*上に戻るアイコンの指定*/
+  .toPageTop {
+    position: fixed;
+    right: 20px;
+    /*配置位置*/
+    bottom: 20px;
+  }
+
+  /*上に戻るアイコンの大きさ*/
+  .toPageTop img {
+    width: 100px;
+    height: 100px;
+  }
+
+
+  /*footer 　　共通部分*/
+  footer {
+    background-color: #007AB7;
+    max-width: 1366px;
+  }
+
+  /*国旗*/
+  footer .footFlag {
+    padding-top: 40px;
+  }
+
+  footer .footFlag img {
+    width: 64px;
+    height: 48px;
+    margin: 0 auto;
+  }
+
+  
+  /*footerナビ*/
+  footer ul {
+    max-width: 332px;
+    margin: 80px 0 20px 103px;
+  }
+
+  footer ul li {
+    font-size: 20px;
+    color: #ffffff;
+    border-bottom: 1px solid #ffffff;
+    padding: 20px 0 12px;
+  }
+
+  footer ul li:first-of-type {
+    padding: 0 0 12px;
+  }
+
+  /*footerロゴ*/
+  footer .footLogo {
+    width: 256px;
+    height: 103px;
+    position: absolute;
+    bottom: 20px;
+    left: 555px;
+  }
+
+  /*sns横並びアイコン*/
+  footer .sns {
+    width: 182.9px;
+    position: absolute;
+    bottom: 20px;
+    left: 1080.1px;
+  }
+
+  /*sns画像サイズ*/
+.sns img {
+    width: 32px;
+    height: 32px;
+}
+.sns img[src="images/twitter.png"] {
+    width: 38.9px;
+    height: 32px;
+}
+
+
+
+  /*ここからPC版ローディング画面（HT）*/
+  body,
+  main {
+    margin: 0;
+    background-color: #fff;
+    /* 通常コンテンツを白で表示 */
+  }
+
+  #loadingOverlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;/*領域を隙間なく埋める*/
+    background: #007AB7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 500;
+  }
+
+  .loadingLogo {
+    width: 318px;
+    height: 128px;
+    opacity: 0;
+    animation-name: blinkPc;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+    animation-delay: 0.8s;
+    animation-iteration-count: infinite;
+  }
+  /*blink: アニメーションの任意の名前（@keyframesで定義した名前と一致させる）。
+  s (duration): アニメーション1サイクルにかかる時間（秒）。 
+  ease-out (timing-function): アニメーションの速度（開始は速く、終わりは遅く）。
+    s (delay): アニメーション開始までの遅延時間（秒）。
+  infinite (iteration-count): アニメーションの繰り返し回数（ロードが終わるまで無限）。*/
+
+  @keyframes blinkPc {
+    0% {
+      opacity: 0;
+    }
+
+    65% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+
+
+
+	/* パンくずナビゲーション */
+	.panNav {
+		width: 1366px;
+		height: 60px;
+		font-size: 20px;
+		font-weight: 400;
+	}
+
+	/* モーダル処理 */
+	
+	.modalPhoto {
+		width: 555px;
+		height: 555px;
+		margin: auto;
+	}
+
+	.modalText {
+		font-size: 24px;
+	}
+	/* ボタン */
+
+	.openBtn:hover {
+		background-color: rgba(237, 161, 132, .2);
+	}
+
+	/* モーダルコンテンツ */
+	.modalContent {
+		background-color: rgba(1,128,190,0.9);
+		width: 675px;
+		height: 675px;
+	}
+
+	/* 閉じるボタン */
+	.closeBtn {
+		width: 36px;
+		height: 36px;
+	}
+	.closeBtn:hover,
+	.closeBtn:focus {
+		background-color: rgba(0,0,0,0.3);
+	cursor: pointer;
+	}
+}
+  
