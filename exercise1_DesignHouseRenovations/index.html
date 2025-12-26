@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="common/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Design House Renovations </title>
+</head>
+<body >
+    <header >
+        <div id="pageTop">
+            <h1 class="topLogo">
+                <img src="images/sqHeaderLogo.svg" alt="Design House Renovations">
+            </h1>
+            <nav class="hamburgerMenu">
+                <input class="menubtnCheckbox" type="checkbox" id="menubtnTool">
+                    <!--メニューの開閉状態を決めるためのチェックボックス。ボックス自体は邪魔なのでCSSで非表示-->
+                <label class="hamburgerIcon" for="menubtnTool">
+                    <span class="lineBtn"></span>
+                </label>
+                    <!--三本線（メニューボタン）を表示。spanタグで線を引き、
+                    それと同じ大きさの線をCSSの疑似要素（::before,::after）で追加-->
+                <ul class="globalNav"><!--メニューボタンが押されるまでは表示されない部分。
+                                            CSSで整形、overflow:hidden;max-height:0;を使用している。-->
+                    <li>
+                        <a href="#conceptSection">コンセプト</a>
+                    </li>
+                    <li>
+                        <a href="#serviceSection">サービス</a>
+                    </li>
+                    <li>
+                        <a href="#flowSection">施工の流れ</a>
+                    </li>
+                    <li>
+                        <a href="#qandaSection">よくあるご質問</a>
+                    </li>
+                    <li>
+                        <a href="#contactSection">お問い合わせ</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+   <main>
+
+        <h1 class="mainHero">
+            <img src="images/motoHero3.png" alt="">
+        </h1>
+
+        <section id="conceptSection">
+            <h2>
+                CONCEPT
+            </h2>
+            <h3 class="withLines"><!--疑似要素で文字横に線を引く。他も同様。クラスでまとめる-->
+                <span>コンセプト</span>
+            </h3>
+            <h4>
+                家族が笑顔になれる場所
+            </h4>
+            <p>
+                家族が集う、温かく居心地の良い空間づくりを目指して、
+                幅広い年代の方に安心して過ごしていただける空間づくりや、
+                お手入れのしやすい素材を使用したリフォームをご提案いたします。
+            </p>
+        </section>
+
+        <section id="serviceSection">
+            <h2>
+                SERVICE
+            </h2>
+            <h3 class="withLines">
+                <span>サービス</span>
+            </h3>
+
+            <ul class="pcberService">
+            <li class="bathRoom">
+                <span class="servicePhoto">
+                    <img src="images/sqMainSqMainList1.png"alt="">
+                </span>
+                <h4>浴室</h4>
+                <p>
+                    ご家族が一緒に入れる広めの浴槽や手すり等、安全性に配慮しています。
+                </p>
+                <p class="moreAndArrow">
+                    <span>more</span> 
+                    <img src="images/sqMainArrow.svg">
+                </p>
+            </li>
+            <li class="livingRoom">
+                <span class="servicePhoto">
+                    <img src="images/sqMainList2.png"alt="">
+                </span>
+                <h4>リビング</h4>
+                <p>
+                    照明や家具の配置等、くつろぎやすい空間づくりを大切にしています。
+                </p>
+                <p class="moreAndArrow">
+                    <span>more</span> 
+                    <img src="images/sqMainArrow.svg">
+                </p>
+            </li>
+            <li class="kitchenRoom">
+                <span class="servicePhoto">
+                    <img src="images/sqMainList3.png">
+                </span>
+                <h4>キッチン</h4>
+                <p>
+                    機能性だけでなく、デザイン性にもこだわっております。
+                </p>
+                <p class="moreAndArrow">
+                    <span>more</span>
+                    <img src="images/sqMainArrow.svg">
+                </p>
+                
+            </li>
+        </ul>
+        </section>
+
+        <section id="flowSection">
+
+            <h2>FLOW</h2>
+        <h3 class="withLines">
+            <span>施工の流れ</span>
+        </h3> 
+
+            <ol>
+                <li>
+                    <span class="flowText">ご相談</span>
+                </li>
+                <span id="imgFilter60"><img src="images/sqMainArrowBig.svg"></span><!--矢印部分の画像-->
+                <li>
+                    <span class="flowText">現地調査</span>
+                </li>
+                <span id="imgFilter70"><img src="images/sqMainArrowBig.svg"></span>
+                <li>
+                    <span class="flowText">お見積り</span>
+                </li>
+                <span id="imgFilter80"><img src="images/sqMainArrowBig.svg"></span>
+                <li >
+                    <span class="flowText">ご契約</span>
+                </li>
+                <span id="imgFilter90"><img src="images/sqMainArrowBig.svg"></span>
+                <li>
+                    <span class="flowText">施工</span>
+                </li>
+                <span id="imgFilter100"><img src="images/sqMainArrowBig.svg"></span>
+                <li>
+                    <span class="flowText">お引渡し</span>
+                </li>
+            </ol>
+        </section>
+
+        <section id="qandaSection">
+            <h2>Q&A</h2>
+            <h3 class="withLines">
+                <span>よくあるご質問</span>
+            </h3>
+
+            <dl>
+                <dt>
+                    <span class="questionContent">Q.</span><!--Q丸アイコンを作るためのclass-->
+                    見積りは無料ですか？
+                </dt>
+                <dd>
+                    <span class="answerContent">A.</span><!--A丸アイコンを作るためのclass-->
+                    はい。お見積りは無料で承っております。
+                    ホームページよりお気軽にお問い合わせください。
+                </dd>
+                <dt>
+                    <span class="questionContent">Q.</span>
+                    普段通り生活をしながらのリフォーム工事は可能ですか？
+                </dt>
+                <dd>
+                    <span class="answerContent">A.</span>
+                    はい。もちろん可能です。
+                    工事中の箇所は、何日間か使用できなくなる場合もございますのであらかじめご了承ください。
+                    大型リフォームの場合には、仮住まいもお薦めしております。
+                </dd>
+            </dl>
+        </section>
+
+        <section id="contactSection">
+            <h2>CONTACT</h2>
+            <h3 class="withLines">
+                <span>お問い合わせ</span>
+            </h3>
+
+            <form action="" method="">
+                <div class="gridcontent"><!--PC版での整列のためにクラス分け-->
+
+                    <div class="inquiryRadio"><!--お問い合わせ種別とラジオボタン-->
+                        
+                        <div class="InquiryType"><!--お問い合わせ種別-->
+
+                            <div  class="inquiryLeft">お問い合わせ種別<span class="fieldisRequired"> 必須</span>
+                            </div ><!--左　PC版での整列のためにクラス分け-->
+
+                        </div> 
+                    
+                        <div class="radioBtn"><!--ラジオボタン-->
+
+                            <div  class="inquiryRight"><!--右　PC版での整列のためにクラス分け-->  
+                                <label>
+                                    <input type="radio" name="attendTo" value="資料請求">
+                                    <span class="radioText">資料請求</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="attendTo" value="ご相談">
+                                    <span class="radioText">ご相談</span>
+                                </label>
+                            </div>
+
+                        </div>
+<!---->
+                    </div>
+                        <label class="userName">
+
+                            <div  class="nameLeft"><!--左　PC版での整列のためにクラス分け-->  
+                                お名前<span class="fieldisRequired">必須</span>
+                            </div >
+
+                            <div  class="nameRight"><!--右　PC版での整列のためにクラス分け-->  
+                                    <input type="text" name="dearName">
+                            </div >
+
+                        </label>
+                    
+                        <label class="huriGana">
+
+                            <div  class="huriganaLeft"><!--左　PC版での整列のためにクラス分け-->
+                                フリガナ<span class="fieldisRequired">必須</span>
+                            </div >
+
+                            <div  class="huriganaRight"><!--右　PC版での整列のためにクラス分け-->  
+                                <input type="text" name="nameFuriana">
+                            </div >
+
+                        </label>
+
+                        <label class="telePhone">
+                                  
+                            <div  class="telLeft"><!--左　PC版での整列のためにクラス分け-->
+                                電話番号<span class="fieldisRequired">必須</span>
+                            </div >
+
+                            <div  class="telRight"><!--右　PC版での整列のためにクラス分け-->
+                                <input type="tel" name="userTelephone">
+                            </div >
+
+                        </label>
+
+                        <div class="addressBlock">
+
+                            <div  class="addressLeft"><!--左　PC版での整列のためにクラス分け-->
+                                住所<span class="fieldisRequired">必須</span>
+                            </div >
+                            
+                            <div class="postCode">
+
+                                <div  class="addressRight01"><!--右　PC版での整列のためにクラス分け-->
+                                    〒
+                                </div>
+
+                                <div  class="addressRight02"><!--右　PC版での整列のためにクラス分け-->
+                                    <input type="text" name="userPostcode"  placeholder="">
+                                </div >
+
+                                <div  class="addressRight03"><!--右　PC版での整列のためにクラス分け-->
+                                    <input type="text" name="userAddress" placeholder="">
+                                </div >
+
+                            </div>
+                        </div>
+
+                        <label class="userMail">
+
+                            <div  class="mailLeft">メールアドレス<span class="fieldisRequired">必須</span>
+                            </div ><!--左　PC版での整列のためにクラス分け-->
+
+                            <div  class="mailRight"><!--右　PC版での整列のためにクラス分け-->
+                                <input type="email" name="userMail">
+                            </div >
+
+                        </label> 
+
+                        <label class="conFirmMail">
+
+                            <div  class="confilmLeft">メールアドレス(確認用)<span class="fieldisRequired">必須</span>
+                            </div ><!--左　PC版での整列のためにクラス分け-->
+
+                            <div class="confilmRight"><!--右　PC版での整列のためにクラス分け-->
+                                <input type="email" name="userMailconfirm">
+                            </div >
+
+                        </label>
+
+                        <label class="messageTextForm">
+
+                            <div  class="messageLeft"><!--左　PC版での整列のためにクラス分け-->お問い合わせ内容
+                            </div >
+
+                            <div class="messageRight"><!--右　PC版での整列のためにクラス分け-->
+                                <textarea name="messageText">
+                                </textarea>
+                            </div >
+
+                        </label>
+
+                        <label class="submitBtn">
+
+                            <div class="submitCenter"><!--最下部　PC版での整列のためにクラス分け--><!--buttonタグでまとめてクリック可能にする-->
+                                <button type="submit" class="toSend">入力内容を確認する 
+                                    <img src="images/sqFormArrow.svg">
+                                </button>
+                            </div>
+
+                        </label>
+                    </div>
+                </form>
+
+            </section>
+
+            <div class="mainEnd">
+                
+                <div class="toPagetop"><!--ページトップへのリンクを含むアイコン-->
+                    <a href="#pageTop">
+                        <img src="images/sqMainArrowGt.svg" alt="ページトップへ戻る">
+                    </a>
+                </div>
+
+            </div>
+        </main>
+        <footer>
+            <small>
+                <p>&copy;2023 Design House Renovations</p>
+            </small>
+        </footer>
+    </body>
+</html>
+
+
