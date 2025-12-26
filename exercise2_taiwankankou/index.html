@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="common/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>台湾観光サイト</title>
+</head>
+<body>
+    <!-- ▼ ローディング画面をここに追加 ▼ -->
+    <div id="loadingOverlay"><!--ローディングアニメ用ID-->
+        <img src="images/topLogo.png" class="loadingLogo" alt="ローディングロゴ">
+    </div>
+    <!-- ▲ ローディング画面ここまで ▲ -->
+
+<!--▼ページ内リンク用ID -->
+<div id="topPage"></div> 
+
+    <header>
+         <div class="headerContainer">
+                <!--ここから共有部分-->
+                    <img src="images/topLogo.png" class=" headerLogo" alt="メインロゴ"> 
+                <!--ここからドロワークローズ時の３本線アイコン-->
+                <button class="drawerOpen" id="openNav"><!--変更不可　ドロワーJS用ID-->
+                    <img src="images/sqDrawerIcon.svg" class="onlySp" alt="ドロワー用アイコン"> 
+                </button>
+            </div>
+        
+        <!--ここからドロワーオープン時のメニュー（メニュークローズ時は非表示）-->
+        <nav id="drawerNav"><!--変更不可　ドロワーJS用ID-->
+                    <img src="images/topLogo.png" class="onlySp drawerLogo" alt="ドロワーロゴ">
+                <button class="drawerClose" id="closeNav"><!--変更不可　ドロワーJS用ID-->
+                    <img src="images/sqDrawerClose.svg" class="onlySp" alt="ドロワークローズ用アイコン">
+                </button>
+
+                <ul>
+                    <li>Menu</li>
+                    <li><a href="index.html" class="MenuTop">TOP</a></li>
+                    <li><a href="taipei/index.html">台北</a></li>
+                    <li><a href="taichu/index.html">台中</a></li>
+                    <li><a href="tainan/index.html">台南</a></li>
+                    <li><a href="#">当サイトのポリシー</a></li>
+                    <li><a href="#">お問い合わせ</a></li>
+                </ul>
+        </nav>
+        </header>
+        <div id="overLay"></div><!--変更不可　ドロワーJS用ID-->
+    
+    <main>
+        <section class="topSec">
+            <p><img src="images/topLogo.png"></p>
+            <dl class="sns">
+                <dt><img src="images/facebook.png" alt="facebookのアイコン"></dt>
+                <dt><img src="images/instagram.png" alt="instagramのアイコン"></dt>
+                <dt><img src="images/twitter.png" alt="twitterのアイコン"></dt>
+            </dl>
+        </section>
+
+        <section class="formosaSec">
+            <div class="formosa1">
+                <div class="flagH1">
+                    <img src="images/taiwanFlag.svg" class="formosaFlag">
+                    <h1>Formosa<br><span class="hrLine">フォルモサ（麗しの島）</span></h1>
+                </div>
+                <p class="formosaImg"><img src="images/formosa1.png"></p>   <!--クラス名：pcでも不要なら削除-->
+            </div>
+            <div class="formosa2">
+                <div class="formosaText">
+                    <hr>
+                    <p>
+                        フォルモサは、十六世紀にポルトガル人がエメラルド色の美しい台湾を見つけて発した賛嘆の言葉　です。
+                        緑にあふれた台湾の美しい風景が、あなたを桃源郷の世界へといざなってくれるでしょう。
+                    </p>
+                    <hr>
+                </div>
+                <p class="formosaImg"><img src="images/formosa2.png"></p>
+            </div>
+        </section>
+
+        <section class="gallerySec">
+            <div class="midashi">
+                <h2>Gallery <span>ギャラリ－</span></h2>
+            </div>
+            
+            <div class="silideWrap">
+                <!-- スライド（コンテンツ） -->
+                <div id="slide" class="slide">
+                    <!--ダミー用-->
+                    <div>
+                        <img src="images/slider5.png">
+                    </div>
+                    <div>
+                        <img src="images/slider4.png">
+                    </div>
+                    <!--本体-->
+                    <div>
+                        <img src="images/slider1.png">
+                    </div>
+                    <div>
+                        <img src="images/slider2.png">
+                    </div>
+                    <div>
+                        <img src="images/slider3.png">
+                    </div>
+                    <div>
+                        <img src="images/slider4.png">
+                    </div>
+                    <div>
+                        <img src="images/slider5.png">
+                    </div>
+                    <!--ダミー用-->
+                    <div>
+                        <img src="images/slider1.png">
+                    </div>
+                    <div>
+                        <img src="images/slider2.png">
+                    </div>
+                </div>
+                <!-- インジケーター -->
+                <ul class="indicator" id="indicator">
+                    <li id="prev" class="prev"><img src="images/sliderArrow.svg"></li>
+                    <li class="list"></li>
+                    <li class="list"></li>
+                    <li class="list"></li>
+                    <li class="list"></li>
+                    <li class="list"></li>
+                    <li id="next" class="next"><img src="images/sliderArrow.svg"></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="travelSec">
+            <div class="midashi">
+                <h2>Travel <span>おすすめスポット</span></h2>
+            </div>
+            <div class="travelSpot">
+                <div class="travelText">
+                    <hr class="horizon">
+                    <p>
+                        訪れた人々を魅了する「美麗島」台湾。
+                        そんな台湾の人気スポットを代表する地を３つのエリアでご紹介。
+                        様々な風景に誰もが魅了されます。
+                    </p>
+                    <hr class="horizon">
+                </div>
+                <div class="travelMap">
+                    <img src="images/taiwanMap.png" alt="" class="taiwanMap">
+                    <a href="taipei/index.html" class="mapLink tpLink" id="taipeiMap"><img src="images/taipeiLink.png" alt=""></a>
+                    <a href="taichu/index.html" class="mapLink tcLink" id="taichuMap"><img src="images/taichuLink.png" alt=""></a>
+                    <a href="tainan/index.html" class="mapLink tnLink" id="tainanMap"><img src="images/tainanLink.png" alt=""></a>
+                </div>
+            </div>
+            <hr>
+        </section>
+
+        <section class="eventSec">
+            <div class="midashi">
+                <h2>Event <span>おすすめイベント</span></h2>
+            </div>
+            
+            <div class="event">
+                <div class="lantern">
+                    <h3>台湾ランタンフェスティバル</h3>
+                    <div class="lanternImgText">
+                        <img src="images/lantern.png">
+                        <div class="dateText">
+                            <p class="eventDates"><span>開催期間</span><br>
+                            春節 旧暦元日（2024年2月24日～3月2日予定）</p>
+                            <div class="eventText">
+                                <hr>
+                                <p>
+                                    春節の風習として「天燈」と呼ばれる紙製のランタンに無病息災などの祈りを書き込み、火種を用いて熱気球と同じ原理で空に飛ばす儀式。
+                                    吉祥や邪気払いの意味があります。
+                                </p>
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="countdown">
+                    <h3>台北最High新年城<br>カウントダウンパーティー</h3>
+                    <div class="countImgText">
+                        <img src="images/countdown.png">
+                        <div class="dateText">
+                            <p class="eventDates"><span>開催期間</span><br>
+                            12月31日～1月1日</p>
+                            <div class="eventText">
+                                <hr>
+                                <p>
+                                    台北101では毎年、新年を祝う花火を実施。元旦0時から約3分間、台北101を覆い尽くすように、ビル全体から美しい火花が舞い散ります。
+                                    世界中から注目されるイベントの一つです。
+                                </p>
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="profileSec">
+            <div class="profile">
+                <h4>台湾基本情報</h4>
+                <div class="file">
+                    <dl class="file1"> <!--クラス名：pc版でも不要であれば削除-->
+                        <dt>■正式名称：中華民国・台湾</dt>
+                        <dd>　Republic of China,Taiwan</dd>
+                        <dt>■首都：台北</dt>
+                        <dt>■人口：約2,300万人</dt>
+                        <dt>■面積：約3万6,000km²</dt>
+                        <dt>■人種・民族：漢民族、先住民</dt>
+                        <dt>■宗教：仏教、道教、キリスト教、その他</dt>
+                        <dt>■言語：北京語、台湾語</dt>
+                        <dt>■通貨：元（ニュー台湾ドル）</dt>
+                        <dt>■時差：1時間 台湾が正午のとき、日本は午後1時</dt>
+                    </dl>
+                    <dl class="file2"> <!--クラス名：pc版でも不要であれば削除-->
+                        <dt>■台湾の気候・服装</dt>
+                        <dt>■亜熱帯に属し一年を通して温暖な台湾。しかし北回帰線から南は熱帯で暑く、
+                            北部は大陸性気候の影響を受けて冷え込むこともあるなど、地域差を頭に入れて服装の準備を。</dt>
+                        <dt>■台湾の祝祭日</dt>
+                        <dt>■正月：1月1日</dt>
+                        <dt>■端午節※：6月22日 ■春節※：1月20日～29日</dt>
+                        <dt>■中秋節※：9月29日 ■和平記念日：2月28日</dt>
+                        <dt>■国慶節：10月10日 ■清明節：4月5日</dt>
+                    </dl>
+                </div>
+            </div>
+        </section>
+        
+        <!--▼ページトップへ飛ぶアイコン-->
+        <nav class="toPageTop">
+                <a href="#topPage">
+                    <img src="images/sliderArrow.svg"  alt="ページトップへ戻る">
+                </a>
+            </nav>
+        <!--▲ページトップへ飛ぶアイコンここまで-->
+
+    </main>
+    <footer>
+        <p class="footFlag"><img src="images/taiwanFlag.svg"></p>
+        <div class="footSec">
+            <ul>
+                <li><a href="index.html">Topへもどる</a></li>
+                <li><a href="taipei/index.html">台北</a></li>
+                <li><a href="taichu/index.html">台中</a></li>
+                <li><a href="tainan/index.html">台南</a></li>
+                <li><a href="#">当サイトのポリシー</a></li>
+                <li><a href="#">お問い合わせ</a></li>
+            </ul>
+            <div class="logoSns">
+                <img src="images/topLogo.png" class="footLogo">
+                <dl class="sns">
+                    <dt><img src="images/facebook.png" alt="facebookのアイコン"></dt>
+                    <dt><img src="images/instagram.png" alt="instagramのアイコン"></dt>
+                    <dt><img src="images/twitter.png" alt="twitterのアイコン"></dt>
+                </dl>
+            </div>
+        </div>
+        <p>Copyright (C) 2023 TAIWAN.traveler.cc</p>
+    </footer>
+    <script src="scripts/script.js"></script>
+    <script src="common\script.js"></script><!--ローディング、ドロワー統合JS-->
+</body>
+</html>
