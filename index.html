@@ -4,219 +4,491 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="common/reset.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="styles/style.css">
-    <title>Portfolio</title>
+
+    <title>Hinako Tomita's Portfolio</title>
+    
+
 </head>
 
 <body>
     <div id="PageTop"></div>
-    
+    <!-- 背景画像 -->
+    <div class="backImg"></div>
 
+    <!-- ヘッダー-->
     <header>
         <div class="headerNav">
 
             <h1 class="titleImg">
                 Hinako Tomita's Portfolio
-            </h1><!--バックにCSSで画像入れたい-->
-            
-            <div id="drawer_open"><!--JSトリガー-->
-                <img src="common/images/testyou2.png" id="open_btn" class="OpenBtn spOnly" alt="ドロワーオープンボタン画像">
+            </h1>
+
+            <!-- ドロワー開くボタン（スマホのみ） -->
+            <div id="drawer_open" class="spOnly"><!--JSトリガー-->
+                <img src="common/images/listBtn.svg" id="open_btn" id="open_btn" alt="ドロワーオープンボタン画像">
             </div>
 
-            <div id="drawer_menu"><!--JSトリガー-->
-                <img src="common/images/testyou3.png" id="close_btn" class="CloseBtn spOnly" alt="ドロワークローズボタン画像">
-            
+            <!-- PC用メニュー（横並び） -->
+            <nav class="pcMenu pcOnly">
+                <ul>
+                    <li class="spOnly">Menu</li>
+                    <li><a href="index.html">Top</a></li><!--シンプルに案内のみ-->
+                    <li><a href="exercise1_DesignHouseRenovations/index.html" target="_blank">Exercise1</a></li>
+                    <li><a href="exercise2_taiwankankou/index.html" target="_blank">Exercise2</a></li>
+                    <!-- <li><a href="https://github.com/htomita03-pixel/portfolio" target="_blank">Sources</a></li>-->
+                    <li><a href="works/index.html" target="_blank">otherWorks</a></li>
+                </ul>
+            </nav>
+
+            <!-- ドロワーメニュー -->
+            <div id="drawerMenuId" class="spOnly"><!--JSトリガー-->
+                <img src="common/images/listCloseBtn.svg" id="closeBtnId"  alt="ドロワークローズボタン画像">
+
                 <nav class="drawerMenu">
                     <ul>
-                        <li class="spOnly">Menu</li>
+                        <li>Menu</li>
                         <li><a href="index.html">Top</a></li><!--シンプルに案内のみ-->
-                        <li><a href="#">Exercise</a></li>
-                        <li><a href="#">Exercise2</a></li>
-                        <li><a href="https://github.com/htomita03-pixel/portfolio">Sources</a></li>
-                        <li><a href="works\index.html">works</a></li>
+                        <li><a href="exercise1_DesignHouseRenovations/index.html" target="_blank">Exercise1</a></li>
+                        <li><a href="exercise2_taiwankankou/index.html" target="_blank">Exercise2</a></li>
+                        <!-- <li><a href="https://github.com/htomita03-pixel/portfolio" target="_blank">Sources</a></li>-->
+                        <li><a href="works/index.html" target="_blank">Otherworks</a></li>
                     </ul>
                 </nav>
             </div>
         </div>
     </header>
+
     <div id="over_lay"></div>
 
-<main>
-    <div class="backImg"></div><!--背景アニメーションbackImgの閉じ-->
-    <div class="wrapper ">
+    <main>
+        <div class="wrapper ">
 
-            <section  class="profileSec">
-                <h2 class="myName"><span>HINAKO TOMITA</span></h2>
-                
-                <div  class="profileBox">
-                    <p class="selfImgBox">
-                        <img src="common/images/testyou1.png"  class="selfImg" alt="本人近影"><!--本人の写真または似顔絵イラスト？-->
-                    </p>
+            <section id="profile" class="profileSec">
+                <h2 class="myName">Hinako Tomita</h2>
 
-                    <div class="profileSecText">
-                    
-                        <h3><span>ごあいさつ</span></h3><!--指定２　トップページには自分のコーディングスキルを示す内容-->
-                        
-                            <div class="profile1">
-                                <span><!--紹介文　考え中-->
-                                    はじめまして。冨田　一菜子と申します。<br>
-                                    このたびは、私のポートフォリオをご覧いただき、ありがとうございます。<br>
-                                    私は只今、就職活動とともに、職業訓練校にてプログラミングの訓練を受講中です。<br>
-                                    こちらには、9月中旬より3月中旬までの6か月間の訓練校での成果物など、<br>
-                                    制作物を取りまとめました。<br>どうぞよろしくご高覧ください。
-                                </span>
-                            </div>
-                            <div class="profile2">
-                                    <span><!--　考え中--></span>
-                                 
-                            </div>
+                <div class="profileCard">
+                    <!-- 左：本人画像 -->
+                    <div class="profileImage">
+                        <img src="common/images/selfImage3.png" class="selfImg" alt="本人イメージ画像（AIにより本人写真をイラスト化加工）">
+                    </div>
+                    <!-- 右：自己紹介 -->
+                    <div class="profileBody">
+                        <h3 class="greeting">
+                            <i class="bi bi-stars beforeStar"></i>
+                            <span>ごあいさつ</span>
+                            <i class="bi bi-stars afterStar"></i>
+                        </h3>
+                        <div class="profile1">
+                            <p><!--紹介文　考え中-->
+                                はじめまして。冨田　一菜子と申します。<br>
+                                このたびは、私のポートフォリオをご覧いただき、ありがとうございます。<br>
+                                私は只今、就職活動とともに、職業訓練校にてプログラミングの訓練を受講中です。<br>
+                                こちらには、9月中旬より3月中旬までの6か月間の訓練校での成果物をはじめ、<br>
+                                個人での制作物なども取りまとめました。<br>どうぞよろしくご高覧ください。
+                            </p>
+                        </div>
                     </div>
                 </div>
             </section>
-            
-            <section  class="linkSec"><!--構造要修正-->
-                <h2><span class="linkSecH2">▼制作物はこちらのリンクからご覧ください</span></h2>
-                <hr>
+            <hr>
+            <section class="skillsSec">
+                <div class="skillsCard">
+                        <h3 class="skillsH3">
+                            <i class="bi bi-stars beforeStar"></i>
+                            <span>スキル紹介</span>
+                            <i class="bi bi-stars afterStar"></i>
+                        </h3>
+                            <ul class="skillsList">
+                                <li>
+                                    HTML/CSS ★★★☆☆ （レスポンシブ対応 / 基本レイアウト）
+                                </li>
+                                <li>
+                                    JavaScript ★★☆☆☆（DOM操作 / 基本機能実装）
+                                </li>
+                                <li>
+                                    PHP ★★☆☆☆(基本機能実装)
+                                </li>
+                                <li>
+                                    SQL(MariaDB) ★☆☆☆☆ (PHPとの併用部分、基本機能実装)
+                                </li>
+                                <li>
+                                    Git/GitHub ★☆☆☆☆ （現在学習中）
+                                </li>
+                                
+                            </ul>
+                </div>
+            </section>
+            <hr>
+            <section class="linkSec"><!--構造要修正
+                <h2><span class="linkSecH2">各種制作物リンク</span></h2>-->
+                
+                <h3 class="linkSecH3">
+                            <i class="bi bi-stars beforeStar"></i>
+                            <span>制作物紹介</span>
+                            <i class="bi bi-stars afterStar"></i>
+                        </h3>
                 <nav class="pageLink">
-                    <ul class="twoColumnsBox">
-                        <li class="twoColumns1 ">
-                            <li class="twoColumnsLi1">
-                                <p class="linkPage">
-                                    <a href="exercise1_DesignHouseRenovations/index.html">
-                                        <span>at school<br>exercises</span>
-                                    </a>
-                                </p>
+                    <ul class="worksList">
 
-                                <li class="linkGuide"><!--指定　トップページから作品ページに遷移するような構成とする-->
-                                    <p class="linkGuideText">
-                                        ▲訓練校の制作課題１はこちらをご覧ください。
-                                    </p>
-                                        <li class="linkGuideBorder">
-                                            <h5>制作内容</h5>
-                                            <hr>
-                                            <p>
-                                                <span>課題１「リフォーム会社サイト」</span>
-                                                
-                                                制作時間：70時間
-                                            </p>
-                                            <h5>使用言語</h5>
-                                            <hr>
-                                            <p>
-                                                <span>HTML・CSS</span><br>
-                                                学習時間：78時間
-                                            </p>
-                                            
-                                            <h5>制作前学習内容</h5>
-                                            <hr>
-                                            ITの基礎・AIの基礎・HTML・CSS・Bootstrap基礎
-                                            <br>期間：9月22日～10月16日
-                                            
-                                        </li>
-                                        
-                                    </li>
-                            </li>
-                            
-                            <li class="twoColumnsLi2">
-                                <p class="linkPage">
-                                    <a href="exercise2_taiwankankou/index.html">
-                                        <span>at school<br>exercise2</span>
-                                    </a>
-                                </p>
-                                <p class="linkGuideText">
-                                        ▲訓練校の制作課題２はこちらをご覧ください。
-                                    </p>
-                                        <li class="linkGuideBorder">
-                                              <h5>制作内容</h5>
-                                              <hr>
-                                                <p>
-                                                <span>課題２「観光案内サイト」<br>「台湾観光サイト」</span>
-                                                
-                                                制作時間：76時間×3人
-                                                </p>
-                                                <h5>使用言語</h5>
-                                                <hr>
-                                                <p>
-                                                    <span>Javascript</span><br>
-                                                    学習時間：78時間
-                                                </p>
-                                                
-                                                <h5>主な制作前学習内容</h5><hr>
-                                                Javascript・JQuery・saved・webAPI・Ajaxの基礎<br>
-                                                期間：11月7日～11月26日
-                                            </li> 
-                                            </p>
-                                            
-                                        </li>
-                            </li>
-                        </li>
-                        
-                        <div class="twoColumns2 ">
-                            <li>
-                                <p class="linkPage">
-                                    <a href="https://github.com/htomita03-pixel/portfolio"><span>Sources<br>go to Github</span></a>
-                                </p>
-                                 <p class="linkGuideText">
-                                        ▲ソースコードはこちらをご覧ください。＊Githubに遷移します。
-                                </p>
-                                <div class="linkGuideBorder">
-                                    <h5>ソースコード公開内容</h5>
-                                    <hr>
-                                    <p>
-                                        <span>演習１、演習２のソースコードを
-                                            Githubにてご覧いただけます。</span>
-                                        <br>
-                                    </p>
+                        <!-- Exercise1 -->
+                        <li class="worksItem ">
+                            <article class="workCard">
+                                <!-- 作品タイトル -->
+                                <h3 class="workTitle">
+                                    課題1「リフォーム会社サイト」<br>   
+                                    <span class="workSubTitle">DesignHouseRenovations</span>
+                                </h3>
+
+                                <!-- 作品リンク -->
+                                <div class="workLinks">
+                                    <p class="workLink">
+                                        <a class="ex1Img1 fontColor1" href="exercise1_DesignHouseRenovations/index.html" target="_blank">
+                                        Exercise1 : Websiteを見る
                                     
-                                </div>
-                            </li>
-
-                            <li>
-                                <p class="linkPage">
-                                    <a href="works\index.html"><span>Works</span></a>
-                                </p>
-                                    <p class="linkGuideText">
-                                    ▲自主制作物はこちらをご覧ください。
+                                    </a>
                                     </p>
+                                    <p class="workLink">
+                                        <a class="ex1Img2 fontColor2" href="https://github.com/htomita03-pixel/portfolio" target="_blank">
+                                            Exercise1 : ソースコードを見る
+                                        </a>
+                                    </p>
+                                </div>
+                                ▲訓練校の制作課題１のwebサイトとソースコードはこちらからご覧ください。
+                                    ソースコードは Githubにてご覧いただけます。
+                                <details>
+                                 <summary><span>制作概要を見る</span></summary>
+                                    <div class="workCaption">
+                                <!-- 作品概要 -->
+                                <section class="workSummary">
+                                    <h4>制作内容</h4>
+                                    <p>
+                                        課題1「リフォーム会社サイト」<br>
+                                        制作時間：70時間
+                                    </p>
+                                </section>
+                        
+                                <!-- 使用技術 -->
+                                <section class="workTech">
+                                <h4>使用言語</h4>
+                                <p>HTML / CSS</p>
+                                </section>
+                                
+                                <!-- 事前学習 -->
+                                <section class="workStudy">
+                                <h4>制作前の主な学習内容</h4>
+                                <p>
+                                    IT基礎、AI基礎、HTML、CSS、Bootstrap基礎<br>
+                                    学習時間：96時間
+                                    期間：9月22日〜10月16日
+                                </p>
+                                </section>
+                                
+                                <section class="workGoodPoint">
+                                <h4>この制作で工夫したこと</h4>
+                                <p>
+                                    初めてのWebサイト制作だったため、学習内容の定着と
+                                    カンプ通りの再現を意識しました。<br>
+                                    機能や素材を先に整理し、大枠から細部へ制作を進めることで、
+                                    制作中の迷いを減らす工夫をしました。
+                                </p>
+                                </section>
 
-                               <div class="linkGuideBorder">
-                                            <h5>制作内容</h5>
-                                            <hr>
-                                            <p>
-                                               <span>随時更新いたします。</span><br>
-                                            </p>
-                                           
-                                          <!--内容は確認して修正する-->
-                                        </div>
-                            </li>
-                        </div>
-                    
+                                <!-- 苦労した点 -->
+                                <section class="workHardPoint">
+                                    <h4>この制作で苦労したこと</h4>
+                                    <p>
+                                        レイアウト調整やサイズ指定に苦労しました。<br>
+                                        特にリキッドレイアウトにおける単位選定や、
+                                        想定通りに配置できない点で試行錯誤しました。
+                                    </p>
+                                </section>
+                                </div>
+                            </details>
+                      
+                            </article>
+                        </li>
+                        <hr>
+                        <!-- Exercise2 -->
+                        <li class="worksItem">
+                            <article class="workCard">
+
+                            <!-- 作品タイトル -->
+                            <h3 class="workTitle">
+                            課題2「観光案内サイト」<br>
+                            <span class="workSubTitle">台湾観光サイト（チーム制作）</span>
+                            </h3>
+                            
+                            <!-- 作品リンク -->
+                            <div class="workLinks">
+                                <p class="workLink">
+                                    <a class="ex2Img1 fontColor1 " href="exercise2_taiwankankou/index.html" target="_blank">
+                                        Exercise2 : Websiteを見る
+                                        </a>
+                                </p>
+                            
+                            <p class="workLink">
+
+
+                                <a class="ex2Img2 fontColor2" href="https://github.com/htomita03-pixel/portfolio" target="_blank">
+                                Exercise2 : ソースコードを見る
+                                </a>
+                            </p>
+                            
+                            </div>
+                        ▲訓練校の制作課題２のwebサイトとソースコードはこちらからご覧ください。ソースコードは Githubにてご覧いただけます。
+                        <details>
+                        <summary>制作概要を見る</summary>
+                        
+                        <div class="workCaption">
+                                <!-- 作品概要 -->
+                        <section class="workSummary">
+                            <h4>制作内容</h4>
+                            <p>
+                                課題2「観光案内サイト」<br>
+                                制作時間：76時間×3人
+                            </p>
+                        </section>
+                        <!-- 使用技術 -->
+                        <section class="workTech">
+                            <h4>使用技術</h4>
+                            <p>
+                                HTML / CSS / JavaScript<br>
+                            </p>
+                        </section>
+
+                        <!-- 事前学習 -->
+                        <section class="workStudy">
+                            <h4>制作前の主な学習内容</h4>
+                            <p>
+                                JavaScript / jQuery / Web API / Ajax 基礎<br>
+                                学習時間：78時間<br>
+                                期間：11月7日〜11月26日
+                            </p>
+                        </section>
+                        <section class="workRole">
+                            <h4>担当範囲</h4>
+                            <p>
+                                台南ページの静的ページ作成を担当しました。<br>
+                                共通部品として、CSSとJavaScriptを用いた
+                                ドロワーメニュー、ローディングアニメーション、
+                                ヘッダー、上に戻るボタンを実装しました。
+                            </p>
+                        </section>
+
+                        <!-- 工夫点 -->
+                        <section class="workGoodPoint">
+                            <h4>この制作で工夫したこと</h4>
+                            <p>
+                                チーム全体でカンプ準拠の完成を目標にし、
+                                作業前に認識合わせを行ってから担当作業を進めました。<br>
+                                制作途中で進捗を確認し、作業分担を柔軟に調整することで
+                                期限内の完成を目指しました。
+                            </p>
+                        </section>
+                            <!-- 苦労した点 -->
+                            <section class="workHardPoint">
+                                <h4>この制作で苦労したこと</h4>
+                                <p>
+                                    初めてのチーム制作だったため、
+                                    認識のずれやバージョン管理に苦労しました。<br>
+                                    コメントやチャットツールを活用し、
+                                    情報共有を意識して制作を進めました。
+                                </p>
+                            </section>
+                            </div>
+                            </details>
+
+                            </article>                        
+                        </li>
+                        <hr>
+
+                         <li class="worksItem ">
+                            <article class="workCard">
+                                <!-- 作品タイトル -->
+                                <h3 class="workTitle">
+                                    課題３「ドーナツショップサイト」は近日中にUPいたします。<br>   
+                                    <span class="workSubTitle">C.C.Donuts</span>
+                                </h3>
+
+                                <!-- 作品リンク -->
+                                <div class="workLinks">
+                                    <p class="workLink">
+                                        <a class="ex3Img1 fontColor1" href="exercise3_ここにフォルダ名/index.php" target="_blank">
+                                        Exercise3 : Websiteを見る
+                                    
+                                    </a>
+                                    </p>
+                                    <p class="workLink">
+                                        <a class="ex3Img2 fontColor2" href="https://github.com/htomita03-pixel/portfolio" target="_blank">
+                                            Exercise3 : ソースコードを見る
+                                        </a>
+                                    </p>
+                                </div>
+                                ▲訓練校の制作課題３のwebサイトとソースコードはこちらからご覧ください。
+                                    ソースコードは Githubにてご覧いただけます。
+                                <details>
+                                 <summary><span>制作概要を見る</span></summary>
+                                    <div class="workCaption">
+                                <!-- 作品概要 -->
+                                <section class="workSummary">
+                                    <h4>制作内容</h4>
+                                    <p>
+                                        課題３「ドーナツショップサイト」<br>
+                                        制作時間：78時間
+                                    </p>
+                                </section>
+                        
+                                <!-- 使用技術 -->
+                                <section class="workTech">
+                                <h4>使用言語</h4>
+                                <p>HTML / CSS / JavaScript /SQL/PHP</p>
+                                </section>
+                                
+                                <!-- 事前学習 -->
+                                <section class="workStudy">
+                                <h4>制作前の主な学習内容</h4>
+                                <p>
+                                   PHP / SQL / サーバー上でのDATABASE作成（XAMPP利用）活用基礎<br>
+                                    学習時間：78時間<br>
+                                    期間：1月5日〜1月22日
+                                </p>
+                                </section>
+                                
+                                <section class="workGoodPoint">
+                                <h4>この制作で工夫したこと</h4>
+                                <p>
+                                   初めてのDB、SQLとPHPを用いたWEBサイト制作でした。HTML・CSSでベースのページを作成後、
+                                   PHP化し、サーバー上で機能する処理などの実装を行っています。
+                                   演習期限内では製作期間内での課題要件をクリアすることに焦点を絞り、
+                                   第一段階として、ページへの商品カート機能、会員登録機能、ログイン機能を実装しました。
+                                   その後、購入手続きなど他の機能については追加で作成予定です。
+                                </p>
+                                </section>
+
+                                <!-- 苦労した点 -->
+                                <section class="workHardPoint">
+                                    <h4>この制作で苦労したこと</h4>
+                                    <p>
+                                    PHPでの初めての作成で、まずHTMLやCSSとの表示部分の役割分け、画像の命名上の注意などの理解から苦労しました。
+                                    また、HTMLからPHPへの変更で、コードの記述間違いによりDBからの取得エラー、
+                                    処理の対象の指定間違いによるエラーなどにより、思うように処理が働かない事や、
+                                    HTMLだけの段階では表示されていたものが正しく表示されないなど、PHPならではの難しさを実感しました。<br>
+                                    この時点の自身のPHPへの理解度と制作物の量に対し、時間に限りがあったため、画面への処理状況の表示機能や、
+                                    AIなどによるコードの実行性の可否判断を補助的に活用することで期限内に一通りの機能を実装しています。
+                                    </p>
+                                </section>
+                                </div>
+                            </details>
+                      
+                            </article>
+                        </li>
+
+                        <!-- 自主制作物 -->
+                        <li class="worksItem ">
+                            <article class="workCard">
+
+                                <!-- 作品タイトル -->
+                                <h3 class="workTitle">
+                                    自主制作物のページ
+                                    <span class="workSubTitle">otherworks</span>
+                                </h3>
+                        
+                                <!-- 自主制作作品ページリンク -->
+                                <div class="workLinks">
+                                    <p class="workLink">
+                                        <a class="worksImg1" href="works/index.html" target="_blank">
+                                            otherWorks : 自主制作のページを見る
+                                        </a>
+                                        ▲自主制作物はこちらからご覧ください。<br>
+                                    </p>
+                                    <p class="workLink">
+                                    
+                                        <a class="worksImg2" href="https://github.com/htomita03-pixel/portfolio" target="_blank">
+                                            otherWorks : ソースコードを見る
+                                        </a>
+                                        ▲自主制作ページとソースコードはこちらからご覧ください。ソースコードは Githubにてご覧いただけます。
+                                    </p>
+                                </div>
+
+                                <details>
+                                <summary>制作概要を見る</summary>
+                                <div class="workCaption">
+                                <!-- 作品概要 -->
+                                <section class="workSummary">
+                                    <h4>自主制作作品につきまして</h4>
+                                    <p>
+                                        訓練課題以外での制作物を展示しております。<br>
+                                        随時更新いたします。
+                                        <ul>
+                                            <li>作品内容</li>
+                                            <li>プログラミング関連作品</li>
+                                            <li>プログラミング関連外の作品</li>
+                                        </ul>
+                                    </p>
+                                </section>
+                                </div>
+                                </details>
+
+                            </article>
+                        </li>
+                       
                     </ul>
                 </nav>
             </section>
-            <div class="Contact">
-                            <p>ご連絡はこちらへお願いいたします。<p>
-                            <address>
-                                <!--メールアドレス記載-->
-                            </address>
-            </div>
+            <hr>
+            <!-- 連絡先 -->
+            <section id="contact" class="contactSec">
+                <h3 class="contactSecH3">
+                            <i class="bi bi-stars beforeStar"></i>
+                            <span>ご連絡はこちらまで</span>
+                            <i class="bi bi-stars afterStar"></i>
+                        </h3>
+                <address>
+                    
+                    <!--<p>Googleform▼にあとでする
+                    <br><span class=""></span></p>
+                    </p>-->
+                </address>
+            </section>
 
+            <!-- 上に戻るボタン -->
             <div class="toPageTop">
                 <a href="#PageTop">
-                    <img src="common/images/testyou3.png"  class="upBtn" alt="ページのTOPへ">
+                    <img src="common/images/upBtn.svg" class="upBtn" alt="ページのTOPへ">
                 </a>
             </div>
-        
-    </div><!--wrapperの閉じ-->
 
-</main>
+        </div><!--wrapperの閉じ-->
+
+    </main>
     <footer>
-        <small>
-            &copy;2026 Hinako Tomita
+    <small>
+        <p>使用技術・開発環境<br>
+            フロントエンド: HTML, CSS, JavaScript<br>
+            <!--バックエンド: PHP<br>追加予定-->
+            フレームワーク:Bootstrap<br>
+            <!--データベース: MySQL<br>追加予定-->
+            開発ツール: VS Code, Git/GitHub<br>
+            開発補助、一部画像生成、加工:ChatGPT(基本モデル)<br>
+            共同制作での連絡ツール:Chatwork<br>
+            <!--リン考え中　どこまで詳細に書くべき？
+            <a href="" target="_blank" aria-label="">HTML Living Standard</a>
+            <a href="" target="_blank" aria-label="">CSS3</a>
+            <a href="" target="_blank" aria-label="">JavaScript</a>-->
+        </p>
+        
+            &copy;2026 Hinako Tomita. All rights reserved.
         </small>
     </footer>
-
-    <script src="scripts\script.js"></script>
+    <script src="scripts/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
 </body>
-</html>
 
+</html>
