@@ -1,0 +1,110 @@
+body {
+    font-family: '游ゴシック', 'Yu Gothic', 'ヒラギノ角ゴ ProN',
+        'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, sans-serif;
+    max-width: 600px;
+    margin: 30px auto;
+    overflow-x: hidden;
+}
+
+
+h2 {
+    border-bottom: 2px solid #333;
+}
+
+button {
+    margin: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px rgba(51, 51, 51, 0.525);
+}
+
+ul {
+    background: #f4f4f4;
+    padding: 10px;
+}
+
+.log {
+    font-size: 0.9em;
+    color: #555;
+}
+
+#js-clock {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #333;
+}
+
+#js-clock {
+    background: black;
+    color: lime;
+    padding: 10px;
+    text-align: center;
+    font-family: monospace;
+}
+
+#js-room-list li {
+    cursor: pointer;
+    padding: 5px;
+}
+
+#js-room-list li:hover {
+    background-color: #b785b6;
+}
+
+#js-room-list,
+#js-log-list {
+    list-style: none;
+    /* これで黒丸が消える */
+    padding-left: 0;
+    /* 左の余白も消す */
+}
+
+.warn10 {
+    background-color: orange;
+    color: white;
+}
+
+.warn5 {
+    background-color: red;
+    color: white;
+}
+
+.warn10 { background-color: orange; color: white; }
+.warn5  { background-color: red; color: white; }
+.blink  { animation: blink-animation 5s steps(5, start) infinite; 
+            color: white; }/*5秒かけて、5段階のコマ送りで（開始直後に最初の変化を起こし）、無限に繰り返す*/
+
+@keyframes blink-animation {
+    0%,100% { background-color: red;}
+    50%     { background-color: rgb(73, 0, 0); }
+}
+
+
+
+.toMorepage {
+ font-size: 0.75rem;
+    margin-bottom: 3rem;
+    margin-left: 60%;
+    
+
+    text-align: center;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    padding: 0.2rem 1rem;
+    width: 30%;
+    
+    background-color:rgba(112, 146, 168, 0.808);
+    text-decoration:none;
+    color: #fff;
+    display: inline-block;
+    box-shadow: 5px 5px 10px rgba(51, 51, 51, 0.525);
+}
+
+.toMorepage span{
+    transform-origin: center;
+    transform:scale(0.6) rotate(90deg);
+    color: #fff;
+    display: inline-block;
+    margin-right: 0.5rem;
+}

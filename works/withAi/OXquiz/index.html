@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tomita's Portfolio | 〇×クイズジェネレーター(JS)</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+    <div id="main-container" class="container">
+        <!-- 1. 設定エリア -->
+        <div id="setup-area">
+            <h1>〇×クイズジェネレーター（JS）</h1>
+            
+            <div class="field">
+                <div>
+                <label>保存済みクイズ：</label> 
+                <button type="button" class="btn-sm btn-danger" id="delete-local-btn">消去</button>
+                </div>
+                
+                <select id="quiz-selector"></select> 
+            </div>
+           
+
+            <div class="field">
+                <label>クイズの名前：</label>
+                <input type="text" id="quiz-title" placeholder="（例）歴史クイズ">
+            </div>
+
+            <div class="field">
+                <label>問題入力（問題,正解）：</label>
+                <textarea id="quiz-input" placeholder="織田信長は江戸幕府を開いた,×"></textarea>
+            </div>
+
+            <div class="btn-group-main">
+                <button id="save-btn" class="btn-primary">ブラウザに保存</button>
+                <div class="file-tools">
+                    <button id="download-btn" class="btn-purple">ファイルに書き出す(.txt)</button>
+                </div>
+                <div class="file-input-wrapper">
+                            <span>ファイルから読み込む：</span>
+                            <input type="file" id="file-input" accept=".txt">
+                        </div>
+            </div>
+
+            <button id="start-btn" onclick="startQuiz()">クイズ開始！</button>
+
+        </div>
+        
+        <a class="toMorepage" href="..//index.html#toWithAi" target="_blank" ><span>▲</span>AI活用作品一覧に戻る</a>
+        
+        <!-- 2. 実行エリア -->
+        <div id="quiz-area" class="hidden">
+            <div id="timer-display">⏱ <span id="seconds">10</span></div>
+            <h2 id="question-text"></h2>
+            <div class="ans-group">
+                <button id="btn-o" class="ans-btn o-btn">〇</button>
+                <button id="btn-x" class="ans-btn x-btn">×</button>
+            </div>
+            <div id="result-text"></div>
+            <button id="next-btn" class="hidden">次の問題へ</button>
+        </div>
+
+        <!-- 3. 結果発表エリア -->
+        <div id="score-area" class="hidden">
+            <h2>結果発表</h2>
+            <p id="final-score"></p>
+            <div class="btn-group-main">
+                <button id="retry-btn">最初に戻る</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 演出用オーバーレイ -->
+    <div id="js-over-lay-symbol"></div>
+
+
+
+    <script src="scripts/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Tomita's Portfolio | 気温ごとの服装アドバイス(JS)</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+
+    <div class="card">
+        <h2>Fashion Advisor</h2>
+        <p>温度を入力してね</p>
+        <!-- 設定と結果表示を横に並べるための枠-->
+        <div class="main-layout">
+            <!-- 左：温度計 -->
+            <div class="thermometer-container">
+                <div class="thermometer-outer">
+                    <div id="tempBar" class="thermometer-inner">
+                    </div>
+                </div>
+                <p>
+                    <span id="currentTemp">20</span>度
+                </p>
+            </div>
+        
+            <!-- 右：結果画像とテキスト表示 -->
+            <div class="result-area">
+                <div class="image-container"></div>
+            </div>
+           
+        
+            <div id="result-area">
+                <div id="detailVal" class="image-container2">
+                    <p><span>温度を入力してボタンを押してね！</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 入力-->
+            <div class="inputGroup">
+                <select id="tempInput">
+                    <!-- ここにセレクトボックスの数字-->
+                </select>
+                度
+                <button id="checkBtn">服装をチェック！</button>
+            </div>
+        
+    </div>
+    
+    <div class="backToPageBtn">
+       <a class="toMorepage" href="../index.html" ><span>▲</span>自主制作作品一覧に戻る</a>
+    </div>
+
+    <script src="scripts/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tomita's Portfolio | Random Name Picker（JS）</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+<div class="card">
+    <h2>Random Name Picker</h2>
+<div class="inputGroup">
+    <p>抽選する名前を1行ずつ入力：</p>
+    <textarea id="name-list" rows="5">
+        ももたろう
+        いぬ
+        さる
+        きじ
+</textarea>
+</div>
+
+<button id="roll-btn">ランダムで選ぶ！</button>
+
+<!-- 3. 結果表示 -->
+<div id="result-area">
+    <div class="total" id="total-val">0</div>
+    <div class="details" id="detailVal">ボタンを押してください</div>
+</div>
+
+<!-- 4. 履歴（一番下に配置する） -->
+<div id="history-area">
+    <div class="history-area-content">
+        <h3>履歴</h3>
+        <button id="clear-btn">消去</button>
+    </div>
+    <ul id="history-list"></ul>
+</div>
+</div>
+
+</div>
+<a class="toMorepage" href="../index.html" ><span>▲</span>自主制作作品一覧に戻る</a>
+
+<script src="scripts/script.js"></script>
+</body>
+
+</html>

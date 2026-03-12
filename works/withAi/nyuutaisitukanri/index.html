@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Tomita's Portfolio | 入退室管理システム（JS）</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+<main>
+    <h2>入退室管理システム（JS）</h2>
+    <div id="js-clock"></div>
+
+    <select id="nameSelect"></select>
+    
+    <!-- 入室時間設定（分単位） -->
+    <label for="leaveAt">退室予定時刻（HH:MM）:</label>
+    <input type="time" id="leaveAt">
+    <button id="enterBtn">入室</button>
+    <button id="leaveBtn">退室</button>
+    <button id="resetBtn">リセット</button>
+
+    <h3>現在入室中（<span id="count">0</span>人）</h3>
+    <ul id="js-room-list"></ul>
+
+    <h3>履歴</h3>
+    <ul id="js-log-list"></ul>
+    <button id="downloadBtn">CSVダウンロード</button>
+
+    <h3>総利用者数（<span id="totalCount">0</span>人）</h3>
+
+    <audio id="alertSound" src="alert.mp3"></audio>
+</main>
+    <a class="toMorepage" href="../index.html#toWithAi" target="_blank" ><span>▲</span>AI活用作品一覧に戻る</a>
+    <script src="scripts/script.js"></script>
+</body>
+
+</html>

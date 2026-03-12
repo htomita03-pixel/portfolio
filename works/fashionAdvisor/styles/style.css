@@ -1,0 +1,416 @@
+@charset "UTF-8";
+
+body {
+    width: 100%;
+    max-width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 16px;
+    overflow-x: hidden;
+}
+
+h2 {
+    margin: 50px;
+    font-size: 24px;
+}
+
+
+
+/* 基本の背景（普通） */
+.card {
+    transition: background-color 0.5s ease;/* 色の変化をふわっとさせる */
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 90%;
+
+}
+
+/* 暑い時の背景 */
+.hotTheme {
+    background-color: #ffeded;
+    border-color: #ff6b6b;
+}
+
+/* 寒い時の背景 */
+.coldTheme {
+    background: linear-gradient(to top, #42a5f5,#87cdff);/* 青いグラデーション */
+    border-color: #42a5f5;
+    color: white;
+}
+
+
+/* 画像のサイズ調整 */
+.clothesImg {
+    width: 100%;
+    object-fit: contain;
+    aspect-ratio: 1/1;
+}
+
+
+.thermometer-outer {
+    width: 30px;
+    height: 200px;
+    background: #e0e0e0;
+    border-radius: 15px;
+    margin: 20px auto;
+    overflow: hidden;/* はみ出し防止 */
+    display: flex;
+    align-items: flex-end;/* 下から上に伸びるように配置 */
+    border: 2px solid #ccc;
+}
+
+/* 中身（赤い棒） */
+.thermometer-inner {
+    width: 100%;
+    height: 50%;/* ここをJSで 0%〜100% に変える */
+    background: linear-gradient(to top, #ff4b2b, #ff416c);/* 赤いグラデーション */
+    transition: height 0.5s ease-out, background 0.5s;/* 動きを滑らかに */
+}
+
+.tempBar {
+    width: 40px;
+    background: orange;
+    transition: height 0.3s;
+}
+
+/* 寒い時は青くしたい場合のクラス */
+.coldBar {
+    background: linear-gradient(to top, #4facfe, #00f2fe) ;
+}
+
+
+
+
+.main-layout {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    margin: 30px auto;
+    border-radius: 10px;
+    border: 1px solid #333;
+    padding: 20px;
+}
+
+/* 温度計調整 */
+.thermometer-container {
+    margin: 0;
+}
+
+#result-area {
+    flex: 1;
+    max-width: 80%;
+    
+}
+
+.inputGroup input{
+    border: 1px solid #333;
+    padding: 4px;
+    background-color: #fff;
+}
+#checkBtn {
+    padding: 10px 16px;
+    min-width: 140px;
+    border: 1px solid #333;
+    color: #333;
+    border-radius: 10px;
+}
+
+
+
+.image-container2 {
+ margin: 0 auto;
+}
+
+.result-area {
+    flex: 1;
+    max-width: 250px;
+    border: 1px solid #fff;
+}
+
+#result-area  .image-container2 p{
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+
+
+/* 雪の基本スタイル */
+.snowFlake {
+    position: fixed;
+    top: -10px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.9;
+    z-index: 999;
+    animation-name: fall;
+    animation-timing-function: linear;
+    pointer-events: none;
+}
+
+/* 落下アニメーション */
+@keyframes fall {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(100vh); /* 画面の一番下まで落ちる */
+    }
+}
+
+.snowFlake {
+    position: fixed;
+    top: -10px;
+    background: white;
+    border-radius: 50%;
+    pointer-events: none;
+
+    animation-name: snowFall;
+    animation-timing-function: linear;
+}
+
+@keyframes snowFall {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+.backToPageBtn {
+    margin: 50px 0;
+    text-align: right;
+}
+
+.toMorepage {
+    font-size: 0.75rem;
+    text-align: center;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    padding: 0.2rem 1rem;
+    background-color: rgba(112, 146, 168, 0.808);
+    text-decoration: none;
+    color: #fff;
+    display: inline-block;
+    width: auto;
+    margin: 0;
+    box-shadow: 5px 5px 10px rgba(51, 51, 51, 0.525);
+}
+
+.toMorepage span{
+    transform-origin: center;
+    transform:scale(0.6) rotate(90deg);
+    color: #fff;
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+
+.toMorepage {
+    margin-left: 60%;
+    width: 30%;
+
+}
+
+.main-layout {
+        flex-direction: column;
+    }
+
+
+@media only screen and (min-width: 768px) {
+    .main-layout {
+        flex-direction: row;
+    }
+
+    body {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 16px;
+    overflow-x: hidden;
+}
+
+h2 {
+    margin: 50px;
+    font-size: 24px;
+}
+
+
+
+/* 基本の背景（普通） */
+.card {
+    transition: background-color 0.5s ease;/* 色の変化をふわっとさせる */
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+  
+
+}
+
+/* 暑い時の背景 */
+.hotTheme {
+    background-color: #ffeded;
+    border-color: #ff6b6b;
+}
+
+/* 寒い時の背景 */
+.coldTheme {
+    background: linear-gradient(to top, #42a5f5,#87cdff);/* 青いグラデーション */
+    border-color: #42a5f5;
+    color: white;
+}
+
+
+/* 画像のサイズ調整 */
+.clothesImg {
+    width: 100%;
+    object-fit: contain;
+    aspect-ratio: 1/1;
+}
+
+.thermometer-container {
+   
+   width: 40%;
+}
+
+
+.thermometer-outer {
+    width: 30px;
+    height: 200px;
+    background: #e0e0e0;
+    border-radius: 15px;
+    margin: 20px auto;
+    overflow: hidden;/* はみ出し防止 */
+    display: flex;
+    align-items: flex-end;/* 下から上に伸びるように配置 */
+    border: 2px solid #ccc;
+}
+
+/* 中身（赤い棒） */
+.thermometer-inner {
+    width: 100%;
+    height: 50%;/* ここをJSで 0%〜100% に変える */
+    background: linear-gradient(to top, #ff4b2b, #ff416c);/* 赤いグラデーション */
+    transition: height 0.5s ease-out, background 0.5s;/* 動きを滑らかに */
+}
+
+/* 寒い時は青くしたい場合のクラス */
+.coldBar {
+    background: linear-gradient(to top, #4facfe, #00f2fe) ;
+}
+
+.main-layout {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    margin: 30px auto;
+    border-radius: 10px;
+    border: 1px solid #333;
+    padding: 20px;
+}
+
+/* 温度計がちょっと左に寄りすぎないように調整 */
+.thermometer-container {
+    margin: 0;
+}
+
+/* 結果エリアの調整 */
+#result-area {
+    flex: 1;/* 残りのスペースを埋める */
+    max-width: 30%;/* 画像が大きくなりすぎないように制限 */
+    margin-right: 15%;
+}
+
+.inputGroup input{
+    border: 1px solid #333;
+    padding: 4px;
+    background-color: #fff;
+}
+#checkBtn {
+    padding: 10px 16px;
+    min-width: 140px;
+    border: 1px solid #333;
+    
+    color: #333;
+    border-radius: 10px;
+}
+
+
+
+.image-container2 {
+ margin: 0 auto;
+}
+
+.result-area {
+    flex: 1;
+    max-width: 250px;
+    border: 1px solid #fff;
+}
+
+#result-area  .image-container2 p{
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+
+
+/* 雪の基本スタイル */
+.snowFlake {
+    position: fixed;
+    top: -10px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.9;
+    z-index: 999;
+    animation-name: fall;
+    animation-timing-function: linear;
+    pointer-events: none;
+}
+
+/* 落下アニメーション */
+@keyframes fall {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(100vh); /* 画面の一番下まで落ちる */
+    }
+}
+
+
+
+.backToPageBtn {
+    margin: 50px 0;
+    text-align: right;
+}
+
+.toMorepage {
+    font-size: 0.75rem;
+    text-align: center;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    padding: 0.2rem 1rem;
+    background-color: rgba(112, 146, 168, 0.808);
+    text-decoration: none;
+    color: #fff;
+    display: inline-block;
+    width: auto;
+    margin: 0;
+}
+
+.toMorepage span{
+    transform-origin: center;
+    transform:scale(0.6) rotate(90deg);
+    color: #fff;
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+
+.toMorepage {
+    margin-left: 60%;
+    width: 30%;
+}
+}

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../common/reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+
+    <title>Tomita's Portfolio | WithAI</title>
+
+
+</head>
+
+<body>
+    <div id="PageTop"></div>
+    <!-- 背景画像 -->
+    <div class="backImg"></div>
+
+    <!-- ヘッダー-->
+    <header>
+        <div class="headerNav">
+
+            <h1 class="titleImg">
+                Tomita's Portfolio
+            </h1>
+
+            <!-- ドロワー開くボタン（スマホのみ） -->
+            <div id="js-drawer-open" class="spOnly">
+                <img src="../../common/images/listBtn.svg" id="js-open-btn" alt="ドロワーオープンボタン画像">
+            </div>
+
+            <!-- PC用メニュー（横並び） -->
+            <nav class="pcMenu pcOnly">
+                <ul>
+                    <li class="spOnly">Menu</li>
+                    <li><a href="../../index.html"target="_blank">Top</a></li>
+                    <li><a href="../../about/index.html"target="_blank">AboutMe</a></li>
+                    <li><a href="../../exercise1_DesignHouseRenovations/index.html" target="_blank">Exercise1</a></li>
+                    <li><a href="../../exercise2_taiwankankou/index.html" target="_blank">Exercise2</a></li>
+                    <li><a href="../../exercise3_ccdonuts/index.php" target="_blank">Exercise3</a></li>
+                    <li><a href="../index.html" target="_blank">OtherWorks</a></li>
+                </ul>
+            </nav>
+
+            <!-- ドロワーメニュー -->
+            <div id="js-drawer-menu" class="spOnly">
+                <img src="../../common/images/listCloseBtn.svg" id="js-close-btn" alt="ドロワークローズボタン画像">
+
+                <nav class="drawerMenu">
+                    <ul>
+                        <li>Menu</li>
+                        <li><a href="../../index.html"target="_blank">Top</a></li>
+                        <li><a href="../../about/index.html"target="_blank">AboutMe</a></li>
+                        <li><a href="../../exercise1_DesignHouseRenovations/index.html" target="_blank">Exercise1</a></li>
+                        <li><a href="../../exercise2_taiwankankou/index.html" target="_blank">Exercise2</a></li>
+                        <li><a href="../../exercise3_ccdonuts/index.php" target="_blank">Exercise3</a></li>  
+                        <li><a href="../works/index.html" target="_blank">OtherWorks</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    
+        <main>
+            <h2></h2>
+            <h3 id="toWithAi">
+                <i class="bi bi-stars beforeStar"></i>
+                <span>AI活用によって制作した作品</span> <!--スクリーンショットなどで作成内容などを軽く触れるだけにとどめる-->
+                <i class="bi bi-stars afterStar"></i>
+                <br>
+                <span class="moreSubTitle">
+                    AIとの共同作業により作成した機能をご紹介します。<br>
+                    こちらのページの制作物は、作成したい内容を指定し、<br>
+                    AIが提示したコードを一部修正して機能を制作したものです。<br>
+                    オフラインでもブラウザで気軽に試すことができるjavascriptで作成しました。
+                </span>
+
+            </h3>
+            <ul class="worksList">
+
+                <!-- aiWorks1 -->
+                <li class="worksItem ">
+                    <article class="workCard">
+                        <!-- 作品タイトル -->
+                        <h3 class="workTitle" id="works1">
+                            作品１「入退室管理システム」(Javascript)<br>
+                            <span class="workSubTitle"></span>
+                        </h3>
+
+                        <!-- 作品リンク -->
+                        <div class="workLinksMore">
+                            <p class="workLink">
+                                <a class="aiWorks2Img1 fontColor1" href="nyuutaisitukanri/index.html" target="_blank">
+                                    withAI-1 : 作成内容を見る
+
+                                </a>
+                            </p>
+                        </div>
+                        ▲AI活用作品１はこちらからご覧ください。
+                        
+                        <details>
+                            <summary><span>制作概要を見る</span></summary>
+                            <div class="workCaption">
+                                <!-- 作品概要 -->
+                                <section class="workSummary">
+                                    <h4>制作内容</h4>
+                                    <p>
+                                        AI活用作品・1「簡易版入退室管理システム」<br>
+                                        ・常に現在時刻が画面上に表示されます。<br>
+                                        ・名前をJSONデータで取り込んでおき、セレクトボックスで入室者を選択。<br>
+                                        ・すでに入室しているときはエラー表示が出ます。<br>
+                                        ・入室の時は、退室予定時刻をセレクトボックスで選択し入室登録。<br>
+                                        ・入室中はその人物の在室状況がリストに表示され、退室予定時刻、予定時刻までのカウントダウンも隣に表示されます。<br>
+                                        ・予定退室時刻が迫ると、対象となる人のデータ表示色が変化します。<br>
+                                        ・退室の時は入室中の名前表示をクリックすると退室処理ができます。
+                                        ・画面下には入退室の記録が表示されます。<br>
+                                        ・履歴をダウンロードすることができます。<br>
+                                        ・リセットのボタンを押すと、すべての履歴が消去されます。<br>
+                                        ・リセットボタンを押すか、ブラウザデータが消えるまで履歴は保持されます。
+                                    </p>
+                                </section>
+
+                                <!-- 使用技術 -->
+                                <section class="workTech">
+                                    <h4>使用言語</h4>
+                                    <p>HTML / CSS / Javascript</p>
+                                </section>
+
+                                    <!--工夫したこと-->
+                                    <section class="workGoodPoint">
+                                        <h4>この制作で工夫したこと</h4>
+                                        <p>
+                                            前職の学童クラブで勤めていた頃、児童の入退室システムに興味があり、
+                                            プログラミングを学ぶ事で機能を理解、作成できるようになりたいと考えていました。<br>
+                                            機能をそろえるには難易度が高く、私一人では実現が困難でしたが、AIを活用することで実現できました。
+                                            学習のため、なるべく私が理解できる範囲に収める形で、HTML/CSS/JSで言語でできる簡易的な入退室システムを作成しています。
+                                            ＊オフラインでもブラウザを使用できれば機能します。
+                                            </p>
+                                    </section>
+                            </div>
+                        </details>
+
+                    </article>
+                </li>
+                <hr>
+
+                
+                <!-- aiWorks2 -->
+                <li class="worksItem ">
+                    <article class="workCard">
+                        <!-- 作品タイトル -->
+                        <h3 class="workTitle" id="works1">
+                            作品2「〇×クイズジェネレーター」(Javascript)<br>
+                            <span class="workSubTitle"></span>
+                        </h3>
+                
+                        <!-- 作品リンク -->
+                        <div class="workLinksMore">
+                            <p class="workLink">
+                                <a class="aiWorks2Img2 fontColor1" href="OXquiz/index.html" target="_blank">
+                                    withAI-2 : 作成内容を見る
+                                </a>
+                            </p>
+                        </div>
+                        
+                        ▲AI活用作品２はこちらからご覧ください。
+                        <details>
+                            <summary><span>制作概要を見る</span></summary>
+                            <div class="workCaption">
+                                <!-- 作品概要 -->
+                                <section class="workSummary">
+                                    <h4>制作内容</h4>
+                                    <p>
+                                        AI活用作品・２「〇×クイズジェネレーター」<br>
+                                        ・出題者が事前にクイズと答えを一行一問ずつ入力<br>
+                                        ・開始ボタンで制限時間付きでクイズセットが開始されます。<br>
+                                        ・クイズの正当数をカウント。<br>
+                                        ・作ったクイズはブラウザに保存すれば、ブラウザのデータが消えるまではそのまま利用可能。<br>
+                                        ・作ったクイズのtxt形式データをダウンロードして読みだせば、再利用可能。<br>
+                                    </p>
+                                </section>
+                
+                                <!-- 使用技術 -->
+                                <section class="workTech">
+                                    <h4>使用言語</h4>
+                                    <p>HTML / CSS / Javascript</p>
+                                </section>
+                
+                                    <!--苦労したこと-->
+                                    <section class="workGoodPoint">
+                                        <h4>この制作で工夫したこと</h4>
+                                        <p>
+                                            学童クラブでよく行われるクイズイベントで使える〇×クイズジェネレーターを作成してみました。<br>
+                                            難易度が高く、私一人では実現が困難でしたが、AIを活用し、なるべく私が理解できる範囲に収める形で、
+                                            HTML/CSS/JSで言語でできる簡易的な入退室システムを作成してみました。
+                                            ＊オフラインでもブラウザを使用できれば機能します。
+                                           </p>
+                                    </section>
+                            </div>
+                        </details>
+                
+                    </article>
+                </li>
+
+
+               
+            </ul>
+
+            <!-- 上に戻るボタン -->
+            <div class="toPageTop">
+                <a href="#PageTop">
+                    <img src="../../common/images/upBtn.svg" class="upBtn" alt="ページのTOPへ">
+                </a>
+            </div>
+        </main>
+        <footer>
+            <small>
+                <p>使用技術・開発環境<br>
+                    フロントエンド: HTML, CSS, JavaScript<br>
+                    バックエンド: PHP<br>
+                    フレームワーク:Bootstrap<br>
+                    データベース: MySQL(mariaDB)<br>
+                    開発ツール: VS Code, Git/GitHub<br>
+                    開発補助、一部画像生成、加工:ChatGPT(基本モデル)<br>
+                    共同制作での連絡ツール:Chatwork<br>
+                </p>
+
+                <hr>
+            &copy;2026 Tomita. All rights reserved.
+            </small>
+        </footer>
+        <script src="scripts/script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+            crossorigin="anonymous"></script>
+    </body>
+
+</html>

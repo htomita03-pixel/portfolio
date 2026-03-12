@@ -1,32 +1,398 @@
 <!DOCTYPE html>
-<html lang="jn">
+<html lang="ja">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="common/reset.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="../common/reset.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="styles/style.css">
-    <title>Portfolio</title>
+
+    <title>Tomita's Portfolio| OtherWorks</title>
+    
+
 </head>
 
 <body>
-    準備中です
-<div class="worksAtend">
-    <div class="worksAtendImg">
-        <img src="..\common/images/testyou0.png">
-        <img src="..\common/images/testyou1.png">
-        <img src="..\common/images/testyou2.png">
-        <img src="..\common/images/testyou3.png">
-    </div>
+    <div id="PageTop"></div>
+    <!-- 背景画像 -->
+    <div class="backImg"></div>
 
-    <div class="worksAtendImg">
-        <img src="..\common/images/testyou0.png">
-        <img src="..\common/images/testyou1.png">
-        <img src="..\common/images/testyou2.png">
-        <img src="..\common/images/testyou3.png">
-    </div>
-</div>
+    <!-- ヘッダー-->
+    <header>
+        <div class="headerNav">
+
+            <h1 class="titleImg">
+                Tomita's Portfolio
+            </h1>
+
+            <!-- ドロワー開くボタン（スマホのみ） -->
+            <div id="js-drawer-open" class="spOnly">
+                <img src="../common/images/listBtn.svg" id="js-open-btn" alt="ドロワーオープンボタン画像">
+            </div>
+
+            <!-- PC用メニュー（横並び） -->
+            <nav class="pcMenu pcOnly">
+                <ul>
+                    <li class="spOnly">Menu</li>
+                    <li><a href="../index.html"target="_blank">Top</a></li>
+                    <li><a href="../about/index.html"target="_blank">AboutMe</a></li>
+                    <li><a href="../exercise1_DesignHouseRenovations/index.html" target="_blank">Exercise1</a></li>
+                    <li><a href="../exercise2_taiwankankou/index.html" target="_blank">Exercise2</a></li>
+                    <li><a href="../exercise3_ccdonuts/index.php" target="_blank">Exercise3</a></li>
+                    <li><a href="index.html">OtherWorks</a></li>
+                </ul>
+            </nav>
+
+            <!-- ドロワーメニュー -->
+            <div id="js-drawer-menu" class="spOnly">
+                <img src="../common/images/listCloseBtn.svg" id="js-close-btn"  alt="ドロワークローズボタン画像">
+
+                <nav class="drawerMenu">
+                    <ul>
+                        <li>Menu</li>
+                        <li><a href="../index.html"target="_blank">Top</a></li>
+                        <li><a href="../about/index.html"target="_blank">AboutMe</a></li>
+                        <li><a href="../exercise1_DesignHouseRenovations/index.html" target="_blank">Exercise1</a></li>
+                        <li><a href="../exercise2_taiwankankou/index.html" target="_blank">Exercise2</a></li>
+                        <li><a href="../exercise3_ccdonuts/index.php" target="_blank">Exercise3</a></li> 
+                        <li><a href="index.html" >OtherWorks</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+
+<main>
+   
+
+     <h3 id="toWorks">
+        <i class="bi bi-stars beforeStar"></i>
+        <span>自主制作作品</span>
+        <i class="bi bi-stars afterStar"></i>
+         <br>
+        <span class="moreSubTitle">
+            　訓練課題以外の制作物をご紹介いたします。<br>
+        </span>
+
+    </h3>      
+    <ul class="worksList">
+
+                        <!-- works1 -->
+                        <li class="worksItem ">
+                            <article class="workCard">
+                                <!-- 作品タイトル -->
+                                <h3 class="workTitle" id="works1">
+          
+                                   作品１「さいころ機能」(Javascript)<br>   
+                                    <span class="workSubTitle">JSDice Roller</span>
+                                </h3>
+
+                                <!-- 作品リンク -->
+                                <div class="workLinks">
+                                    <p class="workLink">
+                                        <a class="diceImg fontColor1" href="dice/index.html" target="_blank">
+                                        works1 : Websiteを見る
+                                    
+                                    </a>
+                                    </p>
+                                    <p class="workLink">
+                                        <a class="diceImgCode fontColor2" href="https://github.com/htomita03-pixel/portfolio" target="_blank">
+                                            works1 : ソースコードを見る
+                                        </a>
+                                    </p>
+                                </div>
+                                ▲自主制作作品１のwebサイトとソースコードはこちらからご覧ください。
+                                    ソースコードは Githubにてご覧いただけます。
+                                <details>
+                                 <summary><span>制作概要を見る</span></summary>
+                                    <div class="workCaption">
+                                <!-- 作品概要 -->
+                                <section class="workSummary">
+                                    <h4>制作内容</h4>
+                                    <p>
+                                        作品1「JSDice Roller」<br>
+                                    </p>
+                                </section>
+                        
+                                <!-- 使用技術 -->
+                                <section class="workTech">
+                                <h4>使用言語</h4>
+                                <p>HTML / CSS / Javascript</p>
+                                </section>
+                            
+                                
+                                <!--苦労したこと--><section class="workGoodPoint">
+                                <h4>この制作で工夫したこと</h4>
+                                <p>
+                                   以前からJavascriptのダイスロールを利用していたのですが、
+                                   自分でも作成したいと考え、元のサイトを参考に簡易版を作成してみました。
+                                   ゲームの順番決めや、くじ引きなどに使いやすいよう、表示は大きめに、履歴や削除の機能をつけました。
+                                </p>
+                                </section>
+
+                                <!-- 苦労した点 -->
+                                <section class="workHardPoint">
+                                    <h4>この制作で苦労したこと</h4>
+                                    <p>
+                                        参考に用いたサイトが１０年以上前からあるものなので、現在の技術に置き換えて、
+                                        機能を作成することになり、WEBサイトなどから調べ、AIの生成コードも参考に作成しました。
+                                        サイコロの出目の条件設定、履歴の表示と削除の実装に苦労しました。
+                                    </p>
+                                </section>
+                                </div>
+                            </details>
+                      
+                            </article>
+                        </li>
+                        <hr>
+
+                         <!-- works2 -->
+                        <li class="worksItem ">
+                            <article class="workCard">
+                                <!-- 作品タイトル -->
+                                <h3 class="workTitle" id="works2">
+           
+                                   作品２「気温の変化に合わせた服装を提案する機能」(Javascript)<br>   
+                                    <span class="workSubTitle">Fashion Advisor</span>
+                                </h3>
+
+                                 <!-- 作品リンク -->
+                                <div class="workLinks">
+                                    <p class="workLink">
+                                        <a class="fashionImg fontColor1"  href="fashionAdvisor/index.html" target="_blank">
+                                        works2 : Websiteを見る
+                                    
+                                    </a>
+                                    </p>
+                                    <p class="workLink">
+                                        <a class="fashionImgCode fontColor2" href="https://github.com/htomita03-pixel/portfolio" target="_blank">
+                                            works2 : ソースコードを見る
+                                        </a>
+                                    </p>
+                                </div>
+                                ▲自主制作作品２のwebサイトとソースコードはこちらからご覧ください。
+                                    ソースコードは Githubにてご覧いただけます。
+                                <details>
+                                 <summary><span>制作概要を見る</span></summary>
+                                    <div class="workCaption">
+                                <!-- 作品概要 -->
+                                <section class="workSummary">
+                                    <h4>制作内容</h4>
+                                    <p>
+                                        作品２「Fashion Advisor」<br>
+                                        
+                                    </p>
+                                </section>
+                        
+                                <!-- 使用技術 -->
+                                <section class="workTech">
+                                <h4>使用言語</h4>
+                                <p>HTML / CSS / Javascript</p>
+                                </section>
+                                
+                                
+                                <!--苦労したこと--><section class="workGoodPoint">
+                                <h4>この制作で工夫したこと</h4>
+                                <p>
+                                   ダイスで用いたコードを応用し、 AIの生成コードも参考に必要な機能を作っています。<br>
+                                   私自身、日々の気温の変化で着る服を迷うことが多くあったため、
+                                   気温によって服装を提案してくれる機能を作成しました。<br>
+                                   寒いときや熱いときの背景をCSSとJSの組み合わせで変更させたり、
+                                   温度計に変化を加えたりすることで、気温の変化を視覚的に感じ取れるようにしています。
+                                </p>
+                                </section>
+
+                                <!-- 苦労した点 -->
+                                <section class="workHardPoint">
+                                    <h4>この制作で苦労したこと</h4>
+                                    <p>
+                                    どのあたりの温度にどの服装を設定するのが適正なのかの確認や、温度ごとの条件設定、<br>
+                                    温度計のシームレスな動きと色の変化の実装<br>
+                                    他、マウスで服の絵を描いたことなどで苦労しました。<br>
+                                    </p>
+                                </section>
+                                </div>
+                            </details>
+                      
+                            </article>
+                        </li>
+                         <!-- works3 -->
+                        <li class="worksItem ">
+                            <article class="workCard">
+                                <!-- 作品タイトル -->
+                                <h3 class="workTitle" id="works3">
+                                    作品３「入力されたテキストをランダムに表示する機能」(Javascript)<br>   
+                                    <span class="workSubTitle">Random Name Picker</span>
+                                </h3>
+
+                                <!-- 作品リンク -->
+                                <div class="workLinks">
+                                    <p class="workLink">
+                                        <a class="nameDiceImg fontColor1" href="diceName/index.html" target="_blank">
+                                        works3 : Websiteを見る
+                                    
+                                    </a>
+                                    </p>
+                                    <p class="workLink">
+                                        <a class="nameDiceCode fontColor2" href="https://github.com/htomita03-pixel/portfolio" target="_blank">
+                                            works3 : ソースコードを見る
+                                        </a>
+                                    </p>
+                                </div>
+                                ▲自主制作作品３のページとソースコードはこちらからご覧ください。
+                                    ソースコードは Githubにてご覧いただけます。
+                                <details>
+                                 <summary><span>制作概要を見る</span></summary>
+                                    <div class="workCaption">
+                                <!-- 作品概要 -->
+                                <section class="workSummary">
+                                    <h4>制作内容</h4>
+                                    <p>
+                                        作品３「テキストランダム表示機能(Javascript)」<br>
+                                    </p>
+                                </section>
+                        
+                                <!-- 使用技術 -->
+                                <section class="workTech">
+                                <h4>使用言語</h4>
+                                <p>HTML / CSS / Javascript</p>
+                                </section>
+                                
+                                <!--苦労したこと--><section class="workGoodPoint">
+                                <h4>この制作で工夫したこと</h4>
+                                <p>
+                                   ダイスで用いたコードを応用し、 AIの生成コードも参考に必要な機能を作っています。<br>
+                                   ゲームの際などにチーム名などでくじ引きの結果表示を行いたいと考え、
+                                   テキストボックスに入力した内容をランダムに表示できる機能を作成しました。<br>
+                                </p>
+                                </section>
+
+                                <!-- 苦労した点 -->
+                                <section class="workHardPoint">
+                                    <h4>この制作で苦労したこと</h4>
+                                    <p>
+                                    テキストボックスに複数の項目の入力を行えるようにしたことや、<br>
+                                    ダイスからの応用なのでどこを新たに書き直すかの見極めと書き換えなどに苦労しました。<br>
+                                    </p>
+                                </section>
+                                </div>
+                            </details>
+                      
+                            </article>
+                        </li>
+                        <li class="worksItem ">
+                            <article class="workCard">
+                                <!-- 作品タイトル -->
+                                <h3 class="workTitle" id="worksWithAi">
+                                  
+                                   その他： AI活用による成果物のご紹介ページ<br>   
+                                    <span class="workSubTitle">自主制作のうちAI活用による制作物をご紹介します。
+                                    </span>
+                                </h3>
+
+                                <!-- 作品リンク -->
+                                <div class="workLinksMore">
+                                    <p class="workLink">
+                                        <a class="withAiImg fontColor1" href="withAi/index.html" target="_blank">
+                                         withAI : Websiteを見る
+                                    </a>
+                                    </p>
+                                    
+                                </div>
+                                ▲自主制作のうちAI活用による制作物はこちらからご覧ください。
+                                <details>
+                                 <summary><span>ページ概要を見る</span></summary>
+                                    <div class="workCaption">
+                                        <!-- ページ概要 -->
+                                        <section class="workSummary">
+                                            <h4>ページの主な内容</h4>
+                                            <p>
+                                               ・ 入退室管理システム<br>
+                                                ・〇×クイズジェネレーター<br>
+                                                <span>
+                                                学童クラブでの業務の中で、必要性を感じた機能のうち難易度の高い機能や、今回の制作時間で作成できなかった機能を、AI活用により作成したものです。<br>
+                                                Javascriptで機能を作成しています。
+                                                </span>
+                                            </p>
+                                        </section>
+                                
+                                    </div>
+                            </details>
+                      
+                            </article>
+                        </li>
+                        
+
+
+                        <!-- プログラミング以外の制作物のページへのリンク -->
+                        <li class="worksItem ">
+                            <article class="workCard">
+                                <!-- 作品タイトル -->
+                                <h3 class="workTitle" id="worksAnother">
+                                  
+                                   その他(more)： そのほかの成果物のご紹介ページ<br>   
+                                    <span class="workSubTitle">プログラミング以外の経験、制作物、スキルなどのご紹介</span>
+                                </h3>
+
+                                <!-- 作品リンク -->
+                                <div class="workLinksMore">
+                                    <p class="workLink">
+                                        <a class="moreImg fontColor1" href="more/index.html" target="_blank">
+                                         more : Websiteを見る
+                                    
+                                    </a>
+                                    </p>
+                                </div>
+                                ▲プログラミング以外の制作物はこちらからご覧ください。
+                                <details>
+                                 <summary><span>ページ概要を見る</span></summary>
+                                    <div class="workCaption">
+                                        <!-- ページ概要 -->
+                                        <section class="workSummary">
+                                            <h4>ページの主な内容</h4>
+                                            <p>
+                                            本人の制作した絵画<br>
+                                            </p>
+                                        </section>
+                                
+                                    </div>
+                            </details>
+                      
+                            </article>
+                        </li>
+     </ul>
+
+    <!-- 上に戻るボタン -->
+        <div class="toPageTop">
+            <a href="#PageTop">
+                <img src="../common/images/upBtn.svg" class="upBtn" alt="ページのTOPへ">
+            </a>
+        </div>
+    </main>
+   <footer>
+    <small>
+        <p>使用技術・開発環境<br>
+       <hr>
+            フロントエンド: HTML, CSS, JavaScript<br>
+            バックエンド: PHP<br>
+            フレームワーク:Bootstrap<br>
+            データベース: MySQL(mariaDB)<br>
+            開発ツール: VS Code, Git/GitHub<br>
+            開発補助、一部画像生成、加工:ChatGPT(基本モデル)<br>
+            共同制作での連絡ツール:Chatwork<br>
+           
+        </p>
+            <hr>
+            &copy;2026 Tomita. All rights reserved.
+        </small>
+    </footer>
+    <script src="scripts/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
 </body>
-<script src="scripts\script.js"></script>
-
 </html>

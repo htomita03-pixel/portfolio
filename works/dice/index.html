@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tomita's Portfolio | JS Dice Roller</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+
+    <div class="card">
+        <h2>JS Dice Roller</h2>
+
+        <!-- 入力-->
+        <div class="inputGroup">
+            <input type="number" id="sides" value="6" min="1"> 面のサイコロを
+            <input type="number" id="num" value="2" min="1"> 個振る
+        </div>
+
+        <button id="roll-btn">ダイスを振る！</button>
+
+        <!--結果-->
+        <div id="result-area">
+            <div class="total" id="total-val">0</div>
+            <div class="details" id="detail-val">ボタンを押してください</div>
+        </div>
+
+        <!--履歴-->
+        <div id="history-area">
+            <div class="history-header">
+                <h3>履歴</h3>
+                <button id="clear-btn">消去</button>
+            </div>
+            <ul id="history-list"></ul>
+        </div>
+
+        <a class="toMorepage" href="../index.html"><span>▲</span>自主制作作品一覧に戻る</a>
+    </div>
+
+</body>
+
+</html>
+
+
+    
+
+    <script src="scripts/script.js"></script>
+</body>
+
+</html>

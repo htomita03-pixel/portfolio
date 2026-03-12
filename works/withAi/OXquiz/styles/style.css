@@ -1,0 +1,210 @@
+/* 基本レイアウト */
+body {
+    font-family: '游ゴシック', 'Yu Gothic', 'ヒラギノ角ゴ ProN',
+        'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, sans-serif;
+    text-align: center;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f4f7f6;
+    transition: background-color 0.3s;
+    overflow-x: hidden;
+}
+
+.container {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 550px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.hidden { 
+    display: none; 
+}
+
+/* 入力エリアの装飾 */
+.field { 
+    margin-bottom: 15px; 
+    text-align: left;
+ }
+
+label {
+     display: block; 
+    font-weight: bold; 
+    margin-bottom: 5px; 
+}
+textarea, input[type="text"], select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* ボタン類 */
+
+button { 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-weight: bold; 
+box-shadow: 5px 5px 10px rgba(51, 51, 51, 0.525);
+}
+
+.btn-group-main { 
+    margin: 20px 0; 
+    display: flex; 
+    gap: 10px; 
+    justify-content: center; 
+}
+
+.btn-success { 
+    background: #28a745; 
+    color: white; 
+}
+
+.btn-primary { 
+    background: #007bff; 
+    color: white; 
+}
+
+
+.btn-purple { 
+    background: #6f42c1; 
+    color: white; 
+}
+
+.btn-dark { 
+    background: #000; 
+    color: white; 
+}
+
+.btn-danger { 
+    background: #2b2122; 
+    color: white; 
+    width: 10%; 
+    padding: 4px 8px; 
+    margin: 10px; 
+    margin-left: 30%;}
+
+    
+.toMorepage {
+ font-size: 0.75rem;
+    margin-bottom: 3rem;
+    margin-left: 60%;
+    
+
+    text-align: center;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    padding: 0.2rem 1rem;
+    width: 30%;
+    
+    background-color:rgba(112, 146, 168, 0.808);
+    text-decoration:none;
+    color: #fff;
+    display: inline-block;
+    box-shadow: 5px 5px 10px rgba(51, 51, 51, 0.525);
+}
+
+.toMorepage span{
+    transform-origin: center;
+    transform:scale(0.6) rotate(90deg);
+    color: #fff;
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+
+#start-btn {
+    width: 30%;
+    margin: 20px auto;
+    padding: 20px 30px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-weight: bold; 
+    background: #ff4757; 
+    color: #fff;
+}
+
+#setup-area {
+    border: 1px solid #2f3542;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+/* 実行中 */
+#timer-display { 
+    font-size: 2em; 
+    color: #e74c3c; 
+    margin-bottom: 10px; 
+}
+
+.ans-group { 
+    display: flex; 
+    gap: 20px; 
+    justify-content: center; 
+    margin: 30px 0; 
+}
+
+.ans-btn { 
+    font-size: 3em; 
+    width: 100px; 
+    height: 100px; 
+    border-radius: 50%; 
+    color: white; 
+}
+
+.o-btn { 
+    background: #ff4757; 
+}
+.x-btn { 
+    background: #2f3542; 
+}
+
+
+
+/* 判定演出 */
+#js-over-lay-symbol {
+    position: fixed; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%) scale(0);
+    font-size: 200px; 
+    font-weight: bold; 
+    opacity: 0; 
+    pointer-events: none; 
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#js-over-lay-symbol.show { 
+    opacity: 0.8; 
+    transform: translate(-50%, -50%) scale(1.2); 
+}
+
+.bg-correct { 
+    background-color: #d1f2eb; 
+}
+
+.bg-wrong { 
+    background-color: #f9ebea; 
+}
+
+
+.show.symbol-o {
+    color:  #ff4757;
+}
+
+.field div{
+    display: flex; 
+}
+
+.field label {
+    width: 300px;
+}
+

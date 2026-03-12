@@ -1,9 +1,9 @@
-@charset "utf-8";
+@charset "UTF-8";
+
 html {
     scroll-behavior: smooth;
 box-sizing: border-box;
 }
-
 
 /* 表示切替 */
 .spOnly {
@@ -13,15 +13,17 @@ box-sizing: border-box;
 .pcOnly {
     display: none;
 }
+
+
 html,
 body {
     width: 100%;
     margin: 0;
     padding: 0;
-   overflow-x: hidden;
     line-height: 1.6;
     font-family: '游ゴシック', 'Yu Gothic', 'ヒラギノ角ゴ ProN',
         'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, sans-serif;
+    overflow-x: hidden;
 }
 
 *,
@@ -33,6 +35,8 @@ body {
 body {
     font-size: 16px;
 }
+
+
 header{
     z-index: 1;
 }
@@ -40,11 +44,15 @@ header{
 .wrapper {
     max-width: 1200px;/* 最大幅を1200pxに制限 */
     margin: 0 auto;
-    padding: 20px;
+    padding: 0px;
     position: relative;
     z-index: 1;/* 背景より前 */
     
+    text-align: center;/*念のため*/
 }
+
+
+
 
 
 header,
@@ -55,9 +63,13 @@ footer {
     padding: 5px;
 }
 
+
+
+
 /*メインのコンテンツについて*/
    main {
     padding: 20px;
+    margin-bottom: 50px;
 }
 
 /* 画像に関する設定 */
@@ -74,36 +86,6 @@ h2 {
     padding: 3%;
 }
 
-/*見出しと飾り*/
-    h3 {
-        font-size: 18px;
-        text-align: center;
-        font-weight: bold;
-        display: block;
-        padding: 0.5rem;
-        margin: 50px auto;
-    }
-        h3 span {
-            padding: 1rem;
-        }
-    
-        h3 .moreSubTitle {
-            font-size: 0.7rem;
-            line-height: 0;
-        }
-
-    .bi.bi-stars {/*←BOOTstrapCDNのアイコン。*/
-        font-size: 24px;
-        color:rgb(142, 199, 245);
-        display: inline-block;
-        transform-origin: center;
-        transform: rotate(60deg);
-
-    }
-
-   .beforeStar::before {
-  transform: scale(-1, 1);
-}
 
 /* 共通ヘッダー */
 .headerNav {
@@ -188,79 +170,91 @@ h2 {
 }
 
 
-/*リンク、アコーディオンメニュー*/
-summary {
-    font-size: 1.1rem;
-    margin-bottom: 3rem;
-    text-align: center;
-    border: 1px solid #ffffff;
-    border-radius: 10px;
-    padding: 0.2rem;
-    width: 60%;
-    margin-left: auto;
-    background-color:rgba(168, 112, 161, 0.808);
-    box-shadow: 5px 5px 10px  rgba(51, 51, 51, 0.525);
-    color: #fff; 
+
+
+/*見出しと飾り*/
+    h3 {
+        font-size: 18px;
+        text-align: center;
+        font-weight: bold;
+        display: block;
+        padding: 0.5rem;
+        margin: 50px auto;
+    }
+
+    .bi.bi-stars {/*←BOOTstrapCDNのアイコン。*/
+        font-size: 24px;
+        color:rgb(142, 199, 245);
+        display: inline-block;
+        transform-origin: center;
+        transform: rotate(60deg);
+
+    }
+
+   .beforeStar::before {
+  transform: scale(-1, 1);
 }
+
+.moreSubTitle {
+    font-size: 0.7rem;
+    line-height: 0;
+}
+
+/*リンク、アコーディオンメニュー*/
+
+.workLinks {
+    margin-bottom: 0px;
+
+}
+
+.workLink span {
+    display: inline-block;
+}
+
+.linkBox {/*２個ごとの画像ボタンの親*/
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+
+}
+
+.modalWrapper {
+    width: 100%;
+}
+
 
 summary::-webkit-details-marker {
     display: none;
 }
-
-
-.workLinks {
-    margin-bottom: 20px;
-
-}
-
-.worksList {
+.workLink {/*moreだけモーダル化するのでsummaryになっている*/
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    align-items: center;
+    list-style: none;
 }
 
-.workTitle {
-    border-bottom: 1px solid #333;
-    margin-bottom: 20px;
-}
-
-.workSubTitle {
-    font-size: 0.8rem;
-}
-
-.workCaption {
-    border: 1px solid #333;
-    border-radius: 20px;
-    padding: 10px;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 3rem;
-}
-
-.workLink a:hover,
-.workLink a:focus {
+.workLink span:hover,
+.workLink span:focus {
     opacity: 0.85;
     transform: translateY(-2px);
     transition: 0.3s;
 }
 
-.workLink a {
+.workLink span {/*ボタンにあたる部分*/
     display: block;
-    width: 100%;
-    height: 80%;
+   
     background-size: cover;
     background-position: center;
     object-fit: cover;
     text-align: center;
-    line-height: 180px;/* 縦中央寄せ */
+    line-height: 80px;
     text-decoration: none;
     font-weight: bold;
     margin: 0 auto;
     border-radius: 20px;
     margin-top: 10px;
     margin-bottom: 10px;
-    
-    font-size: 1rem;
+    aspect-ratio: 1/1;
+    font-size: 0.8rem;
     box-shadow:  5px 5px 10px  rgba(51, 51, 51, 0.525);
 }
 
@@ -273,7 +267,6 @@ summary::-webkit-details-marker {
   0 0 1em #000;
 }
 
-
 .fontColor2{
     color: rgb(255, 255, 255);
     text-shadow:
@@ -282,32 +275,89 @@ summary::-webkit-details-marker {
   0 0 1em #757575;
 }
 
+.worksMoreItem {/*ここで画像の大きさを調節*/
+    width: 80%;
+    aspect-ratio: 1/1;
+}
 
-.diceImg {
-     background-image: url("../../common/images/diceImg.png");
-    }
-.diceImgCode {
-     background-image: url("../../common/images/diceImgCode.png");
-    }
-.fashionImg {
-     background-image: url("../../common/images/fashionImg.png");
-    }
-.fashionImgCode {
-     background-image: url("../../common/images/fashionImgCode.png");
-    }
-.nameDiceImg {
-     background-image: url("../../common/images/nameDiceImg.png");
-    }
-.nameDiceCode {
-     background-image: url("../../common/images/nameDiceCode.png");
-    }
-.withAiImg {
-     background-image: url("../../common/images/withAiImg.png");
-    }
+.worksMore1{
+    background-image: url("../images/item1.png");
+}
+.worksMore2 {
+    background-image: url("../images/item2.png");
+}
+.worksMore3 {
+    background-image: url("../images/item3.png");
+}
+.worksMore4 {
+    background-image: url("../images/item4.png");
+}
+.worksMore5 {
+    background-image: url("../images/item5.png");
+}
+.worksMore6 {
+    background-image: url("../images/item6.png");
+}
+.worksMore7 {
+    background-image: url("../images/item7.png");
+}
+.worksMore8 {
+    background-image: url("../images/item8.png");
+}
+.worksMore9 {
+    background-image: url("../images/item9.png");
+}
+.worksMore10 {
+    background-image: url("../images/item10.png");
+}
+.worksMore11 {
+    background-image: url("../images/item11.png");
+}
+.worksMore12 {
+    background-image: url("../images/item12.png");
+}
 
-.moreImg {
-     background-image: url("../../common/images/moreImg.png");
-    }
+h4 {
+    font-weight: bold;
+}
+
+body.stop {
+  overflow: hidden;
+}
+
+.modalItem {/*モーダルが開いているときの中身（details内のdiv)*/
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100vw;
+    margin: 0 auto;
+    height: 100vh;
+    background-color: rgb(94, 93, 93,0.5);
+    border-radius: 2px;
+}
+
+.modalItem span {
+    position: fixed;
+    top: 10vh;
+    right: 0;
+    left: 0;
+    max-width: 80vw;
+    margin: 0 auto;
+    
+    object-fit: contain;
+    color: #fff;
+}
+
+.modalItem span img{
+    max-width: 80vw;
+    margin: 0 auto;
+    height: 60vh;
+    object-fit: contain;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
 
 
 /*上に戻るボタン*/
@@ -328,46 +378,17 @@ summary::-webkit-details-marker {
 .upBtn {
     width: 45px;
     height: 45px;
-    opacity: 0.7;
+     opacity: 0.7;
 }
- 
-/*背景画像設定*/
-.backImg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -20;
-    opacity: 0.3;
-    background-size: cover;
-    background-position: center;
-    animation: changeImg 120s infinite;
-    background-image: url('');
-    background-repeat: no-repeat;
+
+address {
+    text-align: center;
 }
 
 
+@media only screen and (min-width: px) {
+    /*本人イメージ画像が大きすぎるので調整*/
 
-
-@keyframes changeImg {
-
-    0%,
-    100% {
-        background-image: url('../../common/images/time1.png');
-    }
-
-    25% {
-        background-image: url('../../common/images/time2.png');
-    }
-
-    50% {
-        background-image: url('../../common/images/time3.png');
-    }
-
-    75% {
-        background-image: url('../../common/images/time4.png');
-    }
 }
 
 
@@ -389,13 +410,14 @@ summary::-webkit-details-marker {
             display: none;
         }
 
+       
+       
         
     body main {
         width: 100%;
         max-width: 1200px;
         padding: 30px;
         margin: 0 auto;    
-        overflow: hidden;
     }
 
     /* ヘッダーとフッターの文字サイズを少し大きく */
@@ -418,17 +440,33 @@ summary::-webkit-details-marker {
         font-size: 24px;
         text-align: center;
         font-weight: bold;
-        margin-bottom: 20px;
-        margin-top: 100px;
+        margin-bottom: 50px;
     }
 
-    .moreSubTitle {
-    font-size: 0.7rem;
-    line-height: 0;
+    h3 .moreSubTitle {
+        font-size: 0.7rem;
+        line-height: 0;
+    }
+
+.modalItem span {
+    position: fixed;
+    top: 10vh;
+    right: 0;
+    left: 0;
+    max-width: 80vw;
+    margin: 0 auto;
+    
+    object-fit: contain;
+    color: #fff;
 }
 
-h4 {
-    font-weight: bold;
+.modalItem span img{
+    width: 60vw;
+    margin: 0 auto;
+    height: 70vh;
+    object-fit: contain;
+    color: #fff;
+    margin-bottom: 1rem;
 }
 
 
@@ -438,12 +476,11 @@ h4 {
         padding: 30px;
     }
 
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
     /* 画像の最大幅を1200pxに制限 */
     img {
         max-width: 1200px;
@@ -473,44 +510,43 @@ img {
         font-size: 18px;
     }
 
-/* 制作物リンク、アコーディオンメニュー */
+    
 
-summary {
-    font-size: 1.1rem;
-    margin-bottom: 3rem;
-    text-align: center;
-    border: 1px solid #ffffff;
-    border-radius: 10px;
-    padding: 0.2rem;
-    width: 30%;
-    margin-left: auto;
-    background-color:rgba(168, 112, 161, 0.808);
-    box-shadow: 5px 5px 10px  rgba(51, 51, 51, 0.525);
-    color: #fff; 
-    margin-top:3rem;
+.workLink span{
+    font-size: 1rem;
+    padding: 0;
 }
+
+ 
+
+
+.linkBox {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 45%;
+}
+
+.worksMoreItem {
+ 
+    aspect-ratio: 1/1;
+}
+
+
 
 .workLinks {
     display: flex;
-    justify-content: space-between;
+    justify-content:center;
+    gap: 20px;
 }
 
-.workLinksMore {
-    display: flex;
-    justify-content: center;/*項目増やすなら変更*/
-}
-
-.workLinks p,.workLinksMore p  {
-    width: 90%;
-
-}
-
-.workLinks p a,.workLinksMore p a {
+.worksList span {
     display: inline-block;
     padding: 2rem;
 }
 
 .worksList {
+     width: 90%;
     display: flex;
     flex-direction: column;
 }
@@ -526,17 +562,24 @@ summary {
     margin-bottom: 0.5rem;
     transition: 0.3s;
 }
-.workLink a:hover {
+
+.workLink span:hover {
     background-color: #fff459;
 }
-
 
 /* 上に戻るボタン */
 .toPageTop {
     position: fixed;
     bottom: 2.5vw;
     right: 5vw;
-    z-index: 20;
+    z-index: 2;
+}
+/* 上に戻るボタン */
+.toPageTop {
+    position: fixed;
+    bottom: 2.5vw;
+    right: 5vw;
+    z-index: 2;
     width: 100px;
     height: 100px;
 }
@@ -551,7 +594,4 @@ summary {
 .toPageTop img:hover {
     opacity: 1;
 }
-
-
-
 }

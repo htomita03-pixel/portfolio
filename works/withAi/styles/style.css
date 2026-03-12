@@ -4,7 +4,6 @@ html {
 box-sizing: border-box;
 }
 
-
 /* 表示切替 */
 .spOnly {
     display: block;
@@ -18,7 +17,7 @@ body {
     width: 100%;
     margin: 0;
     padding: 0;
-   overflow-x: hidden;
+    overflow-x: hidden;
     line-height: 1.6;
     font-family: '游ゴシック', 'Yu Gothic', 'ヒラギノ角ゴ ProN',
         'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, sans-serif;
@@ -83,14 +82,11 @@ h2 {
         padding: 0.5rem;
         margin: 50px auto;
     }
-        h3 span {
-            padding: 1rem;
-        }
     
-        h3 .moreSubTitle {
-            font-size: 0.7rem;
-            line-height: 0;
-        }
+h3 .moreSubTitle {
+    font-size: 0.7rem;
+    line-height: 0;
+}
 
     .bi.bi-stars {/*←BOOTstrapCDNのアイコン。*/
         font-size: 24px;
@@ -104,6 +100,7 @@ h2 {
    .beforeStar::before {
   transform: scale(-1, 1);
 }
+
 
 /* 共通ヘッダー */
 .headerNav {
@@ -244,15 +241,29 @@ summary::-webkit-details-marker {
     transition: 0.3s;
 }
 
+.aiWorks2Img1 {
+    background-image: url(../images/nyuutaisituImg.png);
+   background-size: contain;
+   opacity: 0.7; 
+}
+
+.aiWorks2Img2 {
+    background-image: url(../images/oxQuizImg.png);
+   background-size: contain;
+   opacity: 0.7; 
+}
+
 .workLink a {
     display: block;
+    /* ボタン化 */
     width: 100%;
     height: 80%;
     background-size: cover;
     background-position: center;
     object-fit: cover;
     text-align: center;
-    line-height: 180px;/* 縦中央寄せ */
+    line-height: 180px;
+    /* 縦中央寄せ */
     text-decoration: none;
     font-weight: bold;
     margin: 0 auto;
@@ -282,31 +293,33 @@ summary::-webkit-details-marker {
   0 0 1em #757575;
 }
 
-
-.diceImg {
-     background-image: url("../../common/images/diceImg.png");
-    }
-.diceImgCode {
-     background-image: url("../../common/images/diceImgCode.png");
-    }
-.fashionImg {
-     background-image: url("../../common/images/fashionImg.png");
-    }
-.fashionImgCode {
-     background-image: url("../../common/images/fashionImgCode.png");
-    }
-.nameDiceImg {
-     background-image: url("../../common/images/nameDiceImg.png");
-    }
-.nameDiceCode {
-     background-image: url("../../common/images/nameDiceCode.png");
-    }
-.withAiImg {
-     background-image: url("../../common/images/withAiImg.png");
+.worksAtend {
+        position:relative;
+        display: flex;
+        width: 100vw;
+        height: 30vh;
+        overflow: hidden;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;/* スナップ（ピタッと止まる）させる */
+        -webkit-overflow-scrolling: touch;/*iosへの対応のため*/
+        margin-left: -20px;
+    
     }
 
-.moreImg {
-     background-image: url("../../common/images/moreImg.png");
+    .worksAtend .worksAtendImg {
+        display: flex;
+        flex-shrink: 0;
+        height: 100%;
+        align-items: center;
+        flex-shrink:0;
+    }
+
+    .worksAtend .worksAtendImg img {
+        scroll-snap-align: center;
+        width: auto;
+        height:100%;/*画像の拡大分の余白をとるため*/
+        flex-shrink: 0;
+        object-fit: cover;
     }
 
 
@@ -323,12 +336,6 @@ summary::-webkit-details-marker {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.upBtn {
-    width: 45px;
-    height: 45px;
-    opacity: 0.7;
 }
  
 /*背景画像設定*/
@@ -348,25 +355,23 @@ summary::-webkit-details-marker {
 }
 
 
-
-
 @keyframes changeImg {
 
     0%,
     100% {
-        background-image: url('../../common/images/time1.png');
+        background-image: url('../../../common/images/time1.png');
     }
 
     25% {
-        background-image: url('../../common/images/time2.png');
+        background-image: url('../../../common/images/time2.png');
     }
 
     50% {
-        background-image: url('../../common/images/time3.png');
+        background-image: url('../../../common/images/time3.png');
     }
 
     75% {
-        background-image: url('../../common/images/time4.png');
+        background-image: url('../../../common/images/time4.png');
     }
 }
 
@@ -396,6 +401,7 @@ summary::-webkit-details-marker {
         padding: 30px;
         margin: 0 auto;    
         overflow: hidden;
+        list-style: none;
     }
 
     /* ヘッダーとフッターの文字サイズを少し大きく */
@@ -404,8 +410,6 @@ summary::-webkit-details-marker {
         font-size: 18px;
         padding: 20px;
     }
-
-
 
     h2 {
     margin-bottom: 30px;
@@ -437,13 +441,11 @@ h4 {
         font-size: 18px;
         padding: 30px;
     }
-
 img {
     max-width: 100%;
     height: auto;
     display: block;
 }
-
     /* 画像の最大幅を1200pxに制限 */
     img {
         max-width: 1200px;
@@ -473,7 +475,9 @@ img {
         font-size: 18px;
     }
 
-/* 制作物リンク、アコーディオンメニュー */
+ 
+
+    /* 制作物リンク、アコーディオンメニュー */
 
 summary {
     font-size: 1.1rem;
@@ -482,7 +486,8 @@ summary {
     border: 1px solid #ffffff;
     border-radius: 10px;
     padding: 0.2rem;
-    width: 30%;
+    width: 30%
+;
     margin-left: auto;
     background-color:rgba(168, 112, 161, 0.808);
     box-shadow: 5px 5px 10px  rgba(51, 51, 51, 0.525);
@@ -525,6 +530,7 @@ summary {
        font-weight: bold;
     margin-bottom: 0.5rem;
     transition: 0.3s;
+    
 }
 .workLink a:hover {
     background-color: #fff459;
@@ -552,6 +558,63 @@ summary {
     opacity: 1;
 }
 
+/*カルーセルのようなもの（PCのみの挙動）*/
 
+/*簡易カルーセル的なもの*/
+
+    .worksAtend {
+        position:relative;
+        display: flex;
+        width: 100vw;
+        height: 30vh;
+        overflow: hidden;
+        margin-left: -100px;
+    }
+
+    .worksAtend .worksAtendImg {
+        display: flex;
+        flex-shrink: 0;
+        height: 100%;
+        align-items: center;
+        animation: loop 50s  linear infinite; 
+        flex-shrink:0;
+    }
+
+    .worksAtend .worksAtendImg img {
+        width: auto;
+        height:80%;/*画像の拡大分の余白をとるため*/
+        flex-shrink: 0;
+        object-fit: cover;
+    }
+
+    
+
+    @keyframes loop {
+        0% {transform: translateX(0%);}
+
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+
+
+ .worksAtend:has(img:hover) .worksAtendImg {
+    animation-play-state: paused;}
+
+ .worksAtend:has(img:hover) img {
+    animation-play-state: paused;
+    transition: filter 0.3s, opacity 0.3s;
+    filter: blur(5px) brightness(90%);
+    opacity: 0.5;
+}
+
+.worksAtend img:hover {
+    scale: 1.2;
+     filter: blur(0px) brightness(105%)!important;
+     z-index: 10!important;
+     opacity:1!important;
+     border-radius: 10px;
+}
 
 }
