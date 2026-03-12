@@ -1,0 +1,625 @@
+@charset "UTF-8";
+
+html {
+    scroll-behavior: smooth;
+box-sizing: border-box;
+}
+
+/* 表示切替 */
+.spOnly {
+    display: block;
+}
+
+.pcOnly {
+    display: none;
+}
+
+
+html,
+body {
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0; 
+    line-height: 1.6;
+    font-family: '游ゴシック', 'Yu Gothic', 'ヒラギノ角ゴ ProN',
+        'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+
+body {
+    font-size: 16px;
+}
+header{
+    z-index: 1;
+}
+
+.wrapper {
+    max-width: 1200px;/* 最大幅を1200pxに制限 */
+    margin: 0 auto;
+    padding: 0px;
+    position: relative;
+    z-index: 1;/* 背景より前 */
+    text-align: center;/*念のため*/
+}
+
+header,
+footer {
+    background-color: rgba(51, 51, 51, 0.3);
+    color: white;
+    text-align: center;
+    padding: 5px;
+}
+
+
+
+
+/*メインのコンテンツについて*/
+   main {
+    padding: 20px;
+    margin-bottom: 50px;
+}
+
+/* 画像に関する設定 */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+h2 {
+    margin-bottom: 50px;
+    border-radius: 10px;
+    text-align: center;
+    padding: 3%;
+}
+
+
+/* 共通ヘッダー */
+.headerNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+}
+
+.titleImg {
+    border: 1px solid #fff;
+    padding: 3%; 
+}
+
+/* ハンバーガー & クローズボタン */
+
+#js-open-btn,
+#js-close-btn {
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+}
+
+/* ドロワー（スマホ用） */
+#js-drawer-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(146, 50, 122, 0.7);
+    transform: translateX(100%);
+    transition: transform 0.3s ease-out;
+    z-index: 100;
+    visibility: hidden;
+}
+
+/* ドロワー表示時 */
+#js-drawer-menu.show {
+    transform: translateX(0);
+    visibility: visible;
+}
+
+/* クローズボタン */
+#js-close-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+}
+
+/* ドロワーメニューリスト */
+.drawerMenu ul {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 80px;
+    font-size: 24px;
+    color: #ffffffa8;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.drawerMenu ul li {
+    margin-bottom: 24px;
+    background-color: transparent;
+    /* 背景透明 */
+    border: 1px solid #fff;
+    border-radius: 10px;
+    color: #fff;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.drawerMenu ul li:first-of-type {
+    font-size: 36px;
+    background-color: rgba(61, 20, 51, 0);
+    /* 「Menu」も透明に */
+    margin-top: 36px;
+    margin-bottom: 36px;
+    border : none;
+    text-transform: uppercase;
+}
+
+
+
+
+/*見出しと飾り*/
+    h3 {
+        font-size: 18px;
+        text-align: center;
+        font-weight: bold;
+        display: block;
+        padding: 0.5rem;
+        margin: 50px auto;
+    }
+
+    .bi.bi-stars {/*←BOOTstrapCDNのアイコン。*/
+        font-size: 24px;
+        color:rgb(142, 199, 245);
+        display: inline-block;
+        transform-origin: center;
+        transform: rotate(60deg);
+
+    }
+
+   .beforeStar::before {
+  transform: scale(-1, 1);
+}
+
+.moreSubTitle {
+    font-size: 0.7rem;
+    line-height: 0;
+}
+
+/*経歴部分*/
+h4 {
+    font-weight: bold;
+    margin: 30px;
+    font-size: 20px;
+    border: 1px solid #382b2471;
+    border-radius: 20px;
+    background-color:#fff459;
+}
+
+h5 {
+    font-weight: bold;
+    margin:2.5vh;
+  
+}
+
+.profileImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.selfImg {
+    max-width: 100px;
+    border-radius: 50%;
+    object-fit: contain;
+    border: 1px solid #382b2471;
+    
+}
+
+.workCaption {
+    
+    padding: 20px;
+    border: 1px solid #333;
+    border-radius: 20px; 
+}   
+
+.workCaption p {
+    text-align: left;
+    margin:8vh auto;
+    width: 90%;
+    height: 25%; 
+}
+
+/*リンクボタン*/
+
+.toMorepage {
+ font-size: 1.1rem;
+    margin: 1rem;
+    text-align: center;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    padding: 0.2rem 1rem;
+    width: 90%;
+    margin-left:auto;
+    margin-right: 0;
+    background-color:#fff459;
+    box-shadow: 5px 5px 10px  rgba(51, 51, 51, 0.525);
+    color: #333;
+    
+    display: inline-block;
+}
+
+.toMorepage span{
+    transform-origin: center;
+    transform:scale(0.6) rotate(90deg);
+    color: #333;
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+
+
+/*カルーセル中身*/
+body.stop {
+  overflow: hidden;
+}
+
+
+.worksAtend {
+        position:relative;
+        display: flex;
+        width: 100vw;
+        height: 30vh;
+        overflow: hidden;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;/* スナップ（ピタッと止まる）させる */
+        -webkit-overflow-scrolling: touch;/*iosへの対応のため*/
+        margin-left: -20px;
+    
+    }
+
+    .worksAtend .worksAtendImg {
+        display: flex;
+        flex-shrink: 0;
+        height: 100%;
+        align-items: center;
+        flex-shrink:0;
+    }
+
+    .worksAtend .worksAtendImg img {
+        scroll-snap-align: center;
+        width: auto;
+        height:100%;/*画像の拡大分の余白をとるため*/
+        flex-shrink: 0;
+        object-fit: cover;
+    }
+
+
+
+
+/*上に戻るボタン*/
+.toPageTop {
+    width: 60px;
+    height: 60px;
+    z-index: 10;
+    background-color: rgba(105, 105, 102, 0.3);
+    border-radius: 50%;
+    position: fixed;
+    bottom: 10vw;
+    right: 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.upBtn {
+    width: 45px;
+    height: 45px;
+     opacity: 0.7;
+}
+
+address {
+    text-align: center;
+}
+
+
+
+
+/* メディアクエリ：タブレット以上（768px以上） */
+@media only screen and (min-width: 768px) {
+    /* PCではドロワー非表示、横並びメニュー表示 */
+    /* スマホ用要素非表示 */
+    .spOnly {
+        display: none;
+    }
+
+    /* PC用要素表示 */
+    .pcOnly {
+        display: block;
+    }
+
+        /* ドロワーは非表示 */
+        #js-drawer-menu {
+            display: none;
+        }
+        
+    body main {
+        width: 100%;
+        max-width: 1200px;
+        padding: 30px;
+        margin: 0 auto;    
+    }
+
+    /* ヘッダーとフッターの文字サイズを少し大きく */
+    header,
+    footer {
+        font-size: 18px;
+        padding: 20px;
+    }
+
+   
+
+    h2 {
+    margin-bottom: 30px;
+    border-radius: 10px;
+    text-align: center;
+    padding: 3%;
+}
+
+    h3 {
+        font-size: 24px;
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 50px;
+    }
+
+    .moreSubTitle {/*ｈ３のサブタイトル*/
+    font-size: 1rem;
+    line-height: 0;
+    }
+
+    .modalItem img {
+    position: fixed;
+    top: 10vh;
+    right: 0;
+    left: 0;
+    width: 60vw;
+    height: 80vh;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+
+    /* メインコンテンツの余白と文字サイズを調整 */
+    main {
+        font-size: 18px;
+        padding: 30px;
+    }
+
+    /* 画像の最大幅を1200pxに制限 */
+    img {
+        max-width: 1200px;
+        margin: 0 auto;
+        
+    }
+
+    /* 必要に応じてPC版レイアウトを調整 */
+    .nav {
+        display: flex;
+        justify-content: space-around;
+        /* ナビゲーションメニューを水平に並べる */
+    }
+
+    /* PCメニュー */
+    .pcMenu ul {
+        display: flex;
+        gap: 24px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .pcMenu ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+    }
+
+
+    /*経歴*/
+   .workSummary {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 1rem;
+   }
+
+h4 {
+    font-weight: bold;
+    margin: 30px;
+    font-size: 20px;
+    border: 1px solid #382b2471;
+    border-radius: 20px;
+    background-color:#fff459;
+}
+
+.workSummary {
+    gap: 0;
+}
+
+
+.profileImage {
+    display: flex;
+    justify-content: center;
+   align-items: flex-start;
+    height: 30vh;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+
+
+.selfImg {
+    display: inline-block;
+    max-width: 150px;
+    border-radius: 50%;
+    object-fit: contain;
+    border: 1px solid #382b2471;
+     
+}
+
+.aboutSkills  {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.aboutSkills1,.aboutSkills2 {
+    flex-basis: 50vw;
+     margin-bottom: 20vh;
+}
+
+
+.workCaption {
+    
+    padding: 20px;
+    border: 1px solid #333;
+    border-radius: 20px; 
+}  
+  
+
+h4 {
+    padding: 0.75rem;
+}
+
+
+h5 {
+    font-weight: bold;
+    margin:9vh;
+  
+}
+
+.workCaption p {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 90%;
+    height: 25%; 
+}
+
+
+.toMorepage {
+ font-size: 1.1rem;
+    margin-top: 1.5rem;
+    text-align: center;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    padding: 0.2rem 1rem;
+    width: 50%;
+    margin-left: 50%;
+    background-color:#fff459;
+    box-shadow: 5px 5px 10px  rgba(51, 51, 51, 0.525);
+    color: #333;
+    display: inline-block;
+}
+
+.toMorepage span{
+    transform-origin: center;
+    transform:scale(0.6) rotate(90deg);
+    color: #333;
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+
+/* 上に戻るボタン */
+.toPageTop {
+    position: fixed;
+    bottom: 2.5vw;
+    right: 5vw;
+    z-index: 2;
+    width: 100px;
+    height: 100px;
+}
+
+.toPageTop img {
+    width: 50px;
+    height: 50px;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.toPageTop img:hover {
+    opacity: 1;
+}
+
+/*カルーセルのようなもの（PCのみの挙動）*/
+
+/*簡易カルーセル的なもの*/
+
+    .worksAtend {
+        position:relative;
+        display: flex;
+        width: 100vw;
+        height: 30vh;
+        overflow: hidden;
+        margin-left: -100px;
+    }
+
+    .worksAtend .worksAtendImg {
+        display: flex;
+        flex-shrink: 0;
+        height: 100%;
+        align-items: center;
+        animation: loop 50s  linear infinite; 
+        flex-shrink:0;
+    }
+
+    .worksAtend .worksAtendImg img {
+        width: auto;
+        height:80%;/*画像の拡大分の余白をとるため*/
+        flex-shrink: 0;
+        object-fit: cover;
+    }
+
+    
+
+    @keyframes loop {
+        0% {transform: translateX(0%);}
+
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+
+
+ .worksAtend:has(img:hover) .worksAtendImg {
+    animation-play-state: paused;}
+
+ .worksAtend:has(img:hover) img {
+    animation-play-state: paused;
+    transition: filter 0.3s, opacity 0.3s;
+    filter: blur(5px) brightness(90%);
+    opacity: 0.5;
+}
+
+.worksAtend img:hover {
+    scale: 1.2;
+     filter: blur(0px) brightness(105%)!important;
+     z-index: 10!important;
+     opacity:1!important;
+     border-radius: 10px;
+}
+}
