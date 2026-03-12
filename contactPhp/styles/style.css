@@ -1,0 +1,577 @@
+@charset "UTF-8";
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* 表示切替 */
+.spOnly {
+    display: block;
+}
+
+.pcOnly {
+    display: none;
+}
+.noSpam {
+    display: none;
+}
+
+html,
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    line-height: 1.6;
+    font-family: '游ゴシック', 'Yu Gothic', 'ヒラギノ角ゴ ProN',
+        'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, sans-serif;
+}
+
+body {
+    font-size: 16px;
+}
+header{
+    z-index: 1;
+}
+
+.wrapper {
+    max-width: 1200px;/* 最大幅を1200pxに制限 */
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 1;/* 背景より前 */
+    
+}
+
+
+
+header,
+footer {
+    background-color: rgba(51, 51, 51, 0.3);
+    color: white;
+    text-align: center;
+    padding: 5px;
+}
+
+
+
+
+/*メインのコンテンツについて*/
+   main {
+    padding: 20px;
+}
+
+/* 画像に関する設定 */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+h2 {
+    margin-bottom: 20px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    text-align: center;
+    padding: 3%;
+}
+
+
+/* 共通ヘッダー */
+.headerNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+}
+
+.titleImg {
+    border: 1px solid #fff;
+    padding: 3%; 
+}
+
+/* ハンバーガー & クローズボタン */
+
+#js-open-btn,
+#js-close-btn {
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+}
+
+/* ドロワー（スマホ用） */
+#js-drawer-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(146, 50, 122, 0.7);
+    transform: translateX(100%);
+    transition: transform 0.3s ease-out;
+    z-index: 100;
+    visibility: hidden;
+}
+
+/* ドロワー表示時 */
+#js-drawer-menu.show {
+    transform: translateX(0);
+    visibility: visible;
+}
+
+/* クローズボタン */
+#js-close-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+}
+
+/* ドロワーメニューリスト */
+.drawerMenu ul {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 80px;
+    font-size: 24px;
+    color: #ffffffa8;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.drawerMenu ul li {
+    margin-bottom: 24px;
+    background-color: transparent;
+    /* 背景透明 */
+    border: 1px solid #fff;
+    border-radius: 10px;
+    color: #fff;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.drawerMenu ul li:first-of-type {
+    font-size: 36px;
+    background-color: rgba(61, 20, 51, 0);
+    /* 「Menu」も透明に */
+    margin-top: 36px;
+    margin-bottom: 36px;
+    border : none;
+    text-transform: uppercase;
+}
+
+.inlineForm {
+    display: inline-block;
+}
+
+.honeyPotField {
+    display: none;
+}
+
+/*見出しと飾り*/
+    .contactSecH3 {
+        font-size: 18px;
+        text-align: center;
+        font-weight: bold;
+        display: block;
+        padding: 0.5rem;
+        margin: 50px auto;
+    }
+
+    .bi.bi-stars {/*←BOOTstrapCDNのアイコン。*/
+        font-size: 24px;
+        color:rgb(142, 199, 245);
+        display: inline-block;
+        transform-origin: center;
+        transform: rotate(60deg);
+
+    }
+
+   .beforeStar::before {
+  transform: scale(-1, 1);
+}
+.contactSecH3 span {
+    padding: 1rem;
+}
+
+.contactSecH3 {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+    h3 {
+        font-size: 18px;
+        text-align: center;
+        font-weight: bold;
+        display: block;
+        padding: 0.5rem;
+        margin: 50px auto;
+    }
+
+   .beforeStar::before {
+  transform: scale(-1, 1);
+}
+
+
+/*リンク*/
+
+h4 {
+    font-weight: bold;
+}
+
+/*フォーム部分*/
+.inputField button {
+     width: 160px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: inline-block;
+    font-size: 1.25rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    padding: 0.2rem;
+    margin: 0 auto;
+    font-weight: bold;
+    background-color:rgba(168, 112, 161, 0.808);
+    box-shadow: 5px 5px 10px  rgba(51, 51, 51, 0.525);
+    color: #fff; 
+}
+
+.inputField button:hover,
+ .inputField button:focus{
+    opacity: 0.85;
+    transform: translateY(-2px);
+    transition: 0.3s;
+}
+
+.inputField {
+    color: #7F5539;
+    font-size: 0.75rem;
+    color: #7F5539;
+    font-size: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 1.5rem auto;
+    padding: 30px;
+    border: 1px solid #7F5539;
+}
+
+
+.inputField input,textarea {
+    border: 1px solid #7F5539;
+    background-color: #fff;
+    color: #000;
+    width: 100%;
+    font-weight: normal;
+}   
+
+.inputField label {
+    margin-bottom: 1.25rem;
+}
+
+.textCount {
+    display: inline-block;
+    text-align: right;
+    width: 100%;
+}
+
+#js-input-length {
+    color: #000
+}
+
+#js-input-length.countOver{
+    color: #FF0000;
+}
+
+
+.inputFieldPass {
+    display: flex;
+    flex-direction: column;
+}
+
+.required {
+    color: #FF0000;
+}
+
+.headsUp {
+    color: #FF0000;
+    font-size: 0.5rem;
+    display: inline-block;
+}
+
+.inputFieldPassRe input {
+    margin-bottom: 2.5rem;
+}
+
+
+/*戻るボタン（移植）*/
+.toMorepage {
+ font-size: 0.75rem;
+    text-align: center;
+    border: 1px solid #7F5539;
+    border-radius: 10px;
+    padding: 0.2rem 1rem;
+    width: 45%;
+    margin: 20px;
+    box-shadow: 2px 2px 6px  rgba(51, 51, 51, 0.525);
+    color: #000;
+    display: inline-block;
+}
+
+.toMorepage span{
+    transform-origin: center;
+    transform:scale(0.6) rotate(90deg);
+    color: #7F5539;
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+
+
+
+address {
+    text-align: center;
+}
+
+
+
+/* メディアクエリ：タブレット以上（768px以上） */
+@media only screen and (min-width: 768px) {
+    /* PCではドロワー非表示、横並びメニュー表示 */
+    /* スマホ用要素非表示 */
+    .spOnly {
+        display: none;
+    }
+
+    /* PC用要素表示 */
+    .pcOnly {
+        display: block;
+    }
+
+        /* ドロワーは非表示 */
+        #js-drawer-menu {
+            display: none;
+        }
+
+       
+        /* PCメニュー横並び */
+        .pcMenu ul {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+    
+        .pcMenu ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        
+    body main {
+        width: 100%;
+        max-width: 1200px;
+        padding: 30px;
+        margin: 0 auto;    
+    }
+
+    /* ヘッダーとフッターの文字サイズを少し大きく */
+    header,
+    footer {
+        font-size: 18px;
+        padding: 20px;
+    }
+
+    .myName {
+        font-size: 32px;
+    }
+
+    h2 {
+    margin-bottom: 30px;
+    border-radius: 10px;
+    text-align: center;
+    padding: 3%;
+}
+
+    .contactSecH3 {
+        font-size: 24px;
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+
+
+    /* メインコンテンツの余白と文字サイズを調整 */
+    main {
+        font-size: 18px;
+        padding: 30px;
+    }
+
+    /* 画像の最大幅を1200pxに制限 */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+    
+    img {
+        max-width: 1200px;
+        margin: 0 auto;
+        
+    }
+
+
+    /* 必要に応じてPC版レイアウトを調整 */
+    .nav {
+        display: flex;
+        justify-content: space-around;
+        /* ナビゲーションメニューを水平に並べる */
+    }
+
+    /* PCメニュー */
+    .pcMenu ul {
+        display: flex;
+        gap: 24px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .pcMenu ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+    }
+
+    .profileImage img {
+        width: 200px;
+        height: auto;
+        border-radius: 10px;
+    }
+
+/*自己紹介セクション*/
+
+.profileCard {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    margin-bottom: 50px;
+    justify-content: space-evenly;
+}
+/*スキル紹介*/
+.skillsList {
+    width: 50%;
+    margin: 0 auto;
+    /*text-align:center;*/
+}
+
+/*フォーム*/
+.inputField {
+    color: #7F5539;
+    font-size: 0.75rem;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 1.5rem auto;
+    padding: 5% 10%;
+    border: 1px solid #7F5539;
+}
+
+.inputField p {
+    margin-bottom: 2rem;
+}
+
+.inputField button {
+     width: 160px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: inline-block;
+    font-size: 1.25rem;
+    text-align: center;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    padding: 0.2rem;
+    margin: 0 auto;
+    margin-top: 1rem;
+    font-weight: bold;
+    background-color:rgba(168, 112, 161, 0.808);
+    box-shadow: 5px 5px 10px  rgba(51, 51, 51, 0.525);
+    color: #fff; 
+}
+
+.inputField input,textarea {
+    border: 1px solid #7F5539;
+    background-color: #fff;
+    color: #000;
+    width: 100%;
+    height: 2rem;
+    font-size: 1.25rem;
+    font-weight: normal;
+}
+
+.result {
+    font-size: 1.5rem;
+    color: #7F5539;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 1.5rem auto;
+    padding: 5% 10%;
+    border: 1px solid #7F5539;
+}
+
+.errorMessage {
+    color:rgba(255, 0, 0, 0.9);
+    padding: 20px;
+    font-size: 1.2rem;
+}
+
+
+
+ h3 {
+        font-size: 24px;
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 50px;
+    }
+
+    .moreSubTitle {/*ｈ３のサブタイトル*/
+    font-size: 1rem;
+    line-height: 0;
+    }
+
+
+.btnContainer {
+    display: flex;
+    justify-content: right;
+    margin-right: 10%;
+}
+
+
+/*TOPページへ戻るボタン*/
+.toMorepage {
+        font-size: 1rem;
+        margin-bottom: 3rem;
+        text-align: center;
+        border: 1px solid #000;
+        border-radius: 10px;
+        padding: 0.2rem;
+        width: 25%;
+        
+        box-shadow: 5px 5px 10px rgba(51, 51, 51, 0.525);
+        color: #000;
+        margin-bottom: 10px;
+        display: inline-block;
+}
+
+
+}
