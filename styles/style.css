@@ -2,6 +2,8 @@
 
 html {
     scroll-behavior: smooth;
+box-sizing: border-box;
+transition: background-color 0.3s;
 }
 
 /* 表示切替 */
@@ -12,9 +14,7 @@ html {
 .pcOnly {
     display: none;
 }
-.noSpam {
-    display: none;
-}
+
 
 html,
 body {
@@ -22,27 +22,52 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    /* 横方向のスクロールバーを非表示にする */
-    box-sizing: border-box;
     line-height: 1.6;
     font-family: '游ゴシック', 'Yu Gothic', 'ヒラギノ角ゴ ProN',
         'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, sans-serif;
+}*,
+*::before,
+*::after {
+    box-sizing: inherit;
 }
 
 body {
     font-size: 16px;
 }
+
+/*画面表示前のオーバーラップ*/
+#js-over-wrap {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(225, 143, 234,1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    color: #fff;
+}
+
+#js-over-wrap.hide {
+    display: none;
+}
+
+.openingName {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+
 header{
     z-index: 1;
 }
 
 .wrapper {
     max-width: 1200px;/* 最大幅を1200pxに制限 */
-    margin: 0 auto;/* 中央寄せ */
-    padding: 20px;/* 内側の余白*/
+    margin: 0 auto;
+    padding: 20px;
     position: relative;
-    z-index: 1;/* 背景より前に */
-    /*width: 100%; 親要素に対して100%の幅 */
+    z-index: 1;/* 背景より前 */
+    
 }
 
 /*背景画像設定*/
@@ -66,19 +91,19 @@ header{
 
     0%,
     100% {
-        background-image: url('../images/time1.png');
+        background-image: url('../common/images/time1.png');
     }
 
     25% {
-        background-image: url('../images/time2.png');
+        background-image: url('../common/images/time2.png');
     }
 
     50% {
-        background-image: url('../images/time3.png');
+        background-image: url('../common/images/time3.png');
     }
 
     75% {
-        background-image: url('../images/time4.png');
+        background-image: url('../common/images/time4.png');
     }
 }
 
@@ -101,13 +126,12 @@ footer {
 
 /* 画像に関する設定 */
 img {
-    width: 100%;
+    max-width: 100%;
     height: auto;
-    /* アスペクト比を保ちながら高さを自動調整 */
+    display: block;
 }
 
 h2 {
-    margin-bottom: 20px;
     margin-bottom: 50px;
     border-radius: 10px;
     text-align: center;
@@ -130,15 +154,15 @@ h2 {
 
 /* ハンバーガー & クローズボタン */
 
-#open_btn,
-#closeBtnId {
+#js-open-btn,
+#js-close-btn {
     width: 45px;
     height: 45px;
     cursor: pointer;
 }
 
 /* ドロワー（スマホ用） */
-#drawerMenuId {
+#js-drawer-menu {
     position: fixed;
     top: 0;
     right: 0;
@@ -152,13 +176,13 @@ h2 {
 }
 
 /* ドロワー表示時 */
-#drawerMenuId.show {
+#js-drawer-menu.show {
     transform: translateX(0);
     visibility: visible;
 }
 
 /* クローズボタン */
-#closeBtnId {
+#js-close-btn {
     position: absolute;
     top: 12px;
     right: 12px;
@@ -197,18 +221,89 @@ h2 {
     text-transform: uppercase;
 }
 
-/* 自己紹介 */
- .myName {
-        font-size: 24px;
-        background-color:rgb(252, 185, 222)
-    }
+#js-over-lay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 50;
+    display: none;
+}
 
+#js-over-lay.show {
+    display: block;
+}
+
+/* 自己紹介 */
+.Introduction span {
+    font-size: 0.8rem;
+}
+
+
+ 
+
+.js-over-wrap {
+    width: 100vw;
+    height: 100vh;
+}
+
+#js-over-wrap.hide {
+    animation-name: js-over-layHide;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes  js-over-layHide{
+
+ 0% {
+    opacity: 1;
+ }
+
+ 50% {
+    opacity: 0.5;
+ }
+
+ 100% {
+    opacity: 0;
+ }
+
+}
+
+.toMorepage {
+ font-size: 1.1rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    padding: 0.2rem 1rem;
+    width: 70%;
+    margin-left: 30%;
+    background-color:rgba(112, 146, 168, 0.808);
+    box-shadow: 5px 5px 10px  rgba(51, 51, 51, 0.525);
+    color: #fff;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.toMorepage span{
+    transform-origin: center;
+    transform:scale(0.6) rotate(90deg);
+    color: #fff;
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+
+
+
+
+
+/*見出しと飾り*/
     h3 {
         font-size: 18px;
         text-align: center;
         font-weight: bold;
         display: block;
         padding: 0.5rem;
+        margin: 50px auto;
     }
 
     .bi.bi-stars {/*←BOOTstrapCDNのアイコン。*/
@@ -229,7 +324,7 @@ h3 span {
 
 
 
-
+/*自己紹介セクション*/
 .profileCard {
     display: flex;
     flex-direction: column;
@@ -242,12 +337,23 @@ h3 span {
     margin-bottom: 50px;
 }
 
-.selfImg {
-    width: 768px;
-    max-width: 100%;
+.profileImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/*リンク*/
+.selfImg {
+    max-width: 200px;
+    border-radius: 10px;
+}
+
+.profileSec .workCaption p{
+ margin-bottom: 10px;
+}
+
+
+/*リンク、アコーディオンメニュー*/
 summary {
     font-size: 1.1rem;
     margin-bottom: 3rem;
@@ -256,7 +362,7 @@ summary {
     border-radius: 10px;
     padding: 0.2rem;
     width: 60%;
-    margin-left: 40%;
+    margin-left: auto;
     background-color:rgba(168, 112, 161, 0.808);
     box-shadow: 5px 5px 10px  rgba(51, 51, 51, 0.525);
     color: #fff; 
@@ -279,6 +385,7 @@ summary::-webkit-details-marker {
 .worksList {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .workTitle {
@@ -304,7 +411,7 @@ summary::-webkit-details-marker {
 
 .workLink a {
     display: block;
-    /* ボタン化の要 */
+    /* ボタン化 */
     width: 100%;
     height: 80%;
     background-size: cover;
@@ -357,11 +464,18 @@ summary::-webkit-details-marker {
     background-image: url("../common/images/taiwanSourcesImg.png");
 }
 .ex3Img1 {
-    background-image: url("../common/images/cconutsImg.png");
+    background-image: url("../common/images/ccdonutsImg.png");
 }
 .ex3Img2 {
     background-image: url("../common/images/ccdonutsSourcesImg.png");
 }
+.toWorksImg {
+    background-image: url("../common/images/toWorksImg.png");
+}
+.contactImg {
+    background-image: url("../common/images/contactImg.png");
+}
+
 
 h4 {
     font-weight: bold;
@@ -410,32 +524,16 @@ address {
     }
 
         /* ドロワーは非表示 */
-        #drawerMenuId {
+        #js-drawer-menu {
             display: none;
         }
 
        
-        /* PCメニュー横並び */
-        .pcMenu ul {
-            display: flex;
-            gap: 24px;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-    
-        .pcMenu ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 18px;
-        }
-        
+       
     body main {
         width: 100%;
         max-width: 1200px;
-        /* 最大幅 */
         padding: 30px;
-        /* より広い余白 */
         margin: 0 auto;    
     }
 
@@ -446,10 +544,7 @@ address {
         padding: 20px;
     }
 
-    .myName {
-        font-size: 32px;
-    }
-
+  
     h2 {
     margin-bottom: 30px;
     border-radius: 10px;
@@ -464,19 +559,23 @@ address {
         margin-bottom: 20px;
     }
 
-
+    
 
     /* メインコンテンツの余白と文字サイズを調整 */
     main {
         font-size: 18px;
         padding: 30px;
     }
-
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
     /* 画像の最大幅を1200pxに制限 */
     img {
         max-width: 1200px;
         margin: 0 auto;
-        /* 中央寄せ */
+        
     }
 
     /* 必要に応じてPC版レイアウトを調整 */
@@ -522,7 +621,25 @@ address {
     margin: 0 auto;
     /*text-align:center;*/
 }
-/* 制作物リンク */
+
+
+.toMorepage {
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    padding: 0.2rem;
+    width: 30%;
+    margin-left: 75%;
+    box-shadow: 5px 5px 10px  rgba(51, 51, 51, 0.525);
+    color: #fff;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+
+/* 制作物リンク、アコーディオンメニュー */
 
 summary {
     font-size: 1.1rem;
@@ -531,8 +648,9 @@ summary {
     border: 1px solid #ffffff;
     border-radius: 10px;
     padding: 0.2rem;
-    width: 20%;
-    margin-left: 75%;
+    width: 30%
+;
+    margin-left: auto;
     background-color:rgba(168, 112, 161, 0.808);
     box-shadow: 5px 5px 10px  rgba(51, 51, 51, 0.525);
     color: #fff; 
@@ -573,13 +691,23 @@ summary {
 .workLink a:hover {
     background-color: #fff459;
 }
-/* 上に戻るボタン */
-.toPageTop {
-    position: fixed;
-    bottom: 2.5vw;
-    right: 5vw;
-    z-index: 2;
+
+.workLinksMore {
+    display: flex;
+    justify-content: center;/*項目増やすなら変更*/
 }
+
+.workLinks p,.workLinksMore p  {
+    width: 90%;
+
+}
+
+.workLinks p a,.workLinksMore p a {
+    display: inline-block;
+    padding: 2rem;
+}
+
+
 /* 上に戻るボタン */
 .toPageTop {
     position: fixed;
