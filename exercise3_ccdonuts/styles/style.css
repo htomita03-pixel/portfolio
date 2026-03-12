@@ -1,0 +1,1430 @@
+@charset "utf-8";
+html {
+    font-size: 16px;
+    width: 100vw;
+    display: block;
+}
+
+body {
+    max-width: 100%;/*1200px*/
+    font-size: 1rem;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.innerBody {
+    max-width: 90%;
+    margin: 0 auto;
+    width: 89%;
+}
+
+.pcOnly {
+    display: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+/*ヘッダー*/
+header {
+    width: 100%;
+}
+
+.headerUpper {
+background-color: #EDE0D4;
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding:1rem 0.75rem;
+}
+
+h1 img{
+    position:absolute;
+    top: 16px;
+    left: 41%;
+    width: 62px;
+    aspect-ratio: 62/53;
+}
+
+.headerList {
+    display: flex;
+    gap: 0.75rem;
+}
+
+
+
+.headerList li a{
+    display: flex;
+    flex-direction: column;
+    width: 40px;
+    aspect-ratio: 40/35;
+    font-size: 0.625rem;
+    text-align: center;
+}
+
+
+
+
+
+/* ドロワー（スマホ用） */
+
+#js-drawer-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateY(-120%);
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(127, 85, 57, 0.75);
+    transition: transform 0.3s ease-out;
+    z-index: 100;
+}
+
+/* ドロワー表示時 */
+#js-drawer-menu.show {
+    transform: translateY(0);
+}
+
+/* 内側（中身の配置） 左から出るときは横幅減。*/
+.drawerMenuInner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+/*オープンボタン*/
+.drawerOpenBtn {
+    width: 1.56rem;
+    aspect-ratio: 1/1;
+    margin: 0.75rem;
+}
+
+/* クローズボタン */
+.drawerCloseBtn {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    background: transparent;
+    width: 1.56rem;
+    aspect-ratio: 1/1;
+}
+
+/* ロゴ */
+.drawerLogo {
+    padding-top: 0.75rem;
+    text-align:left;
+    margin-left: 0.75rem;
+    width: 59px;
+    aspect-ratio: 59/ 52;
+}
+
+/* ドロワーメニューリスト */
+.drawerNav ul {
+    width: 100%;/*上部から降りてくるもののみ*/
+    padding-top: 6.25rem;
+    font-size: 1.5rem;
+    text-align: center;
+
+}
+
+.drawerNav ul li {
+    border-bottom: 1px solid #fff;
+    line-height: 1.5;
+}
+
+.drawerNav a {
+    display: block;
+    padding: 1rem 0;
+    color: #fff;
+    text-decoration: none;
+}
+
+/*検索部分*/
+.headerLower {
+    text-align: right;
+    background-color: #EDE0D4;
+    padding: 8px;
+}
+
+.searchItem {
+    width: 351px;
+    /*PCは３６０*/
+    height: auto;
+    /*SP37px PC40px*/
+    display: inline-block;
+    text-align: right;
+    margin-right: 4px;
+}
+
+.searchItem button {
+    background-color: #D9D9D9;
+    aspect-ratio: 34/37;
+    border:1px solid #7F5539;
+    text-align: center;
+    width: 34px;
+    margin: 0;
+}
+
+.searchItem button img {
+    object-fit: contain;
+}
+
+.textBox {
+    background-color: #fff;
+    width: 310px;
+    border:1px solid #7F5539;
+    height: 37px;
+}
+
+/*パンくずナビ(TOPはなし）*/
+.pankuzuNav {
+    font-size: 0.75rem;
+    border-bottom: 1px solid #7F5539;
+    padding: 0 1.25rem;
+    height: 36px;
+    color: #7F5539;
+    display: flex;
+}
+.pankuzuNav ul{
+    display: flex;
+    align-items: center;
+}
+.pankuzuNav li + li::before {
+  content: "＞";
+  margin: 0 0.5em;
+}
+
+/*ログインユーザー名*/
+.userName {
+    padding: 0 1.25rem;
+    height: 36px;
+     border-bottom: 1px solid #7F5539;
+     color: #7F5539;
+}
+
+.welcomeText {
+    font-size: 0.75rem;
+    align-items: center;
+    display: inline-block;
+}
+
+.userLink a{
+    font-size: 0.75rem;
+    border: 1px solid #7F5539;
+}
+
+/*hero画像セクション*/
+.heroSec {
+    width:100vw;
+}
+
+.heroSec img {
+    object-fit: contain;  
+    width: 100%;
+}
+
+
+
+/*新着情報セクション　CSSグリッド https: //qiita.com/startyuki/items/1893623e472fad665236*/
+
+.infoSec {
+    padding: 20px 0px;
+}
+
+.infoSec ul {
+    width:100%;
+    display: grid;
+    grid-template-rows: auto auto ;
+    grid-template-columns: 46% 46%;
+    column-gap: 8%;
+    row-gap: 8%;
+    margin-bottom: 20px;
+}
+
+.list01 {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    background-image: url(../images/productImage05.png) ;
+    background-repeat: no-repeat;
+    aspect-ratio: 157.5 / 157;
+    background-size: contain;
+}
+
+
+.list02 {
+    grid-row: 1/ 2;
+    grid-column: 2 / 3;
+    background-image: url(../images/dLife.png) ;
+    background-repeat: no-repeat;
+    aspect-ratio: 157.5 / 157;
+    background-size: contain;
+}
+
+
+.list03 {
+    grid-row: 2 / 3;
+    grid-column: 1 / 3;
+    background-image: url(../images/dBanner.png) ;
+    background-repeat: no-repeat;
+    aspect-ratio: 335/ 83;
+    background-size: contain;
+}
+
+/*グリッド内のコンテンツの配置など*/
+
+    .infoSecLi span {
+    font-family: 'Noto Serif JP';
+    color: #fff;
+    font-size: 0.75rem;
+    display: inline-block;
+    font-weight: bold;
+   }
+
+    .list01 {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .list01 .infoCaption01{
+        align-self: flex-end;
+    }
+
+
+   .pinkCircle {
+        background-color: #FF8877;
+        color: #fff;
+        border-radius: 50%;
+        font-size: 0.75rem;
+        width: 25%;
+        height: 25%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        aspect-ratio: 1/1;
+        margin: 0.25rem;
+    }
+
+    .infoCaption01 {
+        margin: 4px;
+    }
+
+    .list02 {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+    }
+
+    .list02 span {
+        margin-bottom: 10%;
+    }
+
+    .bunnerLink {
+        width: 100%;
+        height: 100%;
+          display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
+    .list03 span {
+        color: #7F5539;
+        font-weight: 500;
+        margin: 2.5%;
+        width: 50px;
+    }
+
+    
+
+
+/*お店紹介セクション*/
+.philosophySec {
+    background-image: url(../images/spShopInfo.png);
+    text-align: center;
+    aspect-ratio: 375/568;
+    color: white;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.philosophySec{
+padding: auto;
+padding-top: 100px ;
+
+}
+
+.philosophyText01 {
+    margin-bottom: 3.75rem;
+}
+
+
+.philosophyText01 h3{
+font-size: 1.5rem; /*２４ｐｘ*/
+margin-bottom: 1.25rem;
+font-weight: bold;
+}
+
+.philosophyText01 p {
+    font-size: 1rem;
+}
+
+.philosophyText02 p{
+font-size: 1.25rem;
+margin-bottom: 0.75rem;
+}
+
+.philosophyText02 span {
+font-size: 1rem;
+}
+
+
+/*ランキング*/
+.rankSec ,.productSec{
+width: 100%;
+}
+
+.sectionTitle {
+    
+    width: auto;/*指定の幅は１４０ｐｘだけど少し長め*/
+    
+    margin: 1.25rem auto;
+    text-align: center;
+    margin-bottom: 4rem;
+}/*ページをまたいで適用している　タグの異なる部品*/
+
+.sectionTitle span{
+    display:inline-block;
+    border-bottom: 2px solid #FFD233;
+    font-size: 1.25rem;/*20px*/
+    padding: 0.75rem;
+}
+
+
+.rankArticle, .productDetail {
+    margin-bottom: 80px;
+    text-align: center;
+}
+
+.rankArticle  img{
+    aspect-ratio: 157.5/157;
+    text-align: center;
+    max-width: 100%;
+    margin-bottom: 1.25rem;
+}
+
+.rankList  h3, .productsList h3 {
+    color: #7F5539;
+    margin-bottom: 1.25rem;
+    text-align: left;
+}
+
+
+/*ランキングの数字部分指定*/
+.rankNumber {
+    text-align: center;
+    color: #fff;
+    aspect-ratio: 1/1;
+    width:35px;/*22%;*/
+    height: 35px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+}
+
+/*PHPで繰り返すための番号の背景設定　
+クラス分けして指定していたが、自動読み込みには使えないので変更*/
+.rankList li:nth-child(1) .rankNumber { 
+    background: gold; 
+}
+.rankList li:nth-child(2) .rankNumber { 
+    background: silver; 
+}
+.rankList li:nth-child(3) .rankNumber { 
+    background: #cd7f32; 
+}
+.rankList li:nth-child(n+4) .rankNumber {
+     background: #E8C2CA; 
+}
+/* nth-child(番号) CSS の擬似クラス、
+兄弟要素のグループの中での位置に基づいて選択
+n+4 は　4以降のすべての要素*/
+
+
+/*カート投入ボタン*/
+.rankList form button, .productsList form button  {
+    background-color: #7F5539;
+    color: #fff;
+    font-size: 0.75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+    margin: 0 auto;
+}
+
+
+
+/*ランキングの価格部分の指定*/
+.price ,.productPrice{
+    color: #BF0000;/*要修正*/
+    margin-bottom: 1.25rem;
+    text-align: left;
+}
+
+/*CSSグリッド*/
+.rankList,.productsList {
+    display: grid;
+    grid-template-rows: auto auto;
+        grid-template-columns: repeat(2,1fr);
+        gap: 5vw;
+}
+/*自動配列　
+repeat(2, ...)
+同じ定義を 2回繰り返す
+fr = fraction（残り領域の割合）
+親要素の横幅を基準に「余っているスペース」を分配する*/
+
+.rankList > li,.productsList > li {
+  min-width: 0;
+}/*広がり防止　１つ下の階層の子要素だけが対象、孫要素は対象外。
+min-width: 0;子要素は必要に応じて
+（親要素の幅に収まるように）ゼロまで縮むことが可能になる
+*/
+
+/*footer*/
+footer {
+    padding: 0.75rem;
+    background-color: #EDE0D4;
+    color: #7F5539;
+}
+
+.footerNav {
+    font-size: 0.75rem;
+
+}
+
+.pageList {
+    width: 144px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-bottom: 32px;
+}
+
+.pageList li {
+    padding: 4px 12px ;
+    display: inline-block;
+    border-left: 2px solid #7F5539;
+}
+
+
+.iconList {
+    display: flex;
+    width: 142.9px;
+    justify-content: space-between;
+}
+
+.iconList li{
+    width: 32px;
+    aspect-ratio: 1/1;
+}
+
+.iconList img {
+    object-fit: contain;
+}
+
+.iconList li:last-of-type{
+    width: 38.9px;
+    aspect-ratio: 38.9/32;
+}
+
+.footerRogo {
+    text-align: right;
+    margin-right: 12px;
+    margin-bottom: 8px;
+}
+
+.footerRogo img {
+    width: 72px;
+    aspect-ratio: 72/64;
+
+}
+small {
+    display: block;
+    text-align: center;
+    border-top: 1px solid #7F5539;
+    padding: 12px; 
+    font-size: 10px;
+}
+
+/*productとproducts共通*/
+.productDetail {
+    margin-bottom: 80px;
+    text-align: center;
+}
+
+
+
+ .productDetail img{
+    aspect-ratio: 157.5/157;
+    text-align: center;
+    max-width: 100%;
+}
+
+.favoriteBtn {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #7F5539;
+     align-items:center;
+     justify-content: center;
+     margin-bottom:0;
+
+}
+
+
+/*productsのみの指定*/
+.menuTitle {
+    color:#7F5539;
+    text-align: center;
+    padding: 20px;
+}
+
+/*productページのみの設定*/
+.productSec{
+width: 100%;
+}
+
+ .productList h3 {
+    color: #7F5539;
+    margin-bottom: 1.25rem;
+    text-align: left;
+}
+
+.productList form  {
+    display: flex; 
+     align-items:flex-end;
+}
+
+
+/*カート投入ボタン*/
+ .productList form button {
+    background-color: #7F5539;
+    color: #fff;
+    font-size: 0.75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+    width: 160px;
+    height: 30px;
+}
+
+form .productCount {
+    border: 1px solid #7F5539;
+    height: 36px;
+    width: 56px;
+}
+
+.productDetailImg {
+    aspect-ratio: 1/1;
+    width: 100%;
+}
+
+.productList .productDetail img{
+    aspect-ratio: 157.5/157;
+    max-width: 100%;
+}
+
+
+/*cart.php用*/
+
+/*カートの小計表示欄*/
+.cartSummary {
+    margin: 1.25rem auto;
+    padding: 1.25rem;
+    border: 1px solid #FFD233;
+    color:#7F5539;
+    width: 100%;/*innerBodyに入っているので*/
+    margin-bottom: 80px;
+    text-align: center;
+}
+
+.cartSummary p{
+    margin: 1.25rem;
+}
+
+.toCheckoutBtn {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #BF0000;
+    color: #fff;
+    font-size: 0.75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+    width: 160px;
+    height: 30px;
+    margin: 0 auto;
+}
+
+/*ひとアイテムをまとめている箱*/
+.cartDetail {
+    margin-bottom: 80px;
+    text-align: center;
+}
+
+/*画像*/
+.cartDetailImg {
+    width: 100%;
+}
+
+.cartDetail img{
+    aspect-ratio: 157.5/157;
+    width: 100%;
+}
+
+/*数量変更、更新、削除ボタンの欄*/
+.cartItemBody {
+    padding: 0; 
+}
+
+.cartItemName {
+    margin: 0 0 6px;
+    color: #7F5539;
+    margin: 1.25rem;
+    text-align: center;
+    border-bottom: 1px solid #E6CCB2;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+
+
+.cartCount {
+    align-items: center;
+    margin-left: 1rem;
+}
+
+.cartCountForm button {
+    margin: 0 auto;
+    gap: 8px;
+    font-size: 12px;
+}
+
+.cartUpdateBtn {
+    padding: 6px 10px;
+    background-color: #CCC;
+    color: #000;
+    font-size: 0.75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+    width: 140px;
+    height: 28px;
+
+}
+
+.cartPrice {
+    color: #BF0000;
+    margin-bottom: 0.75rem;
+    text-align: center;
+}
+
+.cartCountForm select {
+    border: 1px solid #7F5539;
+    width: 56px;
+    height: 24px;
+    padding-right: 0.5rem;
+    margin-bottom: 1.25rem;
+    text-align: right;
+    font-size: 1rem;
+}
+
+/*削除処理フォーム*/
+.cartRemoveLink {
+    background: none;
+    border: none;
+    padding: 0;
+    text-decoration: underline;
+    font-size: 12px;
+
+}
+
+
+
+/*商品一覧に戻るボタン*/
+.backToProducts {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #7F5539;
+    color: #fff;
+    font-size: 0.75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+    width: 160px;
+    height: 30px;
+    margin-bottom: 80px;
+}
+
+/*手続きページ用*/
+
+/*ログイン入力ページ他*/
+.procedureDetail {
+    margin-bottom: 80px;
+}
+
+.toSignUp {
+    text-align: right;
+    color:#7F5539;
+}
+
+.procedureSummary{
+    margin: 1rem auto;
+    padding: 1.25rem;
+    border: 2px solid #F7D1CD;
+    color:#7F5539;
+    width: 100%;/*innerBodyに入っているので*/
+}
+
+.procedureSummary button,
+.inputField button {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #7F5539;
+    color: #fff;
+    font-size: 0.75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3%;
+    width: 160px;
+    height: 48px;
+    margin: 0 auto;
+    margin-bottom: 1.5rem;
+}
+
+
+
+.procedureSummary p {
+    margin: 1.25rem auto;
+}
+
+.procedureSummary input{
+    border: 1px solid #7F5539;
+    background-color: #fff;
+    color: #000;
+    width: 100%;
+}
+
+.proceduremessage {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+}
+
+.proceduremessage span{
+    display:inline-block;
+    line-height: 2;
+}
+
+
+
+/*会員登録ページ*/
+.inputField {
+    color: #7F5539;
+    font-size: 0.75rem;
+    color: #7F5539;
+    font-size: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    width: 78%;
+    margin: 0 auto;
+    margin-top: 1.25rem;
+}
+
+
+.inputField input {
+    border: 1px solid #7F5539;
+    background-color: #fff;
+    color: #000;
+    width: 100%;
+}    
+
+.inputField p {
+    margin-bottom: 1.25rem;
+}
+
+.inputField .adressNum1 {
+    width: 60px;
+}
+
+.inputField .adressNum2 {
+    width: 100px;
+}
+
+
+.inputFieldPass {
+    display: flex;
+    flex-direction: column;
+}
+
+.required {
+    color: #FF0000;
+}
+
+.headsUp {
+    color: #FF0000;
+    font-size: 0.5rem;
+    display: inline-block;
+}
+
+.inputFieldPassRe input {
+    margin-bottom: 2.5rem;
+}
+
+/*確認内容や入力結果表示*/
+.resultField {
+    margin-bottom: 40px;
+}
+
+.resultField dl {
+    width: 80%;
+    margin: 0 auto;
+    font-size: 1rem;
+}
+
+.resultField dt {
+    color:#7F5539;
+    margin-bottom:0.5rem;
+}
+
+.resultField dd {
+    padding: 0.5px 0.75rem ;
+    display: inline-block;
+    border-left: 2px solid #7F5539;
+    margin-bottom: 1rem;
+    height: 1.25rem;
+    color: #000;
+    margin-left:0px;
+}
+
+.resultField .linkGroup {
+    margin: 0px auto;
+    text-align: center;
+}
+
+.linkGroup {
+    margin-bottom: 80px;
+}
+
+.linkGroup button {
+     display: inline-block;
+    text-decoration: none;
+    background-color: #7F5539;
+    color: #fff;
+    font-size: 0.75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+    width: 160px;
+    height: 30px;
+    margin: 0 auto;
+}
+
+.linkGroup span {
+    display: inline-block;
+    font-size: 0.75rem;
+    color: #7F5539;
+    display: flex;
+    flex-direction: column;
+    gap:0;
+    align-items: flex-end;
+}
+
+.linkGroup span a {
+    display: inline-block;
+}
+
+.linkGroup a {
+    color: #7F5539;
+    font-size: 0.75rem;
+}
+
+
+@media screen and (min-width: 768px) {
+
+html {
+        font-size: 24px;
+        width: 100vw;
+        display: block;
+    }
+
+body {
+    font-size: 1rem;
+
+}
+
+.spOnly {
+    display: none;
+}
+
+.pcOnly {
+    display: block;
+}
+.headerUpper {
+    padding: 20px 96px;
+}
+
+.headerList li a{
+    display: flex;
+    flex-direction: column;
+    width: 48px;
+    aspect-ratio: 40/35;
+    font-size: 12px;
+    text-align: center;
+}
+
+/*ドロワー*/
+.drawerLogo {
+    width: 87px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.drawerOpenBtn {
+    width: 50px;
+    aspect-ratio: 1/1;
+    margin: 0.75rem;}
+
+.drawerCloseBtn {
+    position: absolute;
+    top: 12px;
+    right: 95px;
+    background: transparent;
+    width: 54px;
+    aspect-ratio: 1/1;
+}
+
+.drawerNav ul {
+    padding-top: 5.75rem;
+    font-size: 1rem;
+    text-align: center;
+    width:35%;
+    margin: 0 auto;
+}
+
+.drawerNav a {
+    padding: 12px;
+}
+
+
+
+/*検索部分*/
+.headerLower {
+    background-color: #B392AC;
+    text-align: right;
+    padding: 12px;
+}
+
+.searchItem {
+    width: 360px;
+    /*PCは３６０*/
+    height: auto;
+    /*SP37px PC40px*/
+    margin-right: 84px;
+}
+
+.searchItem button {
+    background-color: #D9D9D9;
+    aspect-ratio: 1/1;
+    width: 40px;
+}
+
+.searchItem button img {
+    object-fit: contain;
+    width: 30px;
+    margin: 3.5px;
+}
+
+.textBox {
+    background-color: #fff;
+    width: 310px;
+    border: 1px solid #7F5539;
+    height: 37px;
+}
+
+h1 img {
+    width: 87px;
+    aspect-ratio: 62/53;
+        position: absolute;
+        top: 20px;
+        left: 46%;
+}
+
+.philosophySec {
+    background-image: url(../images/pcShopInfo.png);
+    text-align: center;
+    aspect-ratio:1366/667;
+    color: white;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+/*パンくずナビ(TOPはなし）*/
+.pankuzuNav {
+    font-size: 0.75rem;
+    padding: 0 4.29rem;
+    display: flex;
+}
+
+.pankuzuNav li + li::before {
+  content: "＞";
+  margin: 0 0.5em;
+}
+
+/*ログインユーザー名*/
+.userName {
+    padding: 0 4.29rem;
+}
+.welcomeText {
+    font-size: 0.75rem;
+}
+
+
+/*新着情報セクション*/
+.infoSec {
+    padding: 80px 0px;
+}
+
+.infoSec ul {
+    margin-bottom: 80px;
+}
+
+.pinkCircle {
+        font-size: 1.33rem;
+        width: 25%;
+        height: 25%;
+        margin: 0.25rem;
+    }
+
+     .infoSecLi span {
+    font-size: 1.33rem;
+   }
+
+   .infoCaption01 {
+        margin: 12px;
+    }
+
+   .list02 span {
+        margin-bottom: 10%;
+    }
+
+    .list03 span {
+        margin: 2.5%;
+        width: 150px;
+    }
+
+/*ランキング*/
+
+.sectionTitle {
+    width: auto;
+    /*指定の幅は１４０ｐｘだけど少し長め*/
+    margin: 1.25rem auto;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+/*ページをまたいで適用している　タグの異なる部品*/
+
+.sectionTitle span {
+    display: inline-block;
+    border-bottom: 2px solid #FFD233;
+    font-size: 1.25rem;
+    /*20px*/
+    padding: 0.75rem;
+}
+
+
+/*products h2のみの指定 */
+.menuTitle {
+    color:#7F5539;
+    text-align: center;
+    padding: 20px;
+    padding-top: 40px;
+}
+
+
+.rankArticle , .productDetail{
+    margin-bottom: 120px;
+}
+
+/*番号部分指定*/
+
+.rankNumber {
+    width: 60px;
+    height: 60px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1rem;
+}
+/*カート投入ボタン*/
+.rankList form button,.productsList form button {
+    font-size: 0.83rem;
+    justify-content: center;
+    padding: 5%;
+    width: 100%;
+}
+
+/*CSSグリッド*/
+.rankList, .productsList{
+    display: grid;
+    grid-template-rows: auto auto;
+        grid-template-columns: repeat(3,1fr);
+        column-gap: 6.7%;
+        row-gap: 0rem;
+}
+
+
+
+/*footer*/
+.pageList {
+    width: 600px;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 74px;
+    margin-bottom: 64px;
+    font-size: 16px;
+    margin-left: 8.5%;
+}
+
+.iconList {
+    width: 182.9px;
+}
+
+.footerRogo {
+    margin-bottom: 72px;
+    text-align: center;
+}
+
+/*  フッター　グリッドCSS（順序いれかえのため*/
+.footerNav {
+    display: grid;
+    grid-template-rows: auto auto auto;
+        grid-template-columns: 100%;
+        column-gap: 0%;
+        row-gap: 0rem;
+}
+
+.pageList {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+}
+
+.footerRogo {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+    margin-bottom: 72px;
+}
+.footerRogo img {
+    width: 144px;
+    aspect-ratio: 72/64;
+}
+
+.footerNav {
+    margin-bottom: 40px;
+}
+
+.iconList {
+    grid-row: 3 / 4;
+    grid-column: 1 / 2;
+    margin: 0 auto;
+
+}
+
+/*productページのみの指定*/
+.productSec{
+width: 100%;
+height: auto;
+}
+
+.productList .productDetail {
+    margin-bottom: 80px;
+    text-align: center;
+    display:flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+ .productDetail img{
+    aspect-ratio: 157.5/157;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+ .productList h3 {
+    color: #7F5539;
+    margin-bottom: 1.25rem;
+    text-align: left;
+    font-weight: bold;
+}
+
+.productList .productCaption {
+    color: #7F5539;
+    margin-bottom: 1.25rem;
+    text-align: left;
+}
+
+.productList .productDetailBody form {
+    display: flex;
+    
+}
+
+
+
+form .productCount {
+    border: 1px solid #7F5539;
+    height: 52px;
+    width: 80px;
+}
+
+.productList .productDetailImg {
+    aspect-ratio: 1/1;
+    width: 540px;/*仮*/
+}
+
+.productList .productDetailImg img{
+    object-fit: contain;
+}
+
+.productList .productDetailBody {
+ width: 460px;/*仮*/
+}
+
+/*カート内*/
+.cartDetail {
+    display: flex;
+   justify-content: space-between;
+}
+
+.cartDetailImg {
+    width: 30%;
+}
+
+.cartItemBody {
+    text-align: right;
+    width: 65%;
+}
+
+.cartCountWrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cartCountWrapper p{
+    display: flex;
+    justify-content: right;
+}
+
+.cartItemName {
+    margin: 0 0 6px;
+    margin: 1.25rem;
+    text-align: left;
+}
+
+.cartPrice {
+    color: #BF0000;
+    margin-bottom: 0.75rem;
+   text-align: left;
+   padding-left: 1.25rem;
+}
+    
+.cartCount {
+    align-items: center;
+    gap: 10px;
+    display: flex;
+}
+
+.cartCountForm select {
+    border: 1px solid #7F5539;
+    width: 56px;
+    height: 1rem;
+    padding-right: 0.5rem;
+    margin-bottom: 1.25rem;
+    text-align: right;
+    font-size: 0.75rem;
+}
+
+.cartUpdateBtn {
+    background-color: #CCC;
+    font-size: 0.75rem;
+    padding: 3%;/*SP版は6px 10px*/
+    width: 140px;
+    height: 30px;
+}
+
+.cartRemoveForm {
+    margin-top: 100px;
+    border-bottom: 1px solid #E6CCB2;
+}
+
+
+.toCheckoutBtn {
+    background-color: #BF0000;
+    font-size: 0.75rem;
+    padding: 3%;
+    width: 290px;
+    height: 54px;
+    
+}
+
+.backToProducts {
+        padding: 3%;
+        width: 290px;
+        height: 30px;
+        margin: 0 auto;
+        margin-bottom: 80px;
+}
+
+
+.linkGroup button {
+    font-size: 0.75rem;
+    padding: 1rem;
+    width: 290px;
+    height: auto;
+}
+
+
+/*カート投入ボタン*/
+.productList form button {
+    width: 290px;
+    height: 30px;
+}
+
+
+/*ログイン入力ページ他*/
+.procedureSummary button,
+.inputField button {
+    width: 280px;
+    height: 50px;
+}
+
+
+
+
+
+}
