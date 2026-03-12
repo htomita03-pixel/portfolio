@@ -1,21 +1,26 @@
 <!DOCTYPE html>
-<html lang="jn">
+<html lang="ja">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="common/reset.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="styles/style.css">
 
-    <title>Hinako Tomita's Portfolio</title>
+    <title>Tomita's Portfolio</title>
     
 
 </head>
 
 <body>
+    <div id="js-over-wrap">
+        <p class="openingName">Tomita's Portfolio</p>
+    </div>
+
     <div id="PageTop"></div>
     <!-- 背景画像 -->
     <div class="backImg"></div>
@@ -25,51 +30,54 @@
         <div class="headerNav">
 
             <h1 class="titleImg">
-                Hinako Tomita's Portfolio
+                Tomita's Portfolio
             </h1>
+            
 
             <!-- ドロワー開くボタン（スマホのみ） -->
-            <div id="drawer_open" class="spOnly"><!--JSトリガー-->
-                <img src="common/images/listBtn.svg" id="open_btn" id="open_btn" alt="ドロワーオープンボタン画像">
+            <div id="js-drawer-open" class="spOnly">
+                <img src="common/images/listBtn.svg" id="js-open-btn" alt="ドロワーオープンボタン画像">
             </div>
 
             <!-- PC用メニュー（横並び） -->
             <nav class="pcMenu pcOnly">
                 <ul>
                     <li class="spOnly">Menu</li>
-                    <li><a href="index.html">Top</a></li><!--シンプルに案内のみ-->
+                    <li><a href="index.html">Top</a></li>
+                    <li><a href="about/index.html"target="_blank">AboutMe</a></li>
                     <li><a href="exercise1_DesignHouseRenovations/index.html" target="_blank">Exercise1</a></li>
                     <li><a href="exercise2_taiwankankou/index.html" target="_blank">Exercise2</a></li>
-                    <!-- <li><a href="https://github.com/htomita03-pixel/portfolio" target="_blank">Sources</a></li>-->
-                    <li><a href="works/index.html" target="_blank">otherWorks</a></li>
+                    <li><a href="exercise3_ccdonuts/index.php" target="_blank">Exercise3</a></li>
+                    <li><a href="works/index.html" target="_blank">OtherWorks</a></li>
                 </ul>
             </nav>
 
             <!-- ドロワーメニュー -->
-            <div id="drawerMenuId" class="spOnly"><!--JSトリガー-->
-                <img src="common/images/listCloseBtn.svg" id="closeBtnId"  alt="ドロワークローズボタン画像">
+            <div id="js-drawer-menu" class="spOnly">
+                <img src="common/images/listCloseBtn.svg" id="js-close-btn"  alt="ドロワークローズボタン画像">
 
                 <nav class="drawerMenu">
                     <ul>
                         <li>Menu</li>
-                        <li><a href="index.html">Top</a></li><!--シンプルに案内のみ-->
+                        <li><a href="index.html">Top</a></li>
+                        <li><a href="about/index.html"target="_blank">AboutMe</a></li>
                         <li><a href="exercise1_DesignHouseRenovations/index.html" target="_blank">Exercise1</a></li>
                         <li><a href="exercise2_taiwankankou/index.html" target="_blank">Exercise2</a></li>
-                        <!-- <li><a href="https://github.com/htomita03-pixel/portfolio" target="_blank">Sources</a></li>-->
-                        <li><a href="works/index.html" target="_blank">Otherworks</a></li>
+                        <li><a href="exercise3_ccdonuts/index.php" target="_blank">Exercise3</a></li> 
+                        <li><a href="works/index.html" target="_blank">OtherWorks</a></li>
                     </ul>
                 </nav>
             </div>
         </div>
     </header>
 
-    <div id="over_lay"></div>
+    <div id="js-over-lay"></div>
+
 
     <main>
         <div class="wrapper ">
 
             <section id="profile" class="profileSec">
-                <h2 class="myName">Hinako Tomita</h2>
 
                 <div class="profileCard">
                     <!-- 左：本人画像 -->
@@ -83,18 +91,21 @@
                             <span>ごあいさつ</span>
                             <i class="bi bi-stars afterStar"></i>
                         </h3>
-                        <div class="profile1">
-                            <p><!--紹介文　考え中-->
-                                はじめまして。冨田　一菜子と申します。<br>
+                        <div class="Introduction">
+                            <p>
+                                はじめまして。TOMITAと申します。<br>
                                 このたびは、私のポートフォリオをご覧いただき、ありがとうございます。<br>
                                 私は只今、就職活動とともに、職業訓練校にてプログラミングの訓練を受講中です。<br>
                                 こちらには、9月中旬より3月中旬までの6か月間の訓練校での成果物をはじめ、<br>
-                                個人での制作物なども取りまとめました。<br>どうぞよろしくご高覧ください。
+                                個人での制作物なども取りまとめました。<br>どうぞよろしくご高覧ください。<br>
+                                <span>＊全ページ快適にご利用いただくためには、JavaScriptを有効にしてご覧ください。</span>
                             </p>
                         </div>
                     </div>
                 </div>
+                <a class="toMorepage" href="about/index.html" target="_blank" ><span>▲</span>経歴詳細はこちら</a>
             </section>
+
             <hr>
             <section class="skillsSec">
                 <div class="skillsCard">
@@ -105,33 +116,35 @@
                         </h3>
                             <ul class="skillsList">
                                 <li>
-                                    HTML/CSS ★★★☆☆ （レスポンシブ対応 / 基本レイアウト）
+                                    HTML/CSS ★★★☆☆ <br>
+                                    （レスポンシブ対応が可能。ホームページ作成、更新やお便りのWeb化などが可能）
                                 </li>
                                 <li>
-                                    JavaScript ★★☆☆☆（DOM操作 / 基本機能実装）
+                                    JavaScript ★★☆☆☆<br>
+                                    (WEBページのブラウザ上での操作が可能 / ブラウザ上で使えるくじ引きなどの道具を自作可能)
                                 </li>
                                 <li>
-                                    PHP ★★☆☆☆(基本機能実装)
+                                    PHP ★★☆☆☆<br>
+                                    (サーバー側で行う必要のある処理の基本機能の理解、実装)
                                 </li>
                                 <li>
-                                    SQL(MariaDB) ★☆☆☆☆ (PHPとの併用部分、基本機能実装)
+                                    SQL(MariaDB) ★☆☆☆☆ <br>
+                                    (データベースを用いたデータの保存と利用。PHPとの併用部分、基本機能CRADなどの理解、実装)
                                 </li>
-                                <li>
-                                    Git/GitHub ★☆☆☆☆ （現在学習中）
-                                </li>
-                                
+                                ＊現場の状況や優先順位を判断した上で、必要な場面で活用できればと思います。
                             </ul>
                 </div>
             </section>
             <hr>
-            <section class="linkSec"><!--構造要修正
-                <h2><span class="linkSecH2">各種制作物リンク</span></h2>-->
+            <section class="linkSec" id="toExWorks">
                 
-                <h3 class="linkSecH3">
+                <h3 class="linkSecH3 ">
                             <i class="bi bi-stars beforeStar"></i>
-                            <span>制作物紹介</span>
+                            <span >制作物紹介</span>
                             <i class="bi bi-stars afterStar"></i>
+                           
                         </h3>
+                        
                 <nav class="pageLink">
                     <ul class="worksList">
 
@@ -140,7 +153,7 @@
                             <article class="workCard">
                                 <!-- 作品タイトル -->
                                 <h3 class="workTitle">
-                                    課題1「リフォーム会社サイト」<br>   
+                                    課題１「リフォーム会社サイト」<br>   
                                     <span class="workSubTitle">DesignHouseRenovations</span>
                                 </h3>
 
@@ -188,7 +201,7 @@
                                 </p>
                                 </section>
                                 
-                                <section class="workGoodPoint">
+                                <!--苦労したこと--><section class="workGoodPoint">
                                 <h4>この制作で工夫したこと</h4>
                                 <p>
                                     初めてのWebサイト制作だったため、学習内容の定着と
@@ -219,7 +232,7 @@
 
                             <!-- 作品タイトル -->
                             <h3 class="workTitle">
-                            課題2「観光案内サイト」<br>
+                            課題２「観光案内サイト」<br>
                             <span class="workSubTitle">台湾観光サイト（チーム制作）</span>
                             </h3>
                             
@@ -311,17 +324,17 @@
                             <article class="workCard">
                                 <!-- 作品タイトル -->
                                 <h3 class="workTitle">
-                                    課題３「ドーナツショップサイト」は近日中にUPいたします。<br>   
+                                    課題３「ドーナツショップサイト」<br>   
                                     <span class="workSubTitle">C.C.Donuts</span>
                                 </h3>
 
                                 <!-- 作品リンク -->
                                 <div class="workLinks">
+
                                     <p class="workLink">
-                                        <a class="ex3Img1 fontColor1" href="exercise3_ここにフォルダ名/index.php" target="_blank">
-                                        Exercise3 : Websiteを見る
-                                    
-                                    </a>
+                                        <a class="ex3Img1 fontColor1" href="exercise3_ccdonuts/index.php" target="_blank">
+                                            Exercise3 : Websiteを見る
+                                        </a>
                                     </p>
                                     <p class="workLink">
                                         <a class="ex3Img2 fontColor2" href="https://github.com/htomita03-pixel/portfolio" target="_blank">
@@ -359,13 +372,13 @@
                                 </p>
                                 </section>
                                 
-                                <section class="workGoodPoint">
+                                <!--苦労したこと--><section class="workGoodPoint">
                                 <h4>この制作で工夫したこと</h4>
                                 <p>
                                    初めてのDB、SQLとPHPを用いたWEBサイト制作でした。HTML・CSSでベースのページを作成後、
-                                   PHP化し、サーバー上で機能する処理などの実装を行っています。
+                                   PHP化し、サーバー上で機能する処理などの実装を行っています。<br>
                                    演習期限内では製作期間内での課題要件をクリアすることに焦点を絞り、
-                                   第一段階として、ページへの商品カート機能、会員登録機能、ログイン機能を実装しました。
+                                   第一段階として、ページへの商品カート機能、会員登録機能、ログイン機能を実装しました。<br>
                                    その後、購入手続きなど他の機能については追加で作成予定です。
                                 </p>
                                 </section>
@@ -374,8 +387,8 @@
                                 <section class="workHardPoint">
                                     <h4>この制作で苦労したこと</h4>
                                     <p>
-                                    PHPでの初めての作成で、まずHTMLやCSSとの表示部分の役割分け、画像の命名上の注意などの理解から苦労しました。
-                                    また、HTMLからPHPへの変更で、コードの記述間違いによりDBからの取得エラー、
+                                    PHPでの初めての作成で、まずHTMLやCSSとの表示部分の役割分け、画像の命名上の注意などの理解から苦労しました。<br>
+                                    また、HTMLからPHPへのファイル変更で、コードの記述間違いによりDBからの取得エラー、
                                     処理の対象の指定間違いによるエラーなどにより、思うように処理が働かない事や、
                                     HTMLだけの段階では表示されていたものが正しく表示されないなど、PHPならではの難しさを実感しました。<br>
                                     この時点の自身のPHPへの理解度と制作物の量に対し、時間に限りがあったため、画面への処理状況の表示機能や、
@@ -395,23 +408,16 @@
                                 <!-- 作品タイトル -->
                                 <h3 class="workTitle">
                                     自主制作物のページ
-                                    <span class="workSubTitle">otherworks</span>
+                                    <span class="workSubTitle">OtherWorks</span>
                                 </h3>
                         
                                 <!-- 自主制作作品ページリンク -->
-                                <div class="workLinks">
+                                <div class="workLinks workLinksMore">
                                     <p class="workLink">
-                                        <a class="worksImg1" href="works/index.html" target="_blank">
-                                            otherWorks : 自主制作のページを見る
+                                        <a class="toWorksImg fontColor1" href="works/index.html" target="_blank">
+                                            OtherWorks : 自主制作のページを見る
                                         </a>
                                         ▲自主制作物はこちらからご覧ください。<br>
-                                    </p>
-                                    <p class="workLink">
-                                    
-                                        <a class="worksImg2" href="https://github.com/htomita03-pixel/portfolio" target="_blank">
-                                            otherWorks : ソースコードを見る
-                                        </a>
-                                        ▲自主制作ページとソースコードはこちらからご覧ください。ソースコードは Githubにてご覧いただけます。
                                     </p>
                                 </div>
 
@@ -421,15 +427,28 @@
                                 <!-- 作品概要 -->
                                 <section class="workSummary">
                                     <h4>自主制作作品につきまして</h4>
-                                    <p>
+                                    <div>
                                         訓練課題以外での制作物を展示しております。<br>
                                         随時更新いたします。
                                         <ul>
                                             <li>作品内容</li>
                                             <li>プログラミング関連作品</li>
+                                                <span>
+                                                    javascriptによる自主作成物<br>
+                                                    （さいころ機能「JS Dice Roller」/ 気温に合わせた服をお勧めする機能「Fashion Advisor」/ 入力テキストのランダム表示機能「Random Name Picker」）
+                                                </span>
+                                                <br>
+                                                <span>
+                                                    AI活用によるjavascriptを用いた作成物<br>
+                                                    （入退室管理システム / 〇×クイズジェネレーター）
+                                                </span>
+
                                             <li>プログラミング関連外の作品</li>
+                                            <span>
+                                                （絵画作品）
+                                            </span>
                                         </ul>
-                                    </p>
+                                    </div>
                                 </section>
                                 </div>
                                 </details>
@@ -449,10 +468,13 @@
                             <i class="bi bi-stars afterStar"></i>
                         </h3>
                 <address>
+                <p class="workLink">
+                    <a class="contactImg fontColor1" href="contactPhp/contact.php" target="_blank">
+                        お問い合わせフォームへ 
                     
-                    <!--<p>Googleform▼にあとでする
-                    <br><span class=""></span></p>
-                    </p>-->
+                    </a>
+                </p>
+                   
                 </address>
             </section>
 
@@ -468,21 +490,19 @@
     </main>
     <footer>
     <small>
-        <p>使用技術・開発環境<br>
+        <p>
+       使用技術・開発環境<br>
+       <hr>
             フロントエンド: HTML, CSS, JavaScript<br>
-            <!--バックエンド: PHP<br>追加予定-->
+            バックエンド: PHP<br>
             フレームワーク:Bootstrap<br>
-            <!--データベース: MySQL<br>追加予定-->
+            データベース: MySQL(mariaDB)<br>
             開発ツール: VS Code, Git/GitHub<br>
             開発補助、一部画像生成、加工:ChatGPT(基本モデル)<br>
             共同制作での連絡ツール:Chatwork<br>
-            <!--リン考え中　どこまで詳細に書くべき？
-            <a href="" target="_blank" aria-label="">HTML Living Standard</a>
-            <a href="" target="_blank" aria-label="">CSS3</a>
-            <a href="" target="_blank" aria-label="">JavaScript</a>-->
-        </p>
-        
-            &copy;2026 Hinako Tomita. All rights reserved.
+         </p>   
+         <hr>
+            &copy;2026 Tomita. All rights reserved.
         </small>
     </footer>
     <script src="scripts/script.js"></script>
